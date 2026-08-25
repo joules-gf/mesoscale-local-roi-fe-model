@@ -1,0 +1,28 @@
+<input>
+    <include> aa2024-t351-p350-375-410-460-vf10-10-40-40_mesh.xml </include>
+
+    <abaqus>
+        <E> 73100 </E>
+        <nu> 0.33 </nu>
+        <displacement_yy> 0.01 </displacement_yy>
+        <plastic_stresses> 350, 375, 410, 460 </plastic_stresses>
+    </abaqus>
+
+    <settings>
+        <verbose> False </verbose>
+        <restart> False </restart>
+        <mesh_min_angle> 25 </mesh_min_angle>
+        <mesh_max_edge_length> 0.00328 </mesh_max_edge_length>
+
+        <rng_seeds>
+            <size> 1000 </size>
+        </rng_seeds>
+
+        <filetypes>
+            <seeds> txt </seeds>
+            <poly> txt </poly>
+            <tri> txt </tri>
+        </filetypes>
+
+    </settings>
+</input>

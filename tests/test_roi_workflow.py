@@ -79,7 +79,7 @@ class RoiPostprocessingTests(unittest.TestCase):
         self.assertAlmostEqual(summary.step_time, 0.5)
         self.assertAlmostEqual(summary.average_stress_mpa, 150.0)
         self.assertAlmostEqual(summary.average_plastic_strain, 0.0020)
-        expected_ki = 0.722 * 150.0 * math.sqrt(math.pi * 0.0001)
+        expected_ki = 1.12 * 150.0 * math.sqrt(math.pi * 0.0001)
         self.assertAlmostEqual(summary.stress_intensity_factor, expected_ki)
         self.assertEqual(summary.phase_fractions, {"Phase 0": 50.0, "Phase 1": 50.0, "Phase 2": 0.0, "Phase 3": 0.0})
 

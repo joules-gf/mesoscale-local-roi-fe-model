@@ -84,7 +84,7 @@ def plot_folder_against_rom(
         ref_strain,
         ref_stress,
         label=ref_label,
-        linewidth=4,
+        linewidth=6,
         linestyle='--',
         c='k'
     )
@@ -130,7 +130,7 @@ def plot_folder_against_rom(
 
 if __name__ == '__main__':
   plot_folder_against_rom(
-      reference_csv=r"C:\Users\MAEadmin\Desktop\microstructure fatigue simulation\00_Main_Scripts\material_reference_curves\aa7075-T6_cyclic_ROM.csv",
+      reference_csv=r"C:\Users\MAEadmin\Desktop\microstructure fatigue simulation\00_Main_Scripts\material_reference_curves\aa7075-T6_monotonic_ROM_cyclic_parameters.csv",
       results_folder=r"C:\Users\MAEadmin\Desktop\microstructure fatigue simulation\simulation_outputs\rng_size_sensitivity",
       fig_title="Sensitivity to Different Sampled Diameters of the Same Normal Distribution",
       fig_size=(19, 10),

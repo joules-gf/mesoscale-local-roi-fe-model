@@ -20,6 +20,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.patches import Wedge
 import numpy as np
 import pandas as pd
 
@@ -27,11 +28,49 @@ import pandas as pd
 ROI_RE = re.compile(r"roi_(left|right)_(\d+)$")
 PHASE_COLUMNS = ["Phase 0", "Phase 1", "Phase 2", "Phase 3"]
 PHASE_COLORS = ["#4C78A8", "#F58518", "#54A24B", "#B279A2"]
+COMBINED_EQUAL_YIELD_PHASE_GROUPS = [
+    ("Phase 0", ["Phase 0"], "#4C78A8"),
+    ("Phase 1", ["Phase 1"], "#F58518"),
+    ("Phases 2+3", ["Phase 2", "Phase 3"], "#54A24B"),
+]
+SEPARATE_PHASE_GROUPS = [(phase, [phase], color) for phase, color in zip(PHASE_COLUMNS, PHASE_COLORS)]
 STRESS_COLOR = "#6A3D9A"
 PLASTIC_COLOR = "#4D4D4D"
 LOW_STRESS_COLOR = "#1F77B4"
 HIGH_STRESS_COLOR = "#D62728"
 YOUNGS_MODULUS_MPA = 71000.0
+SIF_SHAPE_FACTOR = 1.12
+
+# Presentation update for the strainRratio-1 ROI slides: all explicit font
+# sizes are +4 points from the previous plots, and the canvases keep the same
+# width while gaining vertical room for slide layouts with more height.
+ROI_FONT_SIZE_INCREASE_POINTS = 4
+ROI_BASE_FONTSIZE = 14
+ROI_AXES_TITLE_FONTSIZE = 16
+ROI_TITLE_FONTSIZE = 18
+ROI_LOCATION_TITLE_FONTSIZE = 16
+ROI_EDGE_LABEL_FONTSIZE = 13
+ROI_SMALL_LEGEND_FONTSIZE = 12
+ROI_SMALL_ANNOTATION_FONTSIZE = 12
+FULL_RESPONSE_GROUPED_FIGSIZE = (14, 13.8)
+FULL_RESPONSE_PAIRED_FIGSIZE = (None, 13.5)
+FULL_RESPONSE_PAIRED_FIGSIZE_BASE_HEIGHT = FULL_RESPONSE_PAIRED_FIGSIZE[1]
+SIF_GROUPED_FIGSIZE = (14, 10.8)
+SIF_PAIRED_FIGSIZE = (None, 10.9)
+SIF_PAIRED_FIGSIZE_BASE_HEIGHT = SIF_PAIRED_FIGSIZE[1]
+REPRESENTATIVE_FIGSIZE = (11, 7.8)
+LOCATION_MAP_FIGSIZE = (5.2, 9.0)
+
+plt.rcParams.update(
+    {
+        "font.size": ROI_BASE_FONTSIZE,
+        "axes.labelsize": ROI_BASE_FONTSIZE,
+        "axes.titlesize": ROI_AXES_TITLE_FONTSIZE,
+        "xtick.labelsize": ROI_BASE_FONTSIZE,
+        "ytick.labelsize": ROI_BASE_FONTSIZE,
+        "legend.fontsize": ROI_BASE_FONTSIZE,
+    }
+)
 
 
 @dataclass(frozen=True)
@@ -59,9 +98,9 @@ def parse_roi_name(roi_name: str) -> tuple[str, int]:
 
 
 def format_roi_label(roi_name: str) -> str:
-    """Convert ``roi_left_01`` to ``Left roi 01`` for plot labels."""
+    """Convert ``roi_left_01`` to ``Left ROI 01`` for plot labels."""
     side, number = parse_roi_name(roi_name)
-    return f"{side.capitalize()} roi {number:02d}"
+    return f"{side.capitalize()} ROI {number:02d}"
 
 
 def ordered_roi_names(roi_names, mode: str = "grouped_by_side") -> list[str]:
@@ -104,9 +143,46 @@ def frame_context_from_cycle_csv(
     )
 
 
+def _format_percent_strain(global_strain: float) -> str:
+    """Format strain as a compact signed percentage for figure titles."""
+    strain_percent = float(global_strain) * 100.0
+    percent_text = f"{strain_percent:+.2f}".rstrip("0").rstrip(".")
+    return f"{percent_text}% strain"
+
+
 def build_frame_title(prefix: str, frame_number: int, step_time: float, global_strain: float) -> str:
-    """Build a title that makes the cycle location explicit."""
-    return f"{prefix} — Frame {frame_number}, Step time {step_time:.3f}, global strain {global_strain:+.4f}"
+    """Build a compact title with only the global strain context requested for plots."""
+    return f"{prefix} — at {_format_percent_strain(global_strain)}"
+
+
+def build_frame_filename(stem: str, extension: str = ".png") -> str:
+    """Build a plain figure filename; strain context belongs in the title."""
+    extension = extension if extension.startswith(".") else f".{extension}"
+    return f"{stem}{extension}"
+
+
+def global_stress_intensity_factor(global_stress_mpa: float, characteristic_length_m: float = 0.1e-3) -> float:
+    """Estimate the global SIF reference using the same length scale as ROI summaries."""
+    return SIF_SHAPE_FACTOR * float(global_stress_mpa) * math.sqrt(math.pi * characteristic_length_m)
+
+
+def phase_plot_groups(combine_equal_yield_phases: bool = True) -> list[tuple[str, list[str], str]]:
+    """Return phase groups for stacked volume-fraction plots.
+
+    Phases 2 and 3 currently share the same yield stress in this model, so the
+    default presentation combines them.  Passing ``False`` keeps all four phases
+    separate if future model definitions assign different yield behavior.
+    """
+    return COMBINED_EQUAL_YIELD_PHASE_GROUPS if combine_equal_yield_phases else SEPARATE_PHASE_GROUPS
+
+
+def roi_half_circle_angles(side: str) -> tuple[int, int]:
+    """Return wedge angles that show each edge ROI as a half-circle inside the model."""
+    if side == "left":
+        return -90, 90
+    if side == "right":
+        return 90, 270
+    raise ValueError(f"Unknown ROI side: {side}")
 
 
 def select_representative_rois(
@@ -160,19 +236,38 @@ def _save_figure(fig, output_path: Path) -> None:
     plt.close(fig)
 
 
-def _apply_group_shading(ax, order: list[str], mode: str, enabled: bool) -> None:
+def _apply_group_shading(ax, order: list[str], mode: str, enabled: bool, show_edge_labels: bool = True) -> None:
     if not enabled:
         return
     if mode == "grouped_by_side":
         left_count = sum(1 for name in order if parse_roi_name(name)[0] == "left")
         ax.axvspan(-0.5, left_count - 0.5, color="#EAF2F8", alpha=0.75, zorder=0)
         ax.axvspan(left_count - 0.5, len(order) - 0.5, color="#FDEDEC", alpha=0.60, zorder=0)
-        ax.text((left_count - 1) / 2, 0.98, "Left edge", transform=ax.get_xaxis_transform(), ha="center", va="top", fontsize=9)
-        ax.text((left_count + len(order) - 1) / 2, 0.98, "Right edge", transform=ax.get_xaxis_transform(), ha="center", va="top", fontsize=9)
+        if 0 < left_count < len(order):
+            ax.axvline(left_count - 0.5, color="#666666", linestyle="--", linewidth=1.0, alpha=0.85, zorder=1)
+        if show_edge_labels:
+            ax.text((left_count - 1) / 2, 0.98, "Left edge", transform=ax.get_xaxis_transform(), ha="center", va="top", fontsize=ROI_EDGE_LABEL_FONTSIZE)
+            ax.text((left_count + len(order) - 1) / 2, 0.98, "Right edge", transform=ax.get_xaxis_transform(), ha="center", va="top", fontsize=ROI_EDGE_LABEL_FONTSIZE)
     elif mode == "paired_by_height":
         for pair_start in range(0, len(order), 2):
             if (pair_start // 2) % 2 == 0:
                 ax.axvspan(pair_start - 0.5, pair_start + 1.5, color="#F4F6F7", alpha=0.75, zorder=0)
+            pair_end = pair_start + 1.5
+            if pair_end < len(order) - 0.5:
+                ax.axvline(pair_end, color="#666666", linestyle="--", linewidth=1.0, alpha=0.85, zorder=1)
+
+
+def _plot_pair_segments(ax, x, values, pair_size: int = 2, **plot_kwargs) -> None:
+    """Plot separate point groups so paired ROI groups are not connected."""
+    x_values = np.asarray(x)
+    y_values = np.asarray(values, dtype=float)
+    base_label = plot_kwargs.pop("label", None)
+    for start in range(0, len(x_values), pair_size):
+        stop = min(start + pair_size, len(x_values))
+        segment_kwargs = dict(plot_kwargs)
+        if base_label is not None:
+            segment_kwargs["label"] = base_label if start == 0 else "_nolegend_"
+        ax.plot(x_values[start:stop], y_values[start:stop], **segment_kwargs)
 
 
 def plot_full_response(
@@ -181,6 +276,7 @@ def plot_full_response(
     output_path: str | Path,
     mode: str,
     shaded_bands: bool = True,
+    combine_equal_yield_phases: bool = True,
 ) -> Path:
     """Create the multi-panel full technical ROI response plot."""
     order = ordered_roi_names(frame_data["roi_name"], mode=mode)
@@ -188,12 +284,78 @@ def plot_full_response(
     x = np.arange(len(order))
     labels = [format_roi_label(name) for name in order]
 
-    fig, axes = plt.subplots(3, 1, figsize=(max(12, 0.62 * len(order)), 11), sharex=True, gridspec_kw={"height_ratios": [1.0, 1.0, 1.25]})
-    title_mode = "Grouped by side" if mode == "grouped_by_side" else "Paired by vertical position"
-    fig.suptitle(build_frame_title(f"ROI response and phase fractions ({title_mode})", int(context.frame_number), context.step_time, context.global_strain), fontsize=14, y=0.995)
+    if mode == "grouped_by_side":
+        fig, axes = plt.subplots(
+            3,
+            2,
+            figsize=FULL_RESPONSE_GROUPED_FIGSIZE,
+            sharey="row",
+            gridspec_kw={"height_ratios": [1.0, 1.0, 1.25]},
+        )
+        fig.suptitle(
+            build_frame_title("ROI response and phase fractions split by side", int(context.frame_number), context.step_time, context.global_strain),
+            fontsize=ROI_TITLE_FONTSIZE,
+            y=0.995,
+        )
+        side_specs = [("left", "Left ROI"), ("right", "Right ROI")]
+        for column_index, (side, side_title) in enumerate(side_specs):
+            side_order = [name for name in order if parse_roi_name(name)[0] == side]
+            side_data = data.loc[side_order]
+            side_x = np.arange(len(side_order))
+            side_labels = [format_roi_label(name) for name in side_order]
+
+            stress_ax = axes[0, column_index]
+            stress_ax.plot(side_x, side_data["average_stress_mpa"], marker="o", color=STRESS_COLOR, linewidth=2.0, label="ROI average S22")
+            stress_ax.axhline(context.global_stress, color=STRESS_COLOR, linestyle="--", linewidth=1.4, label="Global stress")
+            stress_ax.set_title(f"{side_title} stress")
+            stress_ax.grid(True, axis="y", alpha=0.3)
+            stress_ax.set_xticks(side_x)
+            stress_ax.set_xticklabels([])
+            stress_ax.set_xlim(-0.5, len(side_order) - 0.5)
+
+            plastic_ax = axes[1, column_index]
+            plastic_values = side_data["average_plastic_strain"].clip(lower=1.0e-12)
+            plastic_ax.plot(side_x, plastic_values, marker="s", color=PLASTIC_COLOR, linewidth=2.0, label="ROI average plastic strain")
+            if context.global_plastic_strain > 0.0:
+                plastic_ax.axhline(context.global_plastic_strain, color=PLASTIC_COLOR, linestyle="--", linewidth=1.4, label="Global plastic strain estimate")
+            plastic_ax.set_yscale("log")
+            plastic_ax.set_title(f"{side_title} plastic strain")
+            plastic_ax.grid(True, axis="y", alpha=0.3, which="both")
+            plastic_ax.set_xticks(side_x)
+            plastic_ax.set_xticklabels([])
+            plastic_ax.set_xlim(-0.5, len(side_order) - 0.5)
+
+            volume_ax = axes[2, column_index]
+            bottom = np.zeros(len(side_order))
+            for label, columns, color in phase_plot_groups(combine_equal_yield_phases=combine_equal_yield_phases):
+                values = side_data[columns].sum(axis=1).to_numpy(dtype=float)
+                volume_ax.bar(side_x, values, bottom=bottom, color=color, label=label, width=0.72)
+                bottom += values
+            volume_ax.set_title(f"{side_title} volume fractions")
+            volume_ax.set_ylim(0, 100)
+            volume_ax.grid(True, axis="y", alpha=0.25)
+            volume_ax.set_xticks(side_x)
+            volume_ax.set_xticklabels(side_labels, rotation=45, ha="right")
+            volume_ax.set_xlim(-0.5, len(side_order) - 0.5)
+
+        axes[0, 0].set_ylabel("Stress S22 (MPa)")
+        axes[1, 0].set_ylabel("Plastic strain\n(log scale)")
+        axes[2, 0].set_ylabel("Phase fraction (%)")
+        axes[0, 1].legend(loc="best")
+        axes[1, 1].legend(loc="best")
+        axes[2, 1].legend(ncol=3, loc="upper center", bbox_to_anchor=(0.5, -0.42))
+        fig.tight_layout(rect=[0, 0.04, 1, 0.955])
+
+        output = Path(output_path)
+        _save_figure(fig, output)
+        return output
+
+    fig, axes = plt.subplots(3, 1, figsize=(max(12, 0.62 * len(order)), FULL_RESPONSE_PAIRED_FIGSIZE_BASE_HEIGHT), sharex=True, gridspec_kw={"height_ratios": [1.0, 1.0, 1.25]})
+    title_mode = "Paired by vertical position"
+    fig.suptitle(build_frame_title(f"ROI response and phase fractions ({title_mode})", int(context.frame_number), context.step_time, context.global_strain), fontsize=ROI_TITLE_FONTSIZE, y=0.995)
 
     # Stress panel
-    axes[0].plot(x, data["average_stress_mpa"], marker="o", color=STRESS_COLOR, linewidth=2.0, label="ROI average S22")
+    _plot_pair_segments(axes[0], x, data["average_stress_mpa"], marker="o", linestyle="None", color=STRESS_COLOR, label="ROI average S22")
     axes[0].axhline(context.global_stress, color=STRESS_COLOR, linestyle="--", linewidth=1.4, label="Global stress")
     axes[0].set_ylabel("Stress S22 (MPa)")
     axes[0].grid(True, axis="y", alpha=0.3)
@@ -201,7 +363,7 @@ def plot_full_response(
 
     # Plastic strain panel
     plastic_values = data["average_plastic_strain"].clip(lower=1.0e-12)
-    axes[1].plot(x, plastic_values, marker="s", color=PLASTIC_COLOR, linewidth=2.0, label="ROI average plastic strain")
+    _plot_pair_segments(axes[1], x, plastic_values, marker="s", linestyle="None", color=PLASTIC_COLOR, label="ROI average plastic strain")
     if context.global_plastic_strain > 0.0:
         axes[1].axhline(context.global_plastic_strain, color=PLASTIC_COLOR, linestyle="--", linewidth=1.4, label="Global plastic strain estimate")
     axes[1].set_yscale("log")
@@ -211,23 +373,115 @@ def plot_full_response(
 
     # Phase fractions panel
     bottom = np.zeros(len(order))
-    for phase, color in zip(PHASE_COLUMNS, PHASE_COLORS):
-        values = data[phase].to_numpy(dtype=float)
-        axes[2].bar(x, values, bottom=bottom, color=color, label=phase, width=0.72)
+    for label, columns, color in phase_plot_groups(combine_equal_yield_phases=combine_equal_yield_phases):
+        values = data[columns].sum(axis=1).to_numpy(dtype=float)
+        axes[2].bar(x, values, bottom=bottom, color=color, label=label, width=0.72)
         bottom += values
     axes[2].set_ylabel("Phase fraction (%)")
     axes[2].set_ylim(0, 100)
     axes[2].grid(True, axis="y", alpha=0.25)
-    axes[2].legend(ncol=4, loc="upper center", bbox_to_anchor=(0.5, -0.42))
+    axes[2].legend(ncol=3, loc="upper center", bbox_to_anchor=(0.5, -0.42))
 
-    for ax in axes:
-        _apply_group_shading(ax, order, mode, shaded_bands)
+    for axis_index, ax in enumerate(axes):
+        _apply_group_shading(ax, order, mode, shaded_bands, show_edge_labels=(axis_index != 2))
         ax.set_xlim(-0.5, len(order) - 0.5)
 
     axes[2].set_xticks(x)
     axes[2].set_xticklabels(labels, rotation=45, ha="right")
-    axes[2].set_xlabel("Region of interest")
     fig.tight_layout(rect=[0, 0.04, 1, 0.965])
+
+    output = Path(output_path)
+    _save_figure(fig, output)
+    return output
+
+
+def plot_sif_volume_fraction_comparison(
+    frame_data: pd.DataFrame,
+    context: FrameContext,
+    output_path: str | Path,
+    mode: str,
+    shaded_bands: bool = True,
+    combine_equal_yield_phases: bool = True,
+) -> Path:
+    """Create a two-panel SIF and local volume-fraction plot for all ROIs."""
+    order = ordered_roi_names(frame_data["roi_name"], mode=mode)
+    data = frame_data.set_index("roi_name").loc[order]
+    x = np.arange(len(order))
+    labels = [format_roi_label(name) for name in order]
+
+    if mode == "grouped_by_side":
+        fig, axes = plt.subplots(2, 2, figsize=SIF_GROUPED_FIGSIZE, sharey="row")
+        fig.suptitle(
+            build_frame_title("ROI stress intensity and volume fractions split by side", int(context.frame_number), context.step_time, context.global_strain),
+            fontsize=ROI_TITLE_FONTSIZE,
+            y=0.995,
+        )
+        side_specs = [("left", "Left ROI"), ("right", "Right ROI")]
+        for column_index, (side, side_title) in enumerate(side_specs):
+            side_order = [name for name in order if parse_roi_name(name)[0] == side]
+            side_data = data.loc[side_order]
+            side_x = np.arange(len(side_order))
+            side_labels = [format_roi_label(name) for name in side_order]
+
+            sif_ax = axes[0, column_index]
+            sif_ax.plot(side_x, side_data["stress_intensity_factor"], marker="o", color=STRESS_COLOR, linewidth=2.0, label="ROI SIF")
+            sif_ax.axhline(global_stress_intensity_factor(context.global_stress), color=STRESS_COLOR, linestyle="--", linewidth=1.4, label="Global SIF")
+            sif_ax.set_title(f"{side_title} SIF")
+            sif_ax.grid(True, axis="y", alpha=0.3)
+            sif_ax.set_xticks(side_x)
+            sif_ax.set_xticklabels([])
+            sif_ax.set_xlim(-0.5, len(side_order) - 0.5)
+
+            volume_ax = axes[1, column_index]
+            bottom = np.zeros(len(side_order))
+            for label, columns, color in phase_plot_groups(combine_equal_yield_phases=combine_equal_yield_phases):
+                values = side_data[columns].sum(axis=1).to_numpy(dtype=float)
+                volume_ax.bar(side_x, values, bottom=bottom, color=color, label=label, width=0.72)
+                bottom += values
+            volume_ax.set_title(f"{side_title} volume fractions")
+            volume_ax.set_ylim(0, 100)
+            volume_ax.grid(True, axis="y", alpha=0.25)
+            volume_ax.set_xticks(side_x)
+            volume_ax.set_xticklabels(side_labels, rotation=45, ha="right")
+            volume_ax.set_xlim(-0.5, len(side_order) - 0.5)
+
+        axes[0, 0].set_ylabel("Stress intensity factor")
+        axes[1, 0].set_ylabel("Volume fraction (%)")
+        axes[0, 1].legend(loc="best")
+        axes[1, 1].legend(ncol=3, loc="upper center", bbox_to_anchor=(0.5, -0.42))
+        fig.tight_layout(rect=[0, 0.04, 1, 0.955])
+
+        output = Path(output_path)
+        _save_figure(fig, output)
+        return output
+
+    fig, axes = plt.subplots(2, 1, figsize=(max(12, 0.62 * len(order)), SIF_PAIRED_FIGSIZE_BASE_HEIGHT), sharex=True, gridspec_kw={"height_ratios": [1.0, 1.25]})
+    title_mode = "Paired by vertical position"
+    fig.suptitle(build_frame_title(f"ROI stress intensity and volume fractions ({title_mode})", int(context.frame_number), context.step_time, context.global_strain), fontsize=ROI_TITLE_FONTSIZE, y=0.995)
+
+    _plot_pair_segments(axes[0], x, data["stress_intensity_factor"], marker="o", color=STRESS_COLOR, linewidth=2.0, label="ROI SIF")
+    axes[0].axhline(global_stress_intensity_factor(context.global_stress), color=STRESS_COLOR, linestyle="--", linewidth=1.4, label="Global SIF")
+    axes[0].set_ylabel("Stress intensity factor")
+    axes[0].grid(True, axis="y", alpha=0.3)
+    axes[0].legend(loc="best")
+
+    bottom = np.zeros(len(order))
+    for label, columns, color in phase_plot_groups(combine_equal_yield_phases=combine_equal_yield_phases):
+        values = data[columns].sum(axis=1).to_numpy(dtype=float)
+        axes[1].bar(x, values, bottom=bottom, color=color, label=label, width=0.72)
+        bottom += values
+    axes[1].set_ylabel("Volume fraction (%)")
+    axes[1].set_ylim(0, 100)
+    axes[1].grid(True, axis="y", alpha=0.25)
+    axes[1].legend(ncol=3, loc="upper center", bbox_to_anchor=(0.5, -0.42))
+
+    for axis_index, ax in enumerate(axes):
+        _apply_group_shading(ax, order, mode, shaded_bands, show_edge_labels=(axis_index == 0))
+        ax.set_xlim(-0.5, len(order) - 0.5)
+
+    axes[1].set_xticks(x)
+    axes[1].set_xticklabels(labels, rotation=45, ha="right")
+    fig.tight_layout(rect=[0, 0.06, 1, 0.955])
 
     output = Path(output_path)
     _save_figure(fig, output)
@@ -238,6 +492,7 @@ def plot_representative_comparison(
     frame_data: pd.DataFrame,
     context: FrameContext,
     output_path: str | Path,
+    combine_equal_yield_phases: bool = True,
 ) -> Path:
     """Create the two-ROI explanatory plot with normalized response and phases."""
     selection = select_representative_rois(frame_data, context.global_stress, context.global_plastic_strain)
@@ -246,39 +501,39 @@ def plot_representative_comparison(
     metrics = selection.metrics.loc[selected_names]
     phase_data = frame_data.set_index("roi_name").loc[selected_names, PHASE_COLUMNS]
 
-    fig, axes = plt.subplots(1, 2, figsize=(11, 5.8), gridspec_kw={"width_ratios": [1.05, 1.0]})
-    fig.suptitle(build_frame_title("Two representative ROI responses", int(context.frame_number), context.step_time, context.global_strain), fontsize=14)
+    fig, axes = plt.subplots(1, 2, figsize=REPRESENTATIVE_FIGSIZE, gridspec_kw={"width_ratios": [1.05, 1.0]})
+    fig.suptitle(build_frame_title("Two representative ROI responses", int(context.frame_number), context.step_time, context.global_strain), fontsize=ROI_TITLE_FONTSIZE)
 
     # Normalized response bars
     x = np.arange(len(selected_names))
     width = 0.34
-    axes[0].bar(x - width / 2, metrics["stress_ratio"], width=width, color=STRESS_COLOR, label="|ROI stress| / |global stress|")
-    axes[0].bar(x + width / 2, metrics["plastic_ratio"], width=width, color=PLASTIC_COLOR, label="ROI plastic strain / global estimate")
+    axes[0].bar(x - width / 2, metrics["stress_ratio"], width=width, color=STRESS_COLOR, label="Normalized stress")
+    axes[0].bar(x + width / 2, metrics["plastic_ratio"], width=width, color=PLASTIC_COLOR, label="Normalized strain")
     axes[0].axhline(1.0, color="black", linestyle="--", linewidth=1.0, alpha=0.8)
     axes[0].set_xticks(x)
     axes[0].set_xticklabels(labels, rotation=20, ha="right")
     axes[0].set_ylabel("Normalized value")
-    axes[0].set_title("Mechanical response relative to global cycle")
+    axes[0].set_title("mechanical response relative to global response")
     axes[0].grid(True, axis="y", alpha=0.3)
-    axes[0].legend(fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.16))
+    axes[0].legend(fontsize=ROI_SMALL_LEGEND_FONTSIZE, loc="upper center", bbox_to_anchor=(0.5, -0.16))
     annotation_y = axes[0].get_ylim()[1] * 0.90
     text_box = {"boxstyle": "round,pad=0.25", "facecolor": "white", "edgecolor": "none", "alpha": 0.75}
-    axes[0].text(x[0], annotation_y, "Lower stress\nhigher plastic", ha="center", va="top", color=LOW_STRESS_COLOR, fontsize=9, bbox=text_box)
-    axes[0].text(x[1], annotation_y, "Higher stress\nlower plastic", ha="center", va="top", color=HIGH_STRESS_COLOR, fontsize=9, bbox=text_box)
+    axes[0].text(x[0], annotation_y, "Lower stress\nhigher plastic", ha="center", va="top", color=LOW_STRESS_COLOR, fontsize=ROI_SMALL_ANNOTATION_FONTSIZE, bbox=text_box)
+    axes[0].text(x[1], annotation_y, "Higher stress\nlower plastic", ha="center", va="top", color=HIGH_STRESS_COLOR, fontsize=ROI_SMALL_ANNOTATION_FONTSIZE, bbox=text_box)
 
     # Phase fractions for selected ROIs
     bottom = np.zeros(len(selected_names))
-    for phase, color in zip(PHASE_COLUMNS, PHASE_COLORS):
-        values = phase_data[phase].to_numpy(dtype=float)
-        axes[1].bar(x, values, bottom=bottom, color=color, label=phase, width=0.55)
+    for label, columns, color in phase_plot_groups(combine_equal_yield_phases=combine_equal_yield_phases):
+        values = phase_data[columns].sum(axis=1).to_numpy(dtype=float)
+        axes[1].bar(x, values, bottom=bottom, color=color, label=label, width=0.55)
         bottom += values
     axes[1].set_xticks(x)
     axes[1].set_xticklabels(labels, rotation=20, ha="right")
     axes[1].set_ylabel("Phase fraction (%)")
     axes[1].set_ylim(0, 100)
-    axes[1].set_title("Local phase / volume fractions")
+    axes[1].set_title("Local volume fractions")
     axes[1].grid(True, axis="y", alpha=0.25)
-    axes[1].legend(fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=2)
+    axes[1].legend(fontsize=ROI_SMALL_LEGEND_FONTSIZE, loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=2)
 
     fig.tight_layout(rect=[0, 0.06, 1, 0.93])
     output = Path(output_path)
@@ -298,12 +553,32 @@ def plot_roi_location_map(
         selection.high_stress_low_plastic_roi: (HIGH_STRESS_COLOR, "Higher stress / lower plastic"),
     }
 
-    fig, ax = plt.subplots(figsize=(5.2, 7.2))
-    fig.suptitle(build_frame_title("Selected ROI locations", int(context.frame_number), context.step_time, context.global_strain), fontsize=12)
+    fig, ax = plt.subplots(figsize=LOCATION_MAP_FIGSIZE)
+    ax.set_title(
+        build_frame_title("Selected ROI locations", int(context.frame_number), context.step_time, context.global_strain),
+        fontsize=ROI_LOCATION_TITLE_FONTSIZE,
+        pad=8,
+    )
     ax.add_patch(plt.Rectangle((0, 0), 1, 1, fill=False, linewidth=2.0, color="black"))
-    ax.arrow(0.5, 1.05, 0, 0.09, width=0.01, head_width=0.05, head_length=0.035, color="black", clip_on=False)
-    ax.arrow(0.5, -0.05, 0, -0.09, width=0.01, head_width=0.05, head_length=0.035, color="black", clip_on=False)
-    ax.text(0.58, 1.11, "Cyclic loading", fontsize=9, va="center")
+    top_arrow_direction = 1.0 if context.global_strain >= 0.0 else -1.0
+    arrow_start_y = 1.025 if top_arrow_direction > 0 else 1.12
+    ax.arrow(
+        0.5,
+        arrow_start_y,
+        0,
+        0.08 * top_arrow_direction,
+        width=0.01,
+        head_width=0.05,
+        head_length=0.035,
+        color="black",
+        clip_on=False,
+        length_includes_head=True,
+    )
+    ax.text(0.58, 1.075, "Applied top displacement", fontsize=ROI_EDGE_LABEL_FONTSIZE, va="center")
+    ax.plot([0.0, 1.0], [-0.035, -0.035], color="black", linewidth=1.6, clip_on=False)
+    for support_x in np.linspace(0.08, 0.92, 8):
+        ax.plot([support_x - 0.04, support_x], [-0.075, -0.035], color="black", linewidth=1.0, clip_on=False)
+    ax.text(0.5, -0.12, "Bottom constrained", ha="center", va="top", fontsize=ROI_EDGE_LABEL_FONTSIZE)
 
     radius = 0.035
     for side in ("left", "right"):
@@ -315,12 +590,13 @@ def plot_roi_location_map(
             y = 1.0 - 0.1 - (number - 1) * 0.1
             color, description = selected.get(roi_name, ("#BDBDBD", ""))
             size = radius * (1.6 if roi_name in selected else 1.0)
-            ax.add_patch(plt.Circle((x, y), size, color=color, alpha=0.88, ec="black", lw=0.6))
+            theta1, theta2 = roi_half_circle_angles(side)
+            ax.add_patch(Wedge((x, y), size, theta1, theta2, facecolor=color, alpha=0.88, edgecolor="black", lw=0.6))
             if roi_name in selected:
-                ax.text(x + text_dx, y, f"{format_roi_label(roi_name)}\n{description}", ha=ha, va="center", fontsize=8, color=color)
+                ax.text(x + text_dx, y, f"{format_roi_label(roi_name)}\n{description}", ha=ha, va="center", fontsize=ROI_SMALL_ANNOTATION_FONTSIZE, color=color)
 
     ax.set_xlim(-0.35, 1.35)
-    ax.set_ylim(-0.18, 1.18)
+    ax.set_ylim(-0.14, 1.15)
     ax.set_aspect("equal")
     ax.axis("off")
     output = Path(output_path)
@@ -332,6 +608,7 @@ def make_all_roi_plots(
     roi_summary_csv: str | Path,
     cycle_csv: str | Path,
     output_root: str | Path,
+    combine_equal_yield_phases: bool = True,
 ) -> list[Path]:
     """Generate all requested ROI plot families for every frame in the summary."""
     summary = pd.read_csv(roi_summary_csv)
@@ -347,26 +624,45 @@ def make_all_roi_plots(
         created.append(plot_full_response(
             frame_data,
             context,
-            output_root / "full_response" / f"{frame_prefix}_grouped_by_side.png",
+            output_root / "full_response" / build_frame_filename(f"{frame_prefix}_grouped_by_side"),
             mode="grouped_by_side",
             shaded_bands=True,
+            combine_equal_yield_phases=combine_equal_yield_phases,
         ))
         created.append(plot_full_response(
             frame_data,
             context,
-            output_root / "full_response" / f"{frame_prefix}_paired_by_height.png",
+            output_root / "full_response" / build_frame_filename(f"{frame_prefix}_paired_by_height"),
             mode="paired_by_height",
             shaded_bands=True,
+            combine_equal_yield_phases=combine_equal_yield_phases,
+        ))
+        created.append(plot_sif_volume_fraction_comparison(
+            frame_data,
+            context,
+            output_root / "sif_volume_fractions" / build_frame_filename(f"{frame_prefix}_sif_grouped_by_side"),
+            mode="grouped_by_side",
+            shaded_bands=True,
+            combine_equal_yield_phases=combine_equal_yield_phases,
+        ))
+        created.append(plot_sif_volume_fraction_comparison(
+            frame_data,
+            context,
+            output_root / "sif_volume_fractions" / build_frame_filename(f"{frame_prefix}_sif_paired_by_height"),
+            mode="paired_by_height",
+            shaded_bands=True,
+            combine_equal_yield_phases=combine_equal_yield_phases,
         ))
         created.append(plot_representative_comparison(
             frame_data,
             context,
-            output_root / "representative_rois" / f"{frame_prefix}_representative_roi_comparison.png",
+            output_root / "representative_rois" / build_frame_filename(f"{frame_prefix}_representative_roi_comparison"),
+            combine_equal_yield_phases=combine_equal_yield_phases,
         ))
         created.append(plot_roi_location_map(
             frame_data,
             context,
-            output_root / "location_maps" / f"{frame_prefix}_representative_roi_locations.png",
+            output_root / "location_maps" / build_frame_filename(f"{frame_prefix}_representative_roi_locations"),
         ))
 
     return created
@@ -377,9 +673,19 @@ def main() -> None:
     parser.add_argument("--roi-summary", required=True, help="Path to roi_summary.csv")
     parser.add_argument("--cycle-csv", required=True, help="Path to global cycle CSV, e.g. strainRratio-1.csv")
     parser.add_argument("--output-root", required=True, help="Folder where plot families will be saved")
+    parser.add_argument(
+        "--separate-phases",
+        action="store_true",
+        help="Plot phases 2 and 3 separately instead of combining them as equal-yield phases.",
+    )
     args = parser.parse_args()
 
-    created = make_all_roi_plots(args.roi_summary, args.cycle_csv, args.output_root)
+    created = make_all_roi_plots(
+        args.roi_summary,
+        args.cycle_csv,
+        args.output_root,
+        combine_equal_yield_phases=not args.separate_phases,
+    )
     print("Created ROI plots:")
     for path in created:
         print(path)

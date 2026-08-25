@@ -12,6 +12,7 @@ check and modify during thesis work.
 
 from __future__ import annotations
 
+import argparse
 import math
 import re
 from pathlib import Path
@@ -31,6 +32,7 @@ MATERIAL_TO_PHASE = {
     "MATERIAL-3": "Phase 3",
 }
 PHASE_NAMES = ["Phase 0", "Phase 1", "Phase 2", "Phase 3"]
+ROI_SIF_SHAPE_FACTOR = 1.12
 
 
 class RoiSummary(NamedTuple):
@@ -108,7 +110,7 @@ def summarize_roi_report(
     plastic_strain = np.maximum(strain - (stress / youngs_modulus_mpa), 0.0)
     plastic_strain[plastic_strain < 0.00025] = 0.0
     average_plastic_strain = float(plastic_strain.mean())
-    stress_intensity_factor = 0.722 * average_stress * math.sqrt(math.pi * crack_length_m)
+    stress_intensity_factor = ROI_SIF_SHAPE_FACTOR * average_stress * math.sqrt(math.pi * crack_length_m)
 
     return RoiSummary(
         roi_name=roi_name,
@@ -162,3 +164,17 @@ def write_roi_summary_csv(roi_reports_folder: str | Path, output_csv: str | Path
     output_path.parent.mkdir(parents=True, exist_ok=True)
     summarize_roi_folder(folder).to_csv(output_path, index=False)
     return output_path
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Summarize exported Abaqus ROI field-report CSVs.")
+    parser.add_argument("--roi-reports", required=True, help="Folder containing roi_*_frame*.csv reports")
+    parser.add_argument("--output-csv", default=None, help="Output roi_summary.csv path")
+    args = parser.parse_args()
+
+    output_path = write_roi_summary_csv(args.roi_reports, args.output_csv)
+    print(f"Wrote ROI summary: {output_path}")
+
+
+if __name__ == "__main__":
+    main()

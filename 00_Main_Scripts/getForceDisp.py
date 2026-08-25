@@ -12,7 +12,7 @@ def Get_Force_Disp(odb_file, node_set1, node_set2):
 
     results = []
     results.append(["ODB file name: {}".format(odb_file)])
-    results.append(["Step Time", "U_Y", "Total RF Y"])
+    results.append(["Step Time", "U_Y", "Total RF Y", "Bottom RF Node Count", "Upper U Node Count"])
     odb = openOdb(path="{}.odb".format(odb_file))
     step = odb.steps['Step-1']
     instance = odb.rootAssembly.instances['I-PART-1']
@@ -26,24 +26,21 @@ def Get_Force_Disp(odb_file, node_set1, node_set2):
         u = frame.fieldOutputs['U'].getSubset(region=upper_set_region)
 
         rf_y = 0.0
-        disp_y = 0.0
-        count = 0
-
-        for rf_val, u_val in zip(rf.values, u.values):
-            rf_data = -1*rf_val.data
-            u_data = u_val.data
-
+        for rf_val in rf.values:
+            rf_data = -1 * rf_val.data
             rf_y += rf_data[1]
+
+        disp_y = 0.0
+        for u_val in u.values:
+            u_data = u_val.data
             disp_y += u_data[1]
 
-            count += 1
-
-        if count > 0:
-            avg_disp_y = disp_y / count
+        if len(u.values) > 0:
+            avg_disp_y = disp_y / float(len(u.values))
         else:
             avg_disp_y = 0.0
 
-        results.append([step_time,avg_disp_y, rf_y])
+        results.append([step_time, avg_disp_y, rf_y, len(rf.values), len(u.values)])
 
     odb.close()
 

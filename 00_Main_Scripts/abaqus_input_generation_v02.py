@@ -13,7 +13,9 @@ from pathlib import Path
 import tempfile
 import os
 import shutil
+import atexit
 from wsl_windows_compat import noninteractive_enabled
+from material_reference import resolve_abaqus_reference_material, resolve_abaqus_reference_material_xml
 
 
 def get_microstructpy():
@@ -71,6 +73,7 @@ def expand_all_includes(input_file):
     path = Path(input_file)
     root = ET.parse(path).getroot()
     _resolve_includes(root, path.parent)
+    resolve_abaqus_reference_material_xml(root)
     try:
         ET.indent(root, space="    ", level=0)
     except AttributeError:
@@ -80,6 +83,16 @@ def expand_all_includes(input_file):
     ET.ElementTree(root).write(tmp.name)
     tmp.close()
     return tmp.name
+
+
+def copy_resolved_input_file(resolved_input_file, simulation_output_directory, simulation_name):
+    """Copy the fully resolved XML input file into the simulation output folder."""
+    destination_dir = Path(simulation_output_directory) / simulation_name
+    destination_dir.mkdir(parents=True, exist_ok=True)
+    destination = destination_dir / f"{simulation_name}_resolved_input.xml"
+    shutil.copy2(resolved_input_file, destination)
+    return str(destination)
+
 
 def _resolve_includes(root, base_dir):
     for inc in list(root.findall('include')):
@@ -216,6 +229,7 @@ def complete_input_data(input_file):
 
     # Start by ensuring all <include> tags are included/appended, even the one's not read by msp (ie. the <abaqus> tag)
     expanded = expand_all_includes(input_file)
+    atexit.register(lambda path=expanded: Path(path).exists() and Path(path).unlink())
     # Convert input data from XML file to a dictionary of strings. It will be later used to assign the size (from a scipy normal distribution), if it doesn't exist
     input_data_str = msp.cli.input2dict(expanded)
 
@@ -257,6 +271,7 @@ def complete_input_data(input_file):
 
     # Extract abaqus input data to plot the cyclic amplitude
     abaqus = input_data_to_run_2['input']['abaqus']
+    resolve_abaqus_reference_material(abaqus)
     cyclic_parameters = abaqus.get('cyclic_parameters', None)
 
     # Initialize the placeholder for the plot 'expected_cycles_{simulation_name}.png'
@@ -365,7 +380,7 @@ def complete_input_data(input_file):
 
     complete_input = [domain, phases, settings, abaqus]
 
-    return complete_input, simulation_name, simulation_output_directory, mesh_output_directory, ec_dir
+    return complete_input, simulation_name, simulation_output_directory, mesh_output_directory, ec_dir, expanded
 
 def extract_plastic_stresses(abaqus_input_settings):
     plastic_stresses = []
@@ -374,6 +389,55 @@ def extract_plastic_stresses(abaqus_input_settings):
         plastic_stresses.append(plastic_stress)
 
     return plastic_stresses
+
+# Function to insert data within a file (used for abaqus input file preparation)
+def wrap_abaqus_elset_include_lines(mesh_file, max_line_length=160):
+    """Wrap long Abaqus *Elset data lines that include other element sets.
+
+    Very fine microstructures can create thousands of Set-E-Seed-* elsets.
+    MicroStructPy writes material elsets as comma-separated include lists, and
+    long five-digit seed names can make a single line too long for Abaqus. When
+    Abaqus truncates that line, material sections can silently lose elements.
+    This keeps each continuation line short while preserving the same names.
+    """
+    with open(mesh_file, "r") as file:
+        lines = file.readlines()
+
+    wrapped_lines = []
+    in_elset_block = False
+
+    def wrap_csv_items(items):
+        output = []
+        current = ""
+        for item in items:
+            candidate = item if not current else current + "," + item
+            if current and len(candidate) > max_line_length:
+                output.append(current + "\n")
+                current = item
+            else:
+                current = candidate
+        if current:
+            output.append(current + "\n")
+        return output
+
+    for line in lines:
+        stripped = line.strip()
+        lower = stripped.lower()
+
+        if stripped.startswith("*"):
+            in_elset_block = lower.startswith("*elset")
+            wrapped_lines.append(line)
+            continue
+
+        if in_elset_block and "Set-E-Seed-" in line and len(line.rstrip("\n")) > max_line_length:
+            items = [part.strip() for part in stripped.split(",") if part.strip()]
+            wrapped_lines.extend(wrap_csv_items(items))
+        else:
+            wrapped_lines.append(line)
+
+    with open(mesh_file, "w") as file:
+        file.writelines(wrapped_lines)
+
 
 # Function to insert data within a file (used for abaqus input file preparation)
 def insert_text_in_abaqus_file(
@@ -825,7 +889,10 @@ def generate_input(input_files_folder, input_file=None):
         raise ValueError("No XML input file selected.")
 
     # The information provided in the input file (currently) isn't enough to run the simulation, so we fill the gaps
-    complete_input, simulation_name, simulation_output_directory, mesh_output_directory, ec_dir = complete_input_data(input_file_path)
+    complete_input, simulation_name, simulation_output_directory, mesh_output_directory, ec_dir, resolved_input_file = complete_input_data(input_file_path)
+
+    # Keep a reproducibility copy of the fully resolved XML after <include> expansion.
+    copy_resolved_input_file(resolved_input_file, simulation_output_directory, simulation_name)
 
     # Separate input to run microstructpy
     domain, phases, settings, abaqus = complete_input
@@ -861,6 +928,7 @@ def generate_input(input_files_folder, input_file=None):
     
     # Fill in the missing parameters so that Abaqus can run the simulation
     abaqus_input_file_completion(pasted_file_path, abaqus, phases, plastic_stresses)
+    wrap_abaqus_elset_include_lines(pasted_file_path)
 
     return abaqus_output_directory, simulation_name
 

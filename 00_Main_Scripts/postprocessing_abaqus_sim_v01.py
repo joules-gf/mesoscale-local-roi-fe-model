@@ -3,7 +3,9 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import xml.etree.ElementTree as ET
 from wsl_windows_compat import run_abaqus_cae_no_gui
+from material_reference import get_reference_material
 
 # Get Force vs Displacement from ODB
 def extract_force_displacement(abaqus_output_directory, simulation_name):
@@ -44,10 +46,16 @@ def compute_area(strain, stress):
     trapezoid = getattr(np, "trapezoid", np.trapz)
     return trapezoid(stress, strain)
 
-def plot_simulation_against_rom(reference_csv, results_file, show_area=True, show_plot=True, save_fig=True):
-    # Load AA7075-T6 reference (stress in col 1, strain in col 0)
+def plot_simulation_against_rom(
+    reference_csv,
+    results_file,
+    show_area=True,
+    show_plot=True,
+    save_fig=True,
+    ref_label='AA7075-T6 cyclic ROM'
+):
+    # Load reference ROM curve (stress in col 1, strain in col 0)
     ref_strain, ref_stress = load_csv(reference_csv, strain_col=0, stress_col=1)
-    ref_label = 'AA7075-T6 cyclic ROM'
 
     # Load and plot simulation CSV (strain in col 1, stress in col 2)
     strain, stress = load_csv(results_file, strain_col=1, stress_col=2)
@@ -130,20 +138,65 @@ def plot_simulation_against_experimental(experimental_csv, results_file, show_pl
             os.path.dirname(results_file),
             f'cyclic_stress_strain_{curve_name}.png'))
 
-def post_processing(abaqus_output_directory, simulation_name, stress_strain_plot_sttngs):
-    extract_force_displacement(abaqus_output_directory, simulation_name)
-    reference_csv = os.path.join(
+def get_reference_settings_from_resolved_input(abaqus_output_directory, simulation_name):
+    simulation_folder = os.path.dirname(abaqus_output_directory)
+    resolved_input = os.path.join(simulation_folder, f'{simulation_name}_resolved_input.xml')
+
+    default_reference_csv = os.path.join(
         os.path.dirname(__file__),
         'material_reference_curves',
-        'aa7075-T6_cyclic_ROM.csv'
-        )
+        'aa7075-T6_monotonic_ROM_cyclic_parameters.csv'
+    )
+    default_label = 'AA7075-T6 cyclic ROM'
+
+    if not os.path.exists(resolved_input):
+        return default_reference_csv, default_label
+
+    try:
+        root = ET.parse(resolved_input).getroot()
+    except ET.ParseError:
+        return default_reference_csv, default_label
+
+    abaqus = root.find('abaqus')
+    if abaqus is None:
+        return default_reference_csv, default_label
+
+    reference_csv = abaqus.findtext('reference_curve_csv')
+    reference_label = abaqus.findtext('reference_plot_label')
+
+    if reference_csv is None:
+        reference_material = abaqus.findtext('reference_material')
+        if reference_material is not None and reference_material.strip():
+            ref = get_reference_material(reference_material)
+            reference_csv = ref['reference_csv']
+            reference_label = ref['plot_label']
+
+    if reference_csv is None or not reference_csv.strip():
+        reference_csv = default_reference_csv
+    else:
+        reference_csv = reference_csv.strip()
+
+    if reference_label is None or not reference_label.strip():
+        reference_label = default_label
+    else:
+        reference_label = reference_label.strip()
+
+    return reference_csv, reference_label
+
+
+def post_processing(abaqus_output_directory, simulation_name, stress_strain_plot_sttngs):
+    extract_force_displacement(abaqus_output_directory, simulation_name)
+    reference_csv, reference_label = get_reference_settings_from_resolved_input(
+        abaqus_output_directory,
+        simulation_name
+    )
     results_file = os.path.join(os.path.dirname(abaqus_output_directory), f'{simulation_name}.csv')
     
     if stress_strain_plot_sttngs is not None:
         show_area, show_plot, save_fig = stress_strain_plot_sttngs
-        plot_simulation_against_rom(reference_csv, results_file, show_area, show_plot, save_fig)
+        plot_simulation_against_rom(reference_csv, results_file, show_area, show_plot, save_fig, reference_label)
     else:
-        plot_simulation_against_rom(reference_csv, results_file)
+        plot_simulation_against_rom(reference_csv, results_file, ref_label=reference_label)
 
     plot_cycles(results_file, simulation_name)
 
