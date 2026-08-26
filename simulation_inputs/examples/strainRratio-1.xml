@@ -1,0 +1,22 @@
+<input>
+
+    <include> aa7075-T6-base-parameters.xml </include>
+
+    <abaqus>
+        <cyclic_parameters>
+            <rRatio_strain> -1 </rRatio_strain>
+            <frequency_hz> 5 </frequency_hz>
+            <start_min> False </start_min>
+            <time_increment_s> 0.01 </time_increment_s>
+            <plot_before> True </plot_before>
+        </cyclic_parameters>
+
+        <num_increments_step> 250 </num_increments_step>
+    </abaqus>
+
+    <settings>
+        <verbose> True </verbose>
+        <restart> True </restart>
+    </settings>
+
+</input>

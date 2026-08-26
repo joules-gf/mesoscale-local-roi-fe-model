@@ -50,6 +50,12 @@ outputs/
 results/
 runs/
 
+# Local/generated simulation input batches
+# Keep curated examples tracked, but do not track the large AL2024/AL7075
+# working input folders.
+simulation_inputs/AL2024-T351/
+simulation_inputs/AL7075-T6/
+
 # Generated plots / explanatory images
 # Most generated images stay untracked, but keep the explanatory/reference
 # figures in 01_Secondary_Scripts because they document the analysis.
