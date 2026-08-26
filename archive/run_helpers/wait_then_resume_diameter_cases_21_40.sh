@@ -9,5 +9,5 @@ while pgrep -f "full_simulation_runner.py --input-folder simulation_inputs/AL707
     sleep 60
 done
 
-chmod +x run_diameter_cases_21_40_resume.sh
-./run_diameter_cases_21_40_resume.sh
+chmod +x archive/run_helpers/run_diameter_cases_21_40_resume.sh
+archive/run_helpers/run_diameter_cases_21_40_resume.sh

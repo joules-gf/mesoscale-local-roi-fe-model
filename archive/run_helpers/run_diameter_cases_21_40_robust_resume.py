@@ -14,7 +14,9 @@ import subprocess
 import sys
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parent
+# This script is archived under archive/run_helpers/ for provenance.  Keep it
+# runnable from its archived location by resolving back to the repository root.
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 INPUT_DIR = PROJECT_ROOT / "simulation_inputs" / "AL7075-T6" / "bp_dif_size"
 OUTPUT_ROOT = PROJECT_ROOT / "simulation_outputs"
 WINDOWS_STAGE_ROOT = Path("/mnt/c/Users/Public/mesoscale_local_roi_fe_model_abaqus")
