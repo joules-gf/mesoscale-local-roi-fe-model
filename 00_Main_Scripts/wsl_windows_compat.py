@@ -80,8 +80,16 @@ def find_abaqus_command() -> list[str]:
     if configured:
         return shlex.split(configured)
 
-    if shutil.which("abaqus"):
-        return ["abaqus"]
+    abaqus_command = shutil.which("abaqus")
+    if abaqus_command:
+        # On Windows, Abaqus is normally exposed as abaqus.bat.  Launching a
+        # batch file by the bare name through subprocess.run(..., shell=False)
+        # can fail with WinError 2 even when `where abaqus` finds it, so run the
+        # resolved batch file through cmd.exe.
+        if platform.system().lower() == "windows" and abaqus_command.lower().endswith((".bat", ".cmd")):
+            cmd_exe = find_windows_cmd_exe() or "cmd.exe"
+            return [cmd_exe, "/C", abaqus_command]
+        return [abaqus_command]
 
     if is_wsl():
         cmd_exe = find_windows_cmd_exe()

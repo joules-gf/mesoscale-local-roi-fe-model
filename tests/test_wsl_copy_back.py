@@ -2,6 +2,7 @@ import importlib.util
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -35,6 +36,25 @@ class WslCopyBackTests(unittest.TestCase):
 
             self.assertEqual(old_file.read_bytes(), new_file.read_bytes())
             self.assertEqual((dst / "abaqus_files" / "case.sta").read_text(), "completed")
+
+    def test_windows_batch_abaqus_launcher_runs_through_cmd(self):
+        compat = load_wsl_windows_compat()
+
+        def fake_which(name):
+            if name == "abaqus":
+                return r"C:\SIMULIA\Commands\abaqus.bat"
+            if name == "cmd.exe":
+                return r"C:\Windows\System32\cmd.exe"
+            return None
+
+        with mock.patch.object(compat.platform, "system", return_value="Windows"), \
+             mock.patch.object(compat.shutil, "which", side_effect=fake_which):
+            command = compat.find_abaqus_command()
+
+        self.assertEqual(
+            command,
+            [r"C:\Windows\System32\cmd.exe", "/C", r"C:\SIMULIA\Commands\abaqus.bat"],
+        )
 
 
 if __name__ == "__main__":
