@@ -11,10 +11,11 @@ env/
 Thumbs.db
 .idea/
 
-# VS Code local workspace settings
+# VS Code / Hermes local workspace settings
 # If we later add shared recommended VS Code settings, we can track specific
 # files under .vscode/ with negation rules.
 .vscode/
+.hermes/plans/
 
 # Abaqus generated files
 *.odb
