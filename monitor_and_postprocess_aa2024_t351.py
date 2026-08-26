@@ -5,7 +5,7 @@ import subprocess
 import sys
 import csv
 
-REPO = Path('/home/joules_gf/projects/dr-irwin-hermes/workspace/microstructure_fatigue_simulation')
+REPO = Path('/home/joules_gf/projects/dr-irwin-hermes/workspace/mesoscale-local-roi-fe-model')
 CASE = 'aa2024_t351_baseline_mel_0p00328'
 RUNNER_PID = 42928
 CASE_DIR = REPO / 'simulation_outputs' / CASE

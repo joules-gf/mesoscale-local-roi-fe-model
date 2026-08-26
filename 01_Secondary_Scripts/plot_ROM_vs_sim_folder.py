@@ -130,8 +130,8 @@ def plot_folder_against_rom(
 
 if __name__ == '__main__':
   plot_folder_against_rom(
-      reference_csv=r"C:\Users\MAEadmin\Desktop\microstructure fatigue simulation\00_Main_Scripts\material_reference_curves\aa7075-T6_monotonic_ROM_cyclic_parameters.csv",
-      results_folder=r"C:\Users\MAEadmin\Desktop\microstructure fatigue simulation\simulation_outputs\rng_size_sensitivity",
+      reference_csv=r"C:\Users\MAEadmin\Desktop\mesoscale local ROI FE model\00_Main_Scripts\material_reference_curves\aa7075-T6_monotonic_ROM_cyclic_parameters.csv",
+      results_folder=r"C:\Users\MAEadmin\Desktop\mesoscale local ROI FE model\simulation_outputs\rng_size_sensitivity",
       fig_title="Sensitivity to Different Sampled Diameters of the Same Normal Distribution",
       fig_size=(19, 10),
       label_size=32,

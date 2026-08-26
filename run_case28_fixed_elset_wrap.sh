@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cd /home/joules_gf/projects/dr-irwin-hermes/workspace/microstructure_fatigue_simulation
+cd /home/joules_gf/projects/dr-irwin-hermes/workspace/mesoscale-local-roi-fe-model
 source .venv/bin/activate
 export MPLBACKEND=Agg
 export MICROSTRUCTURE_NONINTERACTIVE=1

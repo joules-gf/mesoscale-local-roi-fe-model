@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -u
-cd /home/joules_gf/projects/dr-irwin-hermes/workspace/microstructure_fatigue_simulation
+cd /home/joules_gf/projects/dr-irwin-hermes/workspace/mesoscale-local-roi-fe-model
 
 # Wait for the first attempt launched by Hermes to finish so we never run two
 # Abaqus/MicroStructPy cases at the same time.

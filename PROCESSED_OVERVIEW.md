@@ -1,8 +1,8 @@
-# Processed overview: microstructure fatigue simulation
+# Processed overview: mesoscale local ROI FE model
 
 Processed from uploaded zip: `/home/hermes/.hermes/cache/documents/doc_b709858ccae1_microstucture fatigue simulation.zip`
 
-Extraction path: `/workspace/microstructure_fatigue_simulation`
+Extraction path: `/workspace/mesoscale_local_roi_fe_model`
 
 ## Archive integrity and size
 
@@ -14,7 +14,7 @@ Extraction path: `/workspace/microstructure_fatigue_simulation`
 
 ## What this project is
 
-This is an automated microstructure fatigue simulation pipeline built around:
+This is an automated mesoscale local ROI FE model pipeline built around:
 
 1. XML input files describing domain, material phases, and Abaqus settings.
 2. MicroStructPy mesh generation.
@@ -138,7 +138,7 @@ So I could inspect and syntax-check the code, but I could not run the full simul
 ## Checks performed
 
 - Safely inspected the zip before extraction.
-- Extracted to `/workspace/microstructure_fatigue_simulation`.
+- Extracted to `/workspace/mesoscale_local_roi_fe_model`.
 - Parsed Python files with `compileall`.
 - Result: Python syntax compilation passed for all `.py` files.
 - Parsed the Python AST to identify imports and function definitions.
@@ -150,7 +150,7 @@ So I could inspect and syntax-check the code, but I could not run the full simul
 
    Several scripts contain paths like:
 
-   - `C:\Users\MAEadmin\Desktop\microstructure fatigue simulation\...`
+   - `C:\Users\MAEadmin\Desktop\mesoscale local ROI FE model\...`
    - OneDrive paths in older postprocessing script examples.
 
    This will be fragile for collaborators unless moved to command-line arguments, a config file, or path auto-discovery.

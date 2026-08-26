@@ -938,9 +938,9 @@ def generate_input(input_files_folder, input_file=None):
 # 1) Empty string, 
 #### input_files_folder = ''
 # 2) a raw string (ie. "r'text'") with the path to your inputs folder
-#### input_files_folder = r'C:\Users\MAEadmin\Desktop\microstructure fatigue simulation\simulation_inputs'
+#### input_files_folder = r'C:\Users\MAEadmin\Desktop\mesoscale local ROI FE model\simulation_inputs'
 
-input_files_folder = r'C:\Users\MAEadmin\Desktop\microstructure fatigue simulation\simulation_inputs'
+input_files_folder = r'C:\Users\MAEadmin\Desktop\mesoscale local ROI FE model\simulation_inputs'
 
 
 if __name__ == '__main__':

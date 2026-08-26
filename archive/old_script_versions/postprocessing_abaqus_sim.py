@@ -99,7 +99,7 @@ def post_processing(abaqus_output_directory, simulation_name, stress_strain_plot
 if __name__ == '__main__':
     # When running this file individually modify the input below
 
-    abaqus_output_directory = r'C:\Users\MAEadmin\Desktop\microstructure fatigue simulation\simulation_outputs\strainRratio.4\abaqus_files'
+    abaqus_output_directory = r'C:\Users\MAEadmin\Desktop\mesoscale local ROI FE model\simulation_outputs\strainRratio.4\abaqus_files'
     simulation_name = 'strainRratio.4'
 
     # If stress_strain_plot_sttngs is None that means default post processing (show_area=True, show_plot=True, save_fig=True)

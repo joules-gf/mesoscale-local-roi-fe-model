@@ -16,7 +16,7 @@ TARGET_GROUPS = [
     "plastic_stress_sensitivity",
     "plastic_stress_sensitivity_mesh00328_backup_20260624_144408",
 ]
-STAGE_ROOT = Path("/mnt/c/Users/Public/microstructure_fatigue_simulation_abaqus/corrected_plastic_stress_postprocess")
+STAGE_ROOT = Path("/mnt/c/Users/Public/mesoscale_local_roi_fe_model_abaqus/corrected_plastic_stress_postprocess")
 CMD_EXE = "/mnt/c/Windows/System32/cmd.exe"
 
 

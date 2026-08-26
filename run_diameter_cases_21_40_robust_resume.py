@@ -17,7 +17,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent
 INPUT_DIR = PROJECT_ROOT / "simulation_inputs" / "AL7075-T6" / "bp_dif_size"
 OUTPUT_ROOT = PROJECT_ROOT / "simulation_outputs"
-WINDOWS_STAGE_ROOT = Path("/mnt/c/Users/Public/microstructure_fatigue_simulation_abaqus")
+WINDOWS_STAGE_ROOT = Path("/mnt/c/Users/Public/mesoscale_local_roi_fe_model_abaqus")
 LOG_DIR = OUTPUT_ROOT / "run_logs_diameter_cases_21_40"
 
 sys.path.insert(0, str(PROJECT_ROOT / "00_Main_Scripts"))

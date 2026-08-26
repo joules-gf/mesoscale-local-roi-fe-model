@@ -4,7 +4,7 @@ import sys
 import csv
 import subprocess
 
-REPO = Path('/home/joules_gf/projects/dr-irwin-hermes/workspace/microstructure_fatigue_simulation')
+REPO = Path('/home/joules_gf/projects/dr-irwin-hermes/workspace/mesoscale-local-roi-fe-model')
 INPUT_FOLDER = REPO / 'simulation_inputs' / 'AL2024-T351'
 CASES = ['aa2024-t351-2sd', 'aa2024-t351-3sd', 'aa2024-t351-1p5sd']
 REF_CSV = REPO / '00_Main_Scripts' / 'material_reference_curves' / 'aa2024-T351_monotonic_ROM_1pct_strain.csv'

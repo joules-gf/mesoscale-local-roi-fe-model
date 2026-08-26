@@ -1,10 +1,10 @@
-# Understanding this Project
+# Mesoscale Local ROI FE Model
 
 <!-- GITHUB_STAGE_1_HEADER -->
 
 ## Project status
 
-This repository contains a research-oriented microstructure fatigue simulation workflow using **MicroStructPy** for microstructure/mesh generation and **Abaqus** for finite-element simulation and `.odb` postprocessing.
+This repository contains a research-oriented **mesoscale finite element modeling workflow** for local/global mechanical-response analysis and region-of-interest (ROI) postprocessing in aluminum alloys. It uses **MicroStructPy** for microstructure/mesh generation and **Abaqus** for finite-element simulation and `.odb` postprocessing.
 
 The code is currently kept close to its original research-script form. The immediate goal is to make it easy to share, clone, and run on Windows machines while also allowing partial workflow validation in WSL/Linux where Abaqus may not be available.
 
@@ -66,7 +66,7 @@ Abaqus execution itself generally needs a machine/license where Abaqus is instal
 
 ---
 
-This project is a **fully automated microstructure fatigue simulation pipeline** built on top of MicroStructPy and Abaqus.
+This project is a **fully automated mesoscale FE modeling pipeline** built on top of MicroStructPy and Abaqus, with support for local/global response comparison and ROI postprocessing.
 
 It extends the workflow from **input preprocessing → mesh generation → Abaqus simulation → postprocessing**, allowing you to run an entire simulation with minimal manual intervention.
 

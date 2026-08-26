@@ -129,8 +129,8 @@ def _cmd_quote(value: str) -> str:
 def _windows_stage_root() -> Path:
     # Return a Windows-backed staging root visible to Windows Abaqus.
     candidates = (
-        Path("/mnt/c/Users/Public/microstructure_fatigue_simulation_abaqus"),
-        Path("/mnt/c/Windows/Temp/microstructure_fatigue_simulation_abaqus"),
+        Path("/mnt/c/Users/Public/mesoscale_local_roi_fe_model_abaqus"),
+        Path("/mnt/c/Windows/Temp/mesoscale_local_roi_fe_model_abaqus"),
     )
     for candidate in candidates:
         try:
@@ -138,7 +138,7 @@ def _windows_stage_root() -> Path:
         except OSError:
             continue
         return candidate
-    return Path(tempfile.mkdtemp(prefix="microstructure_fatigue_simulation_abaqus_"))
+    return Path(tempfile.mkdtemp(prefix="mesoscale_local_roi_fe_model_abaqus_"))
 
 
 def _copy_one_file(src: Path, dst: Path) -> None:

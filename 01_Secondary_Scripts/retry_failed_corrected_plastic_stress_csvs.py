@@ -6,7 +6,7 @@ import time
 REPO_ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_ROOT = REPO_ROOT / "simulation_outputs"
 CORRECTED_SCRIPT = REPO_ROOT / "00_Main_Scripts" / "getForceDisp.py"
-STAGE_ROOT = Path("/mnt/c/Users/Public/microstructure_fatigue_simulation_abaqus/corrected_plastic_stress_postprocess_retry")
+STAGE_ROOT = Path("/mnt/c/Users/Public/mesoscale_local_roi_fe_model_abaqus/corrected_plastic_stress_postprocess_retry")
 CMD_EXE = "/mnt/c/Windows/System32/cmd.exe"
 FAILED_CASES = [
     "plastic_stress_sensitivity/bp_plastic_stress_case_08",

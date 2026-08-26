@@ -53,7 +53,7 @@ def run_full_simulation(
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Run the microstructure fatigue simulation workflow.")
+    parser = argparse.ArgumentParser(description="Run the mesoscale local ROI FE model workflow.")
     parser.add_argument(
         "--input-folder",
         default=str(DEFAULT_INPUT_FOLDER),

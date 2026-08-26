@@ -3,7 +3,7 @@ import csv
 import os
 import sys
 
-REPO = Path('/home/joules_gf/projects/dr-irwin-hermes/workspace/microstructure_fatigue_simulation')
+REPO = Path('/home/joules_gf/projects/dr-irwin-hermes/workspace/mesoscale-local-roi-fe-model')
 CASE = 'aa2024-vf15-10-30-45-p350-416-458-515'
 INPUT_XML = REPO / 'simulation_inputs' / 'AL2024-T351' / f'{CASE}.xml'
 CASE_DIR = REPO / 'simulation_outputs' / CASE

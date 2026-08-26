@@ -3,7 +3,7 @@ import os
 import sys
 import csv
 
-REPO = Path('/home/joules_gf/projects/dr-irwin-hermes/workspace/microstructure_fatigue_simulation')
+REPO = Path('/home/joules_gf/projects/dr-irwin-hermes/workspace/mesoscale-local-roi-fe-model')
 CASE = 'aa2024-t351-p350-375-410-460-vf10-10-40-40'
 CASE_DIR = REPO / 'simulation_outputs' / CASE
 ABAQUS_DIR = CASE_DIR / 'abaqus_files'

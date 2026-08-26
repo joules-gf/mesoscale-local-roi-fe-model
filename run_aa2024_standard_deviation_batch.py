@@ -5,7 +5,7 @@ import csv
 import shutil
 import subprocess
 
-REPO = Path('/home/joules_gf/projects/dr-irwin-hermes/workspace/microstructure_fatigue_simulation')
+REPO = Path('/home/joules_gf/projects/dr-irwin-hermes/workspace/mesoscale-local-roi-fe-model')
 INPUT_FOLDER = REPO / 'simulation_inputs' / 'AL2024-T351'
 REF_CSV = REPO / '00_Main_Scripts' / 'material_reference_curves' / 'aa2024-T351_monotonic_ROM_1pct_strain.csv'
 CASES = ['aa2024-t351-2sd', 'aa2024-t351-3sd', 'aa2024-t351-1p5sd']
@@ -77,7 +77,7 @@ def make_aa2024_plots(case, case_dir, result_csv):
 
 def remove_stale_case(case):
     for p in [REPO / 'simulation_outputs' / case,
-              Path('/mnt/c/Users/Public/microstructure_fatigue_simulation_abaqus') / case]:
+              Path('/mnt/c/Users/Public/mesoscale_local_roi_fe_model_abaqus') / case]:
         if p.exists():
             print(f'Removing stale case directory: {p}', flush=True)
             shutil.rmtree(p)

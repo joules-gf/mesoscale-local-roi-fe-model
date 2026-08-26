@@ -8,7 +8,7 @@ import shutil
 import sys
 from datetime import datetime
 
-REPO = Path('/home/joules_gf/projects/dr-irwin-hermes/workspace/microstructure_fatigue_simulation')
+REPO = Path('/home/joules_gf/projects/dr-irwin-hermes/workspace/mesoscale-local-roi-fe-model')
 STATE_PATH = REPO / 'simulation_outputs' / 'aa2024_adaptive_yield_loop_state.json'
 INPUT_FOLDER = REPO / 'simulation_inputs' / 'AL2024-T351'
 REF_CSV = REPO / '00_Main_Scripts' / 'material_reference_curves' / 'aa2024-T351_monotonic_ROM_1pct_strain.csv'
