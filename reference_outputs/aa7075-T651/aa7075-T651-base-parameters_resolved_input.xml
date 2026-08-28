@@ -1,0 +1,68 @@
+<input>
+    <abaqus>
+        <reference_material> AA7075-T651 </reference_material>
+        <E> 70000 </E>
+        <nu> 0.33 </nu>
+        <displacement_yy> 0.01 </displacement_yy>
+        <plastic_stresses> 410, 470, 680, 710 </plastic_stresses>
+        <reference_curve_csv> C:\Users\MAEadmin\Documents\mesoscale-local-roi-fe-model\00_Main_Scripts\material_reference_curves\aa7075-T651_monotonic_ROM_cyclic_parameters.csv </reference_curve_csv>
+        <reference_plot_label> AA7075-T651 cyclic ROM </reference_plot_label>
+        <reference_H_prime_MPa> 852 </reference_H_prime_MPa>
+        <reference_n_prime> 0.074 </reference_n_prime>
+        <reference_stress_max_MPa> 543 </reference_stress_max_MPa>
+    </abaqus>
+    <settings>
+        <verbose> False </verbose>
+        <restart> False </restart>
+        <mesh_min_angle> 25 </mesh_min_angle>
+        <mesh_max_edge_length> 0.00328 </mesh_max_edge_length>
+        <rng_seeds>
+            <size> 1000 </size>
+        </rng_seeds>
+        <filetypes>
+            <seeds> txt </seeds>
+            <poly> txt </poly>
+            <tri> txt </tri>
+        </filetypes>
+    </settings>
+    <domain>
+        <shape> square </shape>
+        <side_length> 1 </side_length>
+    </domain>
+    <material>
+        <name> Phase-0 </name>
+        <shape> circle </shape>
+        <fraction> 0.1 </fraction>
+        <size>
+            <dist_type> uniform </dist_type>
+            <loc> 0.05 </loc>
+        </size>
+    </material>
+    <material>
+        <name> Phase-1 </name>
+        <shape> circle </shape>
+        <fraction> 0.1 </fraction>
+        <size>
+            <dist_type> uniform </dist_type>
+            <loc> 0.05 </loc>
+        </size>
+    </material>
+    <material>
+        <name> Phase-2 </name>
+        <shape> circle </shape>
+        <fraction> 0.4 </fraction>
+        <size>
+            <dist_type> uniform </dist_type>
+            <loc> 0.05 </loc>
+        </size>
+    </material>
+    <material>
+        <name> Phase-3 </name>
+        <shape> circle </shape>
+        <fraction> 0.4 </fraction>
+        <size>
+            <dist_type> uniform </dist_type>
+            <loc> 0.05 </loc>
+        </size>
+    </material>
+</input>
