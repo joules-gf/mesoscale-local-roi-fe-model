@@ -59,7 +59,6 @@ simulation_inputs/AL7075-T6/
 # Generated plots / explanatory images
 # Most generated images stay untracked, but keep the explanatory/reference
 # figures in 01_Secondary_Scripts because they document the analysis.
-*.png
 *.jpg
 *.jpeg
 *.svg
