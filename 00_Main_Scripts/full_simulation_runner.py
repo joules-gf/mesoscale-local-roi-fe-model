@@ -8,7 +8,7 @@ from wsl_windows_compat import AbaqusUnavailableError, is_wsl
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_INPUT_FOLDER = PROJECT_ROOT / "simulation_inputs" / "AL7075-T6"
+DEFAULT_INPUT_FOLDER = PROJECT_ROOT / "simulation_inputs"
 
 
 def run_full_simulation(
