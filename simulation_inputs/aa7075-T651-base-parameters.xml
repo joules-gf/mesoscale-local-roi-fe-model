@@ -6,7 +6,7 @@
     <E> auto </E>
     <nu> 0.33 </nu>
     <displacement_yy> 0.01 </displacement_yy>
-    <plastic_stresses> 410, 470, 680, 710 </plastic_stresses>
+    <plastic_stresses> 800, 470, 680, 710 </plastic_stresses>
   </abaqus>
 
   <settings>
