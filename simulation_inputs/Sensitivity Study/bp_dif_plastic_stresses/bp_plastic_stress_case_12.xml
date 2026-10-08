@@ -1,0 +1,28 @@
+<input>
+    <include> ../baseline_mesh.xml </include>
+
+    <abaqus>
+        <E> 71000 </E>
+        <nu> 0.33 </nu>
+        <displacement_yy> 0.01 </displacement_yy>
+        <plastic_stresses> 678, 516, 623, 438 </plastic_stresses>
+    </abaqus>
+
+    <settings>
+        <verbose> False </verbose>
+        <restart> False </restart>
+        <mesh_min_angle> 25 </mesh_min_angle>
+        <mesh_max_edge_length> 0.00175 </mesh_max_edge_length>
+
+        <rng_seeds>
+            <size> 1000 </size>
+        </rng_seeds>
+
+        <filetypes>
+            <seeds> txt </seeds>
+            <poly> txt </poly>
+            <tri> txt </tri>
+        </filetypes>
+
+    </settings>
+</input>

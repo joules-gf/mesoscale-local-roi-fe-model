@@ -1,0 +1,63 @@
+<input>
+    <domain>
+        <shape> square </shape>
+        <side_length> 1 </side_length>
+    </domain>
+
+    <material>
+        <name> Phase-0 </name>
+        <shape> circle </shape>
+        <fraction> 0.3436 </fraction>
+        <size>
+            <dist_type> uniform </dist_type>
+            <loc> 0.05 </loc>
+        </size>
+    </material>
+    
+    <material>
+        <name> Phase-1 </name>
+        <shape> circle </shape>
+        <fraction> 0.3583 </fraction>
+        <size>
+            <dist_type> uniform </dist_type>
+            <loc> 0.05 </loc>
+        </size>
+    </material>
+
+    <material>
+        <name> Phase-2 </name>
+        <shape> circle </shape>
+        <fraction> 0.2793 </fraction>
+        <size>
+            <dist_type> uniform </dist_type>
+            <loc> 0.05 </loc>
+        </size>
+    </material>
+    
+    <material>
+        <name> Phase-3 </name>
+        <shape> circle </shape>
+        <fraction> 0.0188 </fraction>
+        <size>
+            <dist_type> uniform </dist_type>
+            <loc> 0.05 </loc>
+        </size>
+    </material>
+
+    <abaqus>
+        <E> 71000 </E>
+        <nu> 0.33 </nu>
+        <displacement_yy> 0.01 </displacement_yy>
+        <plastic_stresses> 350, 470, 710, 710 </plastic_stresses>
+    </abaqus>
+
+    <settings>
+        <verbose> True </verbose>
+        <restart> False </restart>
+        <mesh_min_angle> 25 </mesh_min_angle>
+        <mesh_max_edge_length> 0.00175 </mesh_max_edge_length>
+        <rng_seeds>
+            <size> 1000 </size>
+        </rng_seeds>
+    </settings>
+</input>

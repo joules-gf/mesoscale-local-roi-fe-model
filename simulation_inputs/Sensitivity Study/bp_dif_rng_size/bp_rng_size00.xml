@@ -13,10 +13,10 @@
     <verbose> False </verbose>
     <restart> False </restart>
     <mesh_min_angle> 25 </mesh_min_angle>
-    <mesh_max_edge_length> 0.00328 </mesh_max_edge_length>
+    <mesh_max_edge_length> 0.0026 </mesh_max_edge_length>
 
     <rng_seeds>
-      <size> 1000 </size>
+      <position> 0 </position>
     </rng_seeds>
 
     <filetypes>
