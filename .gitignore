@@ -70,3 +70,9 @@ simulation_inputs/AL7075-T6/
 *.bak
 *.swp
 *.swo
+
+# Local run helpers and uniform-distribution study inputs
+/archive/run_helpers/
+/simulation_inputs/Uniform Distribution/*
+!/simulation_inputs/Uniform Distribution/examples/
+!/simulation_inputs/Uniform Distribution/examples/**
