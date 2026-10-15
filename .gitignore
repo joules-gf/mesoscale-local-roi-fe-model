@@ -76,3 +76,5 @@ simulation_inputs/AL7075-T6/
 /simulation_inputs/Uniform Distribution/*
 !/simulation_inputs/Uniform Distribution/examples/
 !/simulation_inputs/Uniform Distribution/examples/**
+!/simulation_inputs/Uniform Distribution/size-rng-position1000/
+!/simulation_inputs/Uniform Distribution/size-rng-position1000/**
