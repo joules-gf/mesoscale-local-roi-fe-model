@@ -48,7 +48,12 @@ these files; it does not automatically execute the runner remotely.
 - Success requires zero subprocess exit, a successful Abaqus `.sta`, and a
   nonempty curve CSV with at least two data rows. This is an operational check,
   not scientific validation of the response.
-- Re-running skips only cases with matching input hash and verified artifacts.
+- Re-running skips only cases with matching input hash and verified artifacts,
+  including results moved to the canonical reference archive.
+- Archive finished cases with `archive_completed_rng_results.py`; see
+  `docs/RNG_RESULT_ARCHIVING.md`. The canonical archive is
+  `reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/`.
+  Keep `rng_result_locations.py` alongside the runner for archive-aware resume.
 - Existing partial/unrecorded case folders are refused, never deleted. Inspect
   and recover or manually archive such a folder before retrying. The runner
   does not automatically recover postprocessing from an existing ODB.

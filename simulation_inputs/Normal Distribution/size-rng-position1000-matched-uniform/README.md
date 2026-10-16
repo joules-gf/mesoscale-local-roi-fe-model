@@ -51,20 +51,26 @@ it does not queue itself behind the remote uniform batch.
 - Handles UTF-8 output, including legacy postprocessing messages.
 - Uses an exclusive lock to prevent duplicate batch starts.
 - Verifies successful Abaqus `.sta` plus at least two finite numeric curve rows.
-- Skips only verified completed cases with matching input hashes.
+- Skips only verified completed cases with matching input hashes. After archiving,
+  resume also recognizes the canonical `reference_outputs` case location.
 - Stops at first failure. Partial/unrecorded case folders are refused, never
   silently deleted; inspect/recover or archive them before retrying.
 
 Case artifacts: `simulation_outputs/normal_matched_size_rng_0001_pos1000/` etc.
 Logs, timing CSV, completion records and batch lock:
 `simulation_outputs/normal_matched_size_rng_position1000_batch/`.
-Generated outputs remain ignored by Git.
+Generated simulation outputs remain ignored by Git. Completed cases may be moved
+with `archive_completed_rng_results.py`; see `docs/RNG_RESULT_ARCHIVING.md`.
+The canonical archive is
+`reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/`.
+Ignored solver files remain local even after relocation.
 
 ## Files to include in your commit
 
 - This entire input folder, including its 20 XMLs, manifest and README.
 - `01_Secondary_Scripts/automated_run_helpers/run_normal_matched_size_rng.py`
 - `tests/test_normal_matched_size_rng.py`
+- `01_Secondary_Scripts/automated_run_helpers/rng_result_locations.py` (archive-aware result lookup)
 
 The already committed uniform inputs and existing core workflow are prerequisites.
 The runner does NOT depend on the uncommitted local matched/intended sweep

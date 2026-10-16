@@ -8,10 +8,12 @@ from pathlib import Path
 import shutil
 import subprocess
 import tempfile
+import sys
 import unittest
 from unittest.mock import MagicMock, patch
 
 REPO = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO / '01_Secondary_Scripts/automated_run_helpers'))
 SPEC = importlib.util.spec_from_file_location('normal_rng', REPO / '01_Secondary_Scripts/automated_run_helpers/run_normal_matched_size_rng.py')
 assert SPEC is not None and SPEC.loader is not None
 batch = importlib.util.module_from_spec(SPEC)
@@ -82,6 +84,20 @@ class NormalRNGTests(unittest.TestCase):
         self.assertIn('unit-test progress', next(batch.BATCH.glob('*.log')).read_text())
         with (batch.BATCH / 'runtime_summary.csv').open() as stream:
             self.assertEqual(len(list(csv.DictReader(stream))), 20)
+
+    def test_resume_recognizes_archived_case(self):
+        rows = batch.load_cases()[:1]
+        with patch.object(batch.subprocess, 'Popen', side_effect=self.fake_process):
+            batch.run_batch(rows)
+        case = rows[0]['case']
+        old = self.root / 'simulation_outputs' / case
+        archived = self.root / 'reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000' / case
+        archived.parent.mkdir(parents=True)
+        old.rename(archived)
+        with patch.object(batch.subprocess, 'Popen') as launch:
+            batch.run_batch(rows)
+            launch.assert_not_called()
+        self.assertTrue(batch.artifacts_ok(case))
 
     def test_missing_artifacts_stops_even_zero_exit(self):
         process = MagicMock()

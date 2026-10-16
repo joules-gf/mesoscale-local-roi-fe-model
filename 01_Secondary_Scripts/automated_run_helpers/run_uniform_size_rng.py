@@ -11,6 +11,8 @@ import sys
 import time
 import xml.etree.ElementTree as ET
 
+from rng_result_locations import case_directory
+
 ROOT = Path(__file__).resolve().parents[2]
 INPUTS = ROOT / 'simulation_inputs' / 'Uniform Distribution' / 'size-rng-position1000'
 BATCH = ROOT / 'simulation_outputs' / 'uniform_size_rng_position1000_batch'
@@ -64,6 +66,7 @@ def load_cases():
 
 
 def artifacts_ok(dest, case):
+    dest = case_directory(Path(dest).parent.parent, case)
     sta = dest / 'abaqus_files' / (case + '.sta')
     curve = dest / (case + '.csv')
     if not sta.exists() or 'THE ANALYSIS HAS COMPLETED SUCCESSFULLY' not in sta.read_text(errors='replace').upper():
@@ -74,11 +77,12 @@ def artifacts_ok(dest, case):
         return sum(1 for line in csv.reader(stream) if line) >= 3
 
 
-def run_batch(rows):
+def run_batch(rows, stream_output=False, extra_fields=()):
     BATCH.mkdir(parents=True, exist_ok=True)
     environment = os.environ.copy()
     environment.update(MPLBACKEND='Agg', MICROSTRUCTURE_NONINTERACTIVE='1', PYTHONIOENCODING='utf-8', PYTHONUNBUFFERED='1')
     fields = ['case', 'size_seed', 'position_seed', 'started_utc', 'elapsed_seconds', 'status', 'returncode', 'log']
+    fields.extend(extra_fields)
     for row in rows:
         case = row['case']
         path = INPUTS / row['input_file']
@@ -101,9 +105,20 @@ def run_batch(rows):
         clock = time.perf_counter()
         print('[START]', case, 'log:', log, flush=True)
         with log.open('w', encoding='utf-8') as stream:
-            result = subprocess.run(command, cwd=ROOT, env=environment, stdout=stream, stderr=subprocess.STDOUT)
-        success = result.returncode == 0 and artifacts_ok(dest, case)
-        report = {**{k: row[k] for k in ('case', 'size_seed', 'position_seed')}, 'started_utc': started, 'elapsed_seconds': round(time.perf_counter() - clock, 3), 'status': 'completed' if success else 'failed', 'returncode': result.returncode, 'log': str(log.relative_to(ROOT))}
+            if stream_output:
+                with subprocess.Popen(command, cwd=ROOT, env=environment, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8', errors='replace', bufsize=1) as process:
+                    assert process.stdout is not None
+                    for line in process.stdout:
+                        stream.write(line)
+                        stream.flush()
+                        print(line, end='', flush=True)
+                    returncode = process.wait()
+            else:
+                result = subprocess.run(command, cwd=ROOT, env=environment, stdout=stream, stderr=subprocess.STDOUT)
+                returncode = result.returncode
+        success = returncode == 0 and artifacts_ok(dest, case)
+        report = {**{k: row[k] for k in ('case', 'size_seed', 'position_seed')}, 'started_utc': started, 'elapsed_seconds': round(time.perf_counter() - clock, 3), 'status': 'completed' if success else 'failed', 'returncode': returncode, 'log': str(log.relative_to(ROOT))}
+        report.update({key: row[key] for key in extra_fields})
         summary = BATCH / 'runtime_summary.csv'
         exists = summary.exists()
         with summary.open('a', newline='', encoding='utf-8') as stream:

@@ -5,10 +5,12 @@ from pathlib import Path
 import shutil
 import subprocess
 import tempfile
+import sys
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 
 REPO = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO / '01_Secondary_Scripts/automated_run_helpers'))
 SPEC = importlib.util.spec_from_file_location('uniform_batch', REPO / '01_Secondary_Scripts/automated_run_helpers/run_uniform_size_rng.py')
 assert SPEC is not None and SPEC.loader is not None
 batch = importlib.util.module_from_spec(SPEC)
@@ -51,6 +53,20 @@ class BatchTests(unittest.TestCase):
         with (batch.BATCH / 'runtime_summary.csv').open() as stream:
             self.assertEqual(len(list(csv.DictReader(stream))), 20)
 
+    def test_resume_recognizes_archived_case(self):
+        rows = batch.load_cases()[:1]
+        with patch.object(batch.subprocess, 'run', side_effect=self.fake_solver):
+            batch.run_batch(rows)
+        case = rows[0]['case']
+        old = self.root / 'simulation_outputs' / case
+        archived = self.root / 'reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000' / case
+        archived.parent.mkdir(parents=True)
+        old.rename(archived)
+        with patch.object(batch.subprocess, 'run') as launch:
+            batch.run_batch(rows)
+            launch.assert_not_called()
+        self.assertTrue(batch.artifacts_ok(old, case))
+
     def test_zero_exit_without_artifacts_is_failure(self):
         with patch.object(batch.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0)) as call:
             with self.assertRaisesRegex(RuntimeError, 'Batch stopped'):
@@ -77,6 +93,28 @@ class BatchTests(unittest.TestCase):
         path.write_text(path.read_text().replace('<position> 1000 </position>', '<position> 999 </position>'))
         with self.assertRaises(ValueError):
             batch.load_cases()
+
+    def test_live_stream_and_metadata(self):
+        import contextlib
+        import io
+        rows = batch.load_cases()[:1]
+        rows[0]['normal_mean_mm'] = '0.055'
+        process = MagicMock()
+        process.__enter__.return_value = process
+        process.stdout = iter(['unit-test live line\n'])
+        process.wait.return_value = 0
+        def launch(command, **kwargs):
+            self.fake_solver(command, **kwargs)
+            self.assertEqual(kwargs['env']['MICROSTRUCTURE_NONINTERACTIVE'], '1')
+            self.assertEqual(kwargs['env']['MPLBACKEND'], 'Agg')
+            return process
+        console = io.StringIO()
+        with patch.object(batch.subprocess, 'Popen', side_effect=launch), contextlib.redirect_stdout(console):
+            batch.run_batch(rows, stream_output=True, extra_fields=('normal_mean_mm',))
+        self.assertIn('unit-test live line', console.getvalue())
+        self.assertIn('unit-test live line', next(batch.BATCH.glob('*.log')).read_text())
+        with (batch.BATCH / 'runtime_summary.csv').open() as stream:
+            self.assertEqual(next(csv.DictReader(stream))['normal_mean_mm'], '0.055')
 
     def test_explicit_scale_rejected(self):
         path = next(self.inputs.glob('*.xml'))

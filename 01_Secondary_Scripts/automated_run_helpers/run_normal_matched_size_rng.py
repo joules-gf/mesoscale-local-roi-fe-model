@@ -1,4 +1,4 @@
-"""Portable sequential 20-case matched-normal size-RNG batch; no extra helper dependencies."""
+"""Portable sequential 20-case matched-normal size-RNG batch with archive-aware resume."""
 import argparse
 import csv
 from datetime import datetime, timezone
@@ -11,6 +11,8 @@ import subprocess
 import sys
 import time
 import xml.etree.ElementTree as ET
+
+from rng_result_locations import case_directory
 
 ROOT = Path(__file__).resolve().parents[2]
 INPUTS = ROOT / 'simulation_inputs/Normal Distribution/size-rng-position1000-matched-uniform'
@@ -74,7 +76,7 @@ def load_cases():
 
 
 def artifacts_ok(case):
-    dest = ROOT / 'simulation_outputs' / case
+    dest = case_directory(ROOT, case)
     sta, curve = dest / 'abaqus_files' / (case + '.sta'), dest / (case + '.csv')
     if not sta.exists() or 'THE ANALYSIS HAS COMPLETED SUCCESSFULLY' not in sta.read_text(errors='replace').upper() or not curve.exists():
         return False
