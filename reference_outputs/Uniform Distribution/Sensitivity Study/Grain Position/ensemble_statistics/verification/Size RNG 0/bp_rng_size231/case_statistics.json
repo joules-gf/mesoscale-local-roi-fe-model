@@ -1,0 +1,151 @@
+{
+  "case": "bp_rng_size231",
+  "size_rng": 0,
+  "position_rng": 231,
+  "stress_1pct_MPa": 524.3997717499733,
+  "stress_extraction": "nominal 1% endpoint (float32 roundoff <1e-9)",
+  "source_hashes": {
+    "reference_outputs\\Uniform Distribution\\Sensitivity Study\\Grain Position\\Size RNG 0\\bp_rng_size231\\bp_rng_size231_resolved_input.xml": "9db9f0f99a93d7e89ecb5ecc904a0e8631ad2176b356bbbbf06e51d92c637f2e",
+    "reference_outputs\\Uniform Distribution\\Sensitivity Study\\Grain Position\\Size RNG 0\\bp_rng_size231\\bp_rng_size231.csv": "4f325c4ecfebeb90e503df2e34fa8a9a5eb91db44ee3ebe17aa27f9bd9777ada",
+    "reference_outputs\\Uniform Distribution\\Sensitivity Study\\Grain Position\\Size RNG 0\\bp_rng_size231\\msp_mesh_files\\seeds.txt": "b8b75c6e874b44569439a1bb886830d6b070c077fc6e72381d13196062c6beeb",
+    "reference_outputs\\Uniform Distribution\\Sensitivity Study\\Grain Position\\Size RNG 0\\bp_rng_size231\\msp_mesh_files\\polymesh.txt": "32aa54a2db72b24892308641d8f5eb33f3c0f15898d31e2a63d059de0c1b8d06",
+    "reference_outputs\\Uniform Distribution\\Sensitivity Study\\Grain Position\\Size RNG 0\\bp_rng_size231\\msp_mesh_files\\trimesh.inp": "9eac7938a28731970970ff592a422eeedbbf5d6c4ccf81bbefa5ddea4e5e74e8",
+    "reference_outputs\\Uniform Distribution\\Sensitivity Study\\Grain Position\\Size RNG 0\\bp_rng_size231\\abaqus_files\\bp_rng_size231.inp": "2ec385d088f11e0aef66891910215554742f9478cde96d26c5bcdaa17561d989"
+  },
+  "seed_count": 418,
+  "triangle_count": 88629,
+  "max_parent_facet_mapping_error_mm": 6.677902580553213e-08,
+  "phase_area_fractions": [
+    0.10112643703473381,
+    0.09750811352828716,
+    0.3939912391741097,
+    0.4073742102628694
+  ],
+  "solved_mesh_phase_area_fractions": [
+    0.10112643703473427,
+    0.09750811352828694,
+    0.3939912391741092,
+    0.40737421026286763
+  ],
+  "max_poly_vs_fe_fraction_error": 1.7763568394002505e-15,
+  "area_weighted_phase_yield_proxy_MPa": 644.4403844675662,
+  "max_phase_fraction_error_pp": 0.7374210262869385,
+  "triangle_edge_ratio_p99": 2.2001538760119095,
+  "triangle_edge_ratio_gt5_percent": 0.0,
+  "triangle_r_over_R_lt0p1_percent": 0.0,
+  "seed_phase_radius_sha256": "d05ab63fcdda293b3d4a6e900a5ea093a7b3c0c4bb8fba9e7515785009fec0d0",
+  "phases": [
+    {
+      "phase": 0,
+      "seed_diameter_um": {
+        "n": 41,
+        "mean": 55.28276019607691,
+        "median": 55.93441773101105,
+        "std": 3.042557064870493,
+        "min": 50.451484050739836,
+        "max": 59.70410066569932
+      },
+      "cell_equivalent_diameter_um": {
+        "n": 41,
+        "mean": 55.64699871512796,
+        "median": 55.74758282716989,
+        "std": 6.704572217401371,
+        "min": 36.81518658325105,
+        "max": 67.11294053077621
+      },
+      "fitted_diameter_um": {
+        "n": 41,
+        "mean": 57.35841379017558,
+        "median": 56.73379833799535,
+        "std": 6.318917587781663,
+        "min": 40.000652630889554,
+        "max": 67.81730778771477
+      },
+      "fitted_missing": 0
+    },
+    {
+      "phase": 1,
+      "seed_diameter_um": {
+        "n": 40,
+        "mean": 55.226508000510286,
+        "median": 55.58923472906896,
+        "std": 2.9029444928807107,
+        "min": 50.330186904861236,
+        "max": 59.75796283457554
+      },
+      "cell_equivalent_diameter_um": {
+        "n": 40,
+        "mean": 55.369694829523404,
+        "median": 55.52945710265511,
+        "std": 6.241017866027349,
+        "min": 43.7874582865177,
+        "max": 67.6834401499032
+      },
+      "fitted_diameter_um": {
+        "n": 40,
+        "mean": 57.42325475535017,
+        "median": 57.462855358072765,
+        "std": 6.33573455233474,
+        "min": 44.410393338712986,
+        "max": 72.53066172881385
+      },
+      "fitted_missing": 0
+    },
+    {
+      "phase": 2,
+      "seed_diameter_um": {
+        "n": 165,
+        "mean": 55.1997002151524,
+        "median": 55.48813503927325,
+        "std": 2.8830982334018995,
+        "min": 50.024986415887916,
+        "max": 59.96279779789857
+      },
+      "cell_equivalent_diameter_um": {
+        "n": 165,
+        "mean": 54.776310623607074,
+        "median": 55.01933762991499,
+        "std": 6.3303046215158725,
+        "min": 35.81869687530305,
+        "max": 67.03364652010652
+      },
+      "fitted_diameter_um": {
+        "n": 165,
+        "mean": 57.8527027451949,
+        "median": 57.73360508135401,
+        "std": 6.060795642197525,
+        "min": 41.447228528816915,
+        "max": 84.90814982501726
+      },
+      "fitted_missing": 0
+    },
+    {
+      "phase": 3,
+      "seed_diameter_um": {
+        "n": 172,
+        "mean": 55.12922912111506,
+        "median": 55.2433423769489,
+        "std": 2.916575672133315,
+        "min": 50.01678238924238,
+        "max": 59.91766698412296
+      },
+      "cell_equivalent_diameter_um": {
+        "n": 172,
+        "mean": 54.51686319090543,
+        "median": 55.01649871075283,
+        "std": 6.616369032011695,
+        "min": 32.36532193958729,
+        "max": 67.41261801902719
+      },
+      "fitted_diameter_um": {
+        "n": 172,
+        "mean": 57.003319535115814,
+        "median": 57.542227610307194,
+        "std": 5.8378712311545335,
+        "min": 39.43221490737823,
+        "max": 72.46436892547327
+      },
+      "fitted_missing": 0
+    }
+  ]
+}

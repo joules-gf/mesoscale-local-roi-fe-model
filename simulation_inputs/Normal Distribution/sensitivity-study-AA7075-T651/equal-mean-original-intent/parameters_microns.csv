@@ -1,0 +1,22 @@
+Case,Kind,Normal mean (microns),Normal std (microns),Coefficient of variation
+normal_intended_case_01,sweep,10,2,0.20
+normal_intended_case_02,sweep,15,3,0.20
+normal_intended_case_03,sweep,25,5,0.20
+normal_intended_case_04,sweep,35,7,0.20
+normal_intended_case_05,sweep,45,9,0.20
+normal_intended_case_06,sweep,55,11,0.20
+normal_intended_case_07,sweep,65,13,0.20
+normal_intended_case_08,sweep,75,15,0.20
+normal_intended_case_09,sweep,85,17,0.20
+normal_intended_case_10,sweep,95,19,0.20
+normal_intended_case_11,sweep,105,21,0.20
+normal_intended_case_12,sweep,115,23,0.20
+normal_intended_case_13,sweep,125,25,0.20
+normal_intended_case_14,sweep,135,27,0.20
+normal_intended_case_15,sweep,145,29,0.20
+normal_intended_case_16,sweep,155,31,0.20
+normal_intended_case_17,sweep,165,33,0.20
+normal_intended_case_18,sweep,175,35,0.20
+normal_intended_case_19,sweep,185,37,0.20
+normal_intended_case_20,sweep,200,40,0.20
+normal_intended_baseline_0p050,baseline,50,10,0.20

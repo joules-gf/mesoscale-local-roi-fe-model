@@ -28,7 +28,7 @@ import matplotlib.pyplot as plt
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 MAIN_SCRIPTS = PROJECT_ROOT / "00_Main_Scripts"
-BASE_INPUT_DIR = PROJECT_ROOT / "simulation_inputs" / "Uniform Distribution" / "sensitivity-study-AA7075-T651" / "bp_same_mean_diameter"
+BASE_INPUT_DIR = PROJECT_ROOT / "simulation_inputs" / "Uniform Distribution" / "sensitivity-study-AA7075-T651" / "bp_same_lower_bound_diameter"
 MIDPOINT_INPUT_DIR = BASE_INPUT_DIR / "professor-requested-midpoint-mapping"
 OUTPUT_ROOT = PROJECT_ROOT / "simulation_outputs"
 LOG_DIR = OUTPUT_ROOT / "professor_requested_midpoint_mapping_70_80_150_160"
@@ -39,7 +39,7 @@ REFERENCE_RESULTS_DIR = (
     / "reference_outputs"
     / "Uniform Distribution"
     / "Sensitivity Study"
-    / "mean-diameter-equal-4all-phases"
+    / "lower-bound-diameter-equal-4all-phases"
 )
 OVERLAY_FIG = REFERENCE_RESULTS_DIR / "phase_mean_diameter_vs_stress_at_1pct_strain_with_midpoint_mapping.png"
 TARGET_STRAIN = 0.01

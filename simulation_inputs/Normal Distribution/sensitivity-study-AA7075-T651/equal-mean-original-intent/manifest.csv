@@ -1,0 +1,22 @@
+case,source_uniform_case,kind,normal_mean_mm,normal_std_mm,size_rng_seed,position_rng,scale_in_xml,input_file
+normal_intended_case_01,bp_same_size_case_01,sweep,0.01,0.002,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_01.xml
+normal_intended_case_02,bp_same_size_case_02,sweep,0.014999999999999999,0.0030000000000000001,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_02.xml
+normal_intended_case_03,bp_same_size_case_03,sweep,0.025000000000000001,0.005000000000000001,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_03.xml
+normal_intended_case_04,bp_same_size_case_04,sweep,0.035000000000000003,0.007000000000000001,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_04.xml
+normal_intended_case_05,bp_same_size_case_05,sweep,0.044999999999999998,0.0089999999999999993,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_05.xml
+normal_intended_case_06,bp_same_size_case_06,sweep,0.055,0.011000000000000001,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_06.xml
+normal_intended_case_07,bp_same_size_case_07,sweep,0.065000000000000002,0.013000000000000001,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_07.xml
+normal_intended_case_08,bp_same_size_case_08,sweep,0.074999999999999997,0.014999999999999999,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_08.xml
+normal_intended_case_09,bp_same_size_case_09,sweep,0.085000000000000006,0.017000000000000001,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_09.xml
+normal_intended_case_10,bp_same_size_case_10,sweep,0.095000000000000001,0.019000000000000003,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_10.xml
+normal_intended_case_11,bp_same_size_case_11,sweep,0.105,0.021000000000000001,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_11.xml
+normal_intended_case_12,bp_same_size_case_12,sweep,0.115,0.023000000000000003,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_12.xml
+normal_intended_case_13,bp_same_size_case_13,sweep,0.125,0.025000000000000001,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_13.xml
+normal_intended_case_14,bp_same_size_case_14,sweep,0.13500000000000001,0.027000000000000003,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_14.xml
+normal_intended_case_15,bp_same_size_case_15,sweep,0.14499999999999999,0.028999999999999998,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_15.xml
+normal_intended_case_16,bp_same_size_case_16,sweep,0.155,0.031,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_16.xml
+normal_intended_case_17,bp_same_size_case_17,sweep,0.16500000000000001,0.033000000000000002,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_17.xml
+normal_intended_case_18,bp_same_size_case_18,sweep,0.17499999999999999,0.034999999999999996,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_18.xml
+normal_intended_case_19,bp_same_size_case_19,sweep,0.185,0.036999999999999998,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_19.xml
+normal_intended_case_20,bp_same_size_case_20,sweep,0.20000000000000001,0.040000000000000008,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_case_20.xml
+normal_intended_baseline_0p050,bp_same_size_baseline_0p050,baseline,0.050000000000000003,0.010000000000000002,1000,omitted: preserve original default,omitted: calculated as 0.2 * loc,normal_intended_baseline_0p050.xml

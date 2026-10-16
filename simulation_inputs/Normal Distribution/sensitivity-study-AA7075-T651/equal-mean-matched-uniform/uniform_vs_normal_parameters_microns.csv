@@ -1,0 +1,22 @@
+Case,Kind,Uniform lower bound (microns),Uniform upper bound (microns),Uniform width (microns),Uniform mean (microns),Uniform std (microns),Normal mean (microns),Normal std (microns)
+normal_matched_uniform_case_01,sweep,10,12,2,11,0.57735026919,11,0.57735026919
+normal_matched_uniform_case_02,sweep,15,18,3,16.5,0.866025403784,16.5,0.866025403784
+normal_matched_uniform_case_03,sweep,25,30,5,27.5,1.44337567297,27.5,1.44337567297
+normal_matched_uniform_case_04,sweep,35,42,7,38.5,2.02072594216,38.5,2.02072594216
+normal_matched_uniform_case_05,sweep,45,54,9,49.5,2.59807621135,49.5,2.59807621135
+normal_matched_uniform_case_06,sweep,55,66,11,60.5,3.17542648054,60.5,3.17542648054
+normal_matched_uniform_case_07,sweep,65,78,13,71.5,3.75277674973,71.5,3.75277674973
+normal_matched_uniform_case_08,sweep,75,90,15,82.5,4.33012701892,82.5,4.33012701892
+normal_matched_uniform_case_09,sweep,85,102,17,93.5,4.90747728811,93.5,4.90747728811
+normal_matched_uniform_case_10,sweep,95,114,19,104.5,5.4848275573,104.5,5.4848275573
+normal_matched_uniform_case_11,sweep,105,126,21,115.5,6.06217782649,115.5,6.06217782649
+normal_matched_uniform_case_12,sweep,115,138,23,126.5,6.63952809568,126.5,6.63952809568
+normal_matched_uniform_case_13,sweep,125,150,25,137.5,7.21687836487,137.5,7.21687836487
+normal_matched_uniform_case_14,sweep,135,162,27,148.5,7.79422863406,148.5,7.79422863406
+normal_matched_uniform_case_15,sweep,145,174,29,159.5,8.37157890325,159.5,8.37157890325
+normal_matched_uniform_case_16,sweep,155,186,31,170.5,8.94892917244,170.5,8.94892917244
+normal_matched_uniform_case_17,sweep,165,198,33,181.5,9.52627944163,181.5,9.52627944163
+normal_matched_uniform_case_18,sweep,175,210,35,192.5,10.1036297108,192.5,10.1036297108
+normal_matched_uniform_case_19,sweep,185,222,37,203.5,10.68097998,203.5,10.68097998
+normal_matched_uniform_case_20,sweep,200,240,40,220,11.5470053838,220,11.5470053838
+normal_matched_uniform_baseline_0p050,baseline,50,60,10,55,2.88675134595,55,2.88675134595

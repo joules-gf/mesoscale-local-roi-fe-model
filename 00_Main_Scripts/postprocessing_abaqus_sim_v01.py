@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import xml.etree.ElementTree as ET
-from wsl_windows_compat import run_abaqus_cae_no_gui
+from wsl_windows_compat import noninteractive_enabled, run_abaqus_cae_no_gui
 from material_reference import get_reference_material
 
 # Get Force vs Displacement from ODB
@@ -22,9 +22,9 @@ def extract_force_displacement(abaqus_output_directory, simulation_name):
     # Check if the csv file was written
     csv_path = os.path.join(os.path.dirname(abaqus_output_directory), simulation_name + ".csv")
     if os.path.exists(csv_path):
-        print(f"\n ✅ Post-processing completed. CSV saved to {csv_path}\n")
+        print(f"\n [OK] Post-processing completed. CSV saved to {csv_path}\n")
     else:
-        print("⚠️ Post-processing failed or missing CSV.")
+        print("[WARNING] Post-processing failed or missing CSV.")
 
 # Get values from CSV to plot against ROM
 # WARNING: This framework assumes that the domain side length = 1, meaning cross sectional are = 1, meaning stress = force/1 and strain = displacement/1
@@ -45,6 +45,18 @@ def load_csv(file_path, strain_col=0, stress_col=1):
 def compute_area(strain, stress):
     trapezoid = getattr(np, "trapezoid", np.trapz)
     return trapezoid(stress, strain)
+
+def maybe_show_plot(show_plot=True):
+    """Show figures only for interactive runs.
+
+    Batch/tmux runs set MICROSTRUCTURE_NONINTERACTIVE=1. In that mode, save
+    requested figures but do not block the batch waiting for GUI windows to be
+    closed.
+    """
+    if show_plot and not noninteractive_enabled():
+        plt.show()
+    else:
+        plt.close()
 
 def plot_simulation_against_rom(
     reference_csv,
@@ -83,12 +95,11 @@ def plot_simulation_against_rom(
     ax.legend()
     fig.tight_layout()
     
-    if show_plot:
-        plt.show()
     if save_fig:
         fig.savefig(os.path.join(
             os.path.dirname(results_file),
             f'stress_strain_{curve_name}.png'))
+    maybe_show_plot(show_plot)
 
 def plot_cycles(results_file, simulation_name, save_fig=True):
     # Skip the first line (metadata), then read actual data
@@ -104,7 +115,7 @@ def plot_cycles(results_file, simulation_name, save_fig=True):
     plt.tight_layout()
     if save_fig:
         plt.savefig(os.path.join(os.path.dirname(results_file), f"cycles_{simulation_name}.png"))
-    plt.show()
+    maybe_show_plot(True)
 
 def plot_simulation_against_experimental(experimental_csv, results_file, show_plot=True, save_fig=True):
     # Load AA7075-T651 experimental reference (stress in col 1, strain in col 0)
@@ -131,12 +142,11 @@ def plot_simulation_against_experimental(experimental_csv, results_file, show_pl
     ax.legend()
     fig.tight_layout()
     
-    if show_plot:
-        plt.show()
     if save_fig:
         fig.savefig(os.path.join(
             os.path.dirname(results_file),
             f'cyclic_stress_strain_{curve_name}.png'))
+    maybe_show_plot(show_plot)
 
 def get_reference_settings_from_resolved_input(abaqus_output_directory, simulation_name):
     simulation_folder = os.path.dirname(abaqus_output_directory)

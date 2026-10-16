@@ -27,7 +27,7 @@ ORIGINAL_INPUT_DIR = (
     / "simulation_inputs"
     / "Uniform Distribution"
     / "sensitivity-study-AA7075-T651"
-    / "bp_same_mean_diameter"
+    / "bp_same_lower_bound_diameter"
 )
 RERUN_INPUT_DIR = ORIGINAL_INPUT_DIR / "professor-requested-reruns"
 REFERENCE_RESULTS_DIR = (
@@ -35,7 +35,7 @@ REFERENCE_RESULTS_DIR = (
     / "reference_outputs"
     / "Uniform Distribution"
     / "Sensitivity Study"
-    / "mean-diameter-equal-4all-phases"
+    / "lower-bound-diameter-equal-4all-phases"
 )
 OUTPUT_ROOT = PROJECT_ROOT / "simulation_outputs"
 RERUN_LOG_DIR = OUTPUT_ROOT / "professor_requested_reruns_case_08_16"
