@@ -21,7 +21,7 @@ from datetime import datetime
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'00_Main_Scripts'))
 from mesh_angle30_quality import STUDY, REF, NEW_SOURCES, parse_mesh, sha, succeeded, read_stress, write_csv, analyze
-INPUT=ROOT/'simulation_inputs'/'Uniform Distribution'/'sensitivity-study-AA7075-T651'/'bp_same_lower_bound_diameter'/'mesh-min-angle-30-comparison'
+INPUT=ROOT/'simulation_inputs'/'Uniform Distribution'/'sensitivity-study-AA7075-T651'/'bp_same_mean_diameter'/'mesh-min-angle-30-comparison'
 
 def geometry_check(source,pmesh,seeds):
     """Check all subdivided solved facets against regenerated polygon facets.

@@ -1,0 +1,63 @@
+{
+  "snapshot_local": "2026-10-16T07:39:23.286879",
+  "case_counts": {
+    "set1": 19,
+    "set3": 20,
+    "set4_user_confirmed_snapshot": 13
+  },
+  "set4_additional_csvs_excluded": [
+    "normal_matched_size_rng_0014_pos1000"
+  ],
+  "set3": {
+    "n": 20,
+    "mean": 539.1260291136801,
+    "std_sample": 7.460961158772558,
+    "minimum": 522.2249147295952,
+    "maximum": 549.5550298690796,
+    "range": 27.330115139484406,
+    "relative_range_percent": 5.069336975700272,
+    "cv_sample_percent": 1.383899265824418,
+    "distinct_size_realizations": 20,
+    "seed_count_min": 414,
+    "seed_count_max": 426
+  },
+  "set4_partial": {
+    "n": 13,
+    "mean": 542.3563839586882,
+    "std_sample": 5.004570566386644,
+    "minimum": 536.6648928523064,
+    "maximum": 552.5396414995193,
+    "range": 15.874748647212982,
+    "relative_range_percent": 2.9269958124844675,
+    "cv_sample_percent": 0.9227457654057681,
+    "distinct_size_realizations": 13,
+    "seed_count_min": 417,
+    "seed_count_max": 423
+  },
+  "set3_common_first13": {
+    "n": 13,
+    "mean": 538.6646665850511,
+    "std_sample": 8.269756923086002,
+    "minimum": 522.2249147295952,
+    "maximum": 549.3094081878662,
+    "range": 27.084493458271027,
+    "relative_range_percent": 5.028080573759814,
+    "cv_sample_percent": 1.5352328519175795,
+    "distinct_size_realizations": 13,
+    "seed_count_min": 414,
+    "seed_count_max": 423
+  },
+  "common13_mean_difference_normal_minus_uniform_MPa": 3.6917173736370614,
+  "common13_mean_difference_percent": 0.6853461165443208,
+  "sweep_comparison": {
+    "n": 19,
+    "mean_difference_MPa": 2.5075597167505244,
+    "minimum_difference_MPa": -17.776935040950775,
+    "maximum_difference_MPa": 40.8075280636549,
+    "max_absolute_difference_MPa": 40.8075280636549,
+    "largest_absolute_difference_case": "normal_matched_uniform_case_08",
+    "nominal_parameter_min_mm": 0.025,
+    "nominal_parameter_max_mm": 0.2
+  },
+  "ROM_stress_at_1pct_MPa": 542.600896154481
+}

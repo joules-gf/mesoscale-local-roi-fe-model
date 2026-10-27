@@ -1,0 +1,4076 @@
+[
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_baseline_0p050",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_baseline_0p050/normal_matched_uniform_baseline_0p050.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_baseline_0p050/normal_matched_uniform_baseline_0p050_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_baseline_0p050/msp_mesh_files/seeds.txt",
+    "csv_sha256": "6e3cb1d59b4701e222b513ed87b3dffe16cb1e0e9bf3ca81200e4efc53f5de4f",
+    "xml_sha256": "e847c104999474e1adb99a29facc5a54b703681f78bd941fd6a52d76ad2a4893",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 538.0902035534382,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_03",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_03/normal_matched_uniform_case_03.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_03/normal_matched_uniform_case_03_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_03/msp_mesh_files/seeds.txt",
+    "csv_sha256": "a4695bc237858fce160c97048807d9be16467eaa8756ef4cc0aae487ab7e4f4d",
+    "xml_sha256": "db93e6d261a6a6478f404306756a8baf0952072e197ab338ae62e579011d7764",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.027500000000000004,
+    "scale": 0.0014433756729740647,
+    "theoretical_mean": 0.027500000000000004,
+    "theoretical_std": 0.0014433756729740647,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 542.949588894844,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_04",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_04/normal_matched_uniform_case_04.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_04/normal_matched_uniform_case_04_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_04/msp_mesh_files/seeds.txt",
+    "csv_sha256": "bd52a57a9f46421c5aa1c1b60fc70c5f7ccdb022579a04e613cbb5600bf9d08c",
+    "xml_sha256": "c85509bfb037bd221e2e2c575b09a7414d02b44ae57baceee213391fc2017183",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.038500000000000006,
+    "scale": 0.0020207259421636905,
+    "theoretical_mean": 0.038500000000000006,
+    "theoretical_std": 0.0020207259421636905,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 553.5620346665382,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_05",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_05/normal_matched_uniform_case_05.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_05/normal_matched_uniform_case_05_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_05/msp_mesh_files/seeds.txt",
+    "csv_sha256": "20386070ac0142c5704be187fa705ef337ab59b7884dc3eac55eda97a144ae05",
+    "xml_sha256": "3a70ea6dd9f0b02339af59ccff232fa25f70e879e44237aa4098d09a9b8c702d",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.049499999999999995,
+    "scale": 0.002598076211353316,
+    "theoretical_mean": 0.049499999999999995,
+    "theoretical_std": 0.002598076211353316,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 544.666159927845,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_06",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_06/normal_matched_uniform_case_06.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_06/normal_matched_uniform_case_06_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_06/msp_mesh_files/seeds.txt",
+    "csv_sha256": "52ecf3e13ba66e35abbb8b5c9a4b712e0bc5df4eed66f207476fbcd812f0f522",
+    "xml_sha256": "a32970f59e7e5c7b6bd48332c1db626f01ee309eccd58bc72c5c4289934be6af",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.0605,
+    "scale": 0.003175426480542942,
+    "theoretical_mean": 0.0605,
+    "theoretical_std": 0.003175426480542942,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 545.4879593253136,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_07",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_07/normal_matched_uniform_case_07.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_07/normal_matched_uniform_case_07_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_07/msp_mesh_files/seeds.txt",
+    "csv_sha256": "63da01885f1a30431bcf20e320662df52e35e5cd1fef4300b4d21b9e06ccc449",
+    "xml_sha256": "4b602dd3a1425fd5932ec450e6e36d6a1ce25603262e17fe84efc9992d4946e0",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.07150000000000001,
+    "scale": 0.003752776749732568,
+    "theoretical_mean": 0.07150000000000001,
+    "theoretical_std": 0.003752776749732568,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 538.3984902501106,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_08",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_08/normal_matched_uniform_case_08.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_08/normal_matched_uniform_case_08_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_08/msp_mesh_files/seeds.txt",
+    "csv_sha256": "c8e8378777b7305dc2937a2238a6045a2479f084b11d6aeb708c0e84f216a56a",
+    "xml_sha256": "d247b5fa3e3008954456bb7d6fdc2e3ef466bf068fbbfbdea4e67528cf097b51",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.08249999999999999,
+    "scale": 0.004330127018922193,
+    "theoretical_mean": 0.08249999999999999,
+    "theoretical_std": 0.004330127018922193,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 549.961634606123,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_09",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_09/normal_matched_uniform_case_09.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_09/normal_matched_uniform_case_09_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_09/msp_mesh_files/seeds.txt",
+    "csv_sha256": "89af8036eb4ee4fed2305a0a72ca4d04abda8195bf4026e73d96988d514fd1de",
+    "xml_sha256": "55b14dcb6b546ae0e347639e89175f182aa992074f796fb6e626c9f60e9b66de",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.0935,
+    "scale": 0.0049074772881118195,
+    "theoretical_mean": 0.0935,
+    "theoretical_std": 0.0049074772881118195,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 536.5148984193802,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_10",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_10/normal_matched_uniform_case_10.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_10/normal_matched_uniform_case_10_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_10/msp_mesh_files/seeds.txt",
+    "csv_sha256": "6c271d67ec10f3274a30f9aaeeac7de9a6927f08a63e85a540abf879c6117aff",
+    "xml_sha256": "1d3a58f65a3995b8d7e49f78c1c6fcff3ba44ca312d34636dd9f745b41557047",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.10450000000000001,
+    "scale": 0.005484827557301446,
+    "theoretical_mean": 0.10450000000000001,
+    "theoretical_std": 0.005484827557301446,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 523.6353741288185,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_11",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_11/normal_matched_uniform_case_11.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_11/normal_matched_uniform_case_11_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_11/msp_mesh_files/seeds.txt",
+    "csv_sha256": "4ac7d03d1575756c94bca20ad071479faba9492c5d0e2fc1ae154830356ce61a",
+    "xml_sha256": "9f3d28b36e06ed1a01c39d2d016c64a903e3d27cfdc87dc0590ffc2c45ef3267",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.11549999999999999,
+    "scale": 0.006062177826491071,
+    "theoretical_mean": 0.11549999999999999,
+    "theoretical_std": 0.006062177826491071,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 535.1502638459206,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_12",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_12/normal_matched_uniform_case_12.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_12/normal_matched_uniform_case_12_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_12/msp_mesh_files/seeds.txt",
+    "csv_sha256": "2ad10b575c17b1af7f1b39dca0423c333304ae6d3c29b3ab81833aaed02bbf4f",
+    "xml_sha256": "5e1246714d5ac6491ec2873636df5ed48ba664e0c1f097295a7b8e84c7d996e6",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.1265,
+    "scale": 0.006639528095680697,
+    "theoretical_mean": 0.1265,
+    "theoretical_std": 0.006639528095680697,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 547.433528482914,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_13",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_13/normal_matched_uniform_case_13.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_13/normal_matched_uniform_case_13_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_13/msp_mesh_files/seeds.txt",
+    "csv_sha256": "77047b11c77d5891ae8c0bb9cee64235056f80575873192f8eac928ffa57d4d3",
+    "xml_sha256": "7bb40ebe31b7fe4467ec2757dfed4120317f0139158592c3b862d82f19ac5c20",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.1375,
+    "scale": 0.007216878364870323,
+    "theoretical_mean": 0.1375,
+    "theoretical_std": 0.007216878364870323,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 518.9248762726784,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_14",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_14/normal_matched_uniform_case_14.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_14/normal_matched_uniform_case_14_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_14/msp_mesh_files/seeds.txt",
+    "csv_sha256": "43ddab85c6db17939ee53d9a3a208b4a5d6c1a05f68e6b6ee73c005c837960c5",
+    "xml_sha256": "7dc6efc2d0f2f91e30ab333733380b1fabe80b7b935d2b7e0fd9d599009207f3",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.14850000000000002,
+    "scale": 0.007794228634059949,
+    "theoretical_mean": 0.14850000000000002,
+    "theoretical_std": 0.007794228634059949,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 527.5502637028694,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_15",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_15/normal_matched_uniform_case_15.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_15/normal_matched_uniform_case_15_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_15/msp_mesh_files/seeds.txt",
+    "csv_sha256": "f14092b35793ec040f8ab15bd7f65d87d374514ae1c9380fa3c7acec2e09b7b3",
+    "xml_sha256": "27ee818c158832db7359d81925f0802f34a9de370a6c6253498e8b5e5bf835e6",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.15949999999999998,
+    "scale": 0.008371578903249573,
+    "theoretical_mean": 0.15949999999999998,
+    "theoretical_std": 0.008371578903249573,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 528.1983083188534,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_16",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_16/normal_matched_uniform_case_16.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_16/normal_matched_uniform_case_16_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_16/msp_mesh_files/seeds.txt",
+    "csv_sha256": "c884e1e8d89dcf74a73f8e2bf37215cb8e8ff571bfd76a298bd431b865cfb754",
+    "xml_sha256": "beb40798633846d1b9741f0c24bc4cdad8bb40d25ca79abd94b8be31f6b1c218",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.17049999999999998,
+    "scale": 0.0089489291724392,
+    "theoretical_mean": 0.17049999999999998,
+    "theoretical_std": 0.0089489291724392,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 519.0475062131882,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_17",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_17/normal_matched_uniform_case_17.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_17/normal_matched_uniform_case_17_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_17/msp_mesh_files/seeds.txt",
+    "csv_sha256": "837921b38420a6650c87d5d20fc0e376e4d6d5713afc2ab6298a19dd9623b49e",
+    "xml_sha256": "5539984bf9b65cb6b22bd96b4089b8013f9e20eda49aeb9bf12f3b663c47c26b",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.1815,
+    "scale": 0.009526279441628826,
+    "theoretical_mean": 0.1815,
+    "theoretical_std": 0.009526279441628826,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 502.332661986351,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_18",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_18/normal_matched_uniform_case_18.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_18/normal_matched_uniform_case_18_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_18/msp_mesh_files/seeds.txt",
+    "csv_sha256": "f8524ac63d07c5df45327e6f0e1cbed667e6246b2268c50c753cd058e45961dc",
+    "xml_sha256": "f25ee9bf06ece14d61650a224e184fd93e91b7d1b6e576ffb11e78edf8e9d274",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.19249999999999998,
+    "scale": 0.01010362971081845,
+    "theoretical_mean": 0.19249999999999998,
+    "theoretical_std": 0.01010362971081845,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 520.6123896241188,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_19",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_19/normal_matched_uniform_case_19.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_19/normal_matched_uniform_case_19_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_19/msp_mesh_files/seeds.txt",
+    "csv_sha256": "2b1b78cfd7fcf3d9623df78e7fc6b1e35760ee33bde6f71f5790afc895607b01",
+    "xml_sha256": "e235e74b97424cef29918831b7471359b479fb2c4e42ed1df52ffceb1309fa8a",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.2035,
+    "scale": 0.010680979980008077,
+    "theoretical_mean": 0.2035,
+    "theoretical_std": 0.010680979980008077,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 554.7656224966049,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set1_matched_normal_sweep",
+    "case": "normal_matched_uniform_case_20",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_20/normal_matched_uniform_case_20.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_20/normal_matched_uniform_case_20_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/normal_matched_uniform_case_20/msp_mesh_files/seeds.txt",
+    "csv_sha256": "da984879e762372534d8db1a09aae52bb37ab431a48966741558c0647cc4af7a",
+    "xml_sha256": "7309c4952a919311c1690c86bcef6175d1cf4c659e01132d52ab0474bb7e24e2",
+    "seeds_sha256": null,
+    "family": "norm",
+    "loc": 0.22000000000000003,
+    "scale": 0.011547005383792518,
+    "theoretical_mean": 0.22000000000000003,
+    "theoretical_std": 0.011547005383792518,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 531.8120960593224,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": null,
+    "saved_mean": null,
+    "saved_std_population": null,
+    "saved_min": null,
+    "saved_max": null,
+    "size_fingerprint": null,
+    "position_fingerprint": null,
+    "phases": {},
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0001_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0001_pos1000/uniform_size_rng_0001_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0001_pos1000/uniform_size_rng_0001_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0001_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "fe28ab29e8d5ec49170418bf51d998858c1c87ac1a7966cda3fcd6f63211eca1",
+    "xml_sha256": "28141a06e36ee5920c589bb2716cce6eef2f2752e31b55865812e138d8dde68c",
+    "seeds_sha256": "dc1e22d564b09c1cb5715a9d7701531ad8011a5ec0a8c58320f581ee02bd37a5",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "1",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 532.3812082409859,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 422,
+    "saved_mean": 0.05486351170844976,
+    "saved_std_population": 0.0028584169872393752,
+    "saved_min": 0.050026989559832716,
+    "saved_max": 0.05999038608551383,
+    "size_fingerprint": "f559b96f4c9b12ab6fc76a354d950f07fba80907a9dd79144ebe2a7f3bd17b04",
+    "position_fingerprint": "00cb7834039d1309347c029528c6de45f5752908bc8592f61ea476880be0556a",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.054867010915093495,
+        "std": 0.002577298483642199
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05538285341870617,
+        "std": 0.002755638005862815
+      },
+      "2": {
+        "n": 167,
+        "mean": 0.05489728125031131,
+        "std": 0.0029166082974215247
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.054710887286762815,
+        "std": 0.0028730342463284164
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0002_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0002_pos1000/uniform_size_rng_0002_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0002_pos1000/uniform_size_rng_0002_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0002_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "1daa59eca5569c4e910e436cddaf82da0ad7813a372e7ab7ed1921292090cd82",
+    "xml_sha256": "3efbda00c04cec366e42f168a33056f3c00126aa44b0e7f2716b715fb9f04a69",
+    "seeds_sha256": "822c165ca1225a87aaebfa746bb12967c8376d60e06e41d329adeed6774accd5",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "2",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 533.1939690709114,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 417,
+    "saved_mean": 0.05521841240747444,
+    "saved_std_population": 0.0028786253906439557,
+    "saved_min": 0.05002745929655987,
+    "saved_max": 0.059981764858008636,
+    "size_fingerprint": "522d0417054c45f99e92ccb7537c7d9c3ce347292d2449be47927cff7bb9987f",
+    "position_fingerprint": "cc7c8b44a87b6de469565404c22f0b7dad55a3c488ecb7576433b72aa065b49e",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.055156961455271505,
+        "std": 0.003011229025828528
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.054848505433476656,
+        "std": 0.0029610888330118368
+      },
+      "2": {
+        "n": 164,
+        "mean": 0.055345126486055496,
+        "std": 0.0027905879905889136
+      },
+      "3": {
+        "n": 172,
+        "mean": 0.0551982650767357,
+        "std": 0.0029009950239795856
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0003_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0003_pos1000/uniform_size_rng_0003_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0003_pos1000/uniform_size_rng_0003_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0003_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "84630aadb6b8d09ae2c28503ebd1bc060ae007f3b4e47f00193bcfe3f9410c93",
+    "xml_sha256": "ca2efefd0fd81e9b7c7d5205468cba352952c301edafaa24a8bb9666673e541f",
+    "seeds_sha256": "6253aba735348fdedc988b267f1abd9f86596025dd9fb29ba69886fd0d8126c2",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "3",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 540.6682646274567,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 417,
+    "saved_mean": 0.05519444852822252,
+    "saved_std_population": 0.002979033806155709,
+    "saved_min": 0.05005664859929235,
+    "saved_max": 0.059965003167518,
+    "size_fingerprint": "5eac43a7d11f6c4b166ab2ff3f95de2883f5fa466e83bb2ce9b13c1d6d3b2e65",
+    "position_fingerprint": "b4a8002dbc2d15aabb5a674e50822ec689b418dd0aeb9c581b6955f02591b59c",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05488116093343027,
+        "std": 0.0029275850838323745
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05570911052265217,
+        "std": 0.002723801131801273
+      },
+      "2": {
+        "n": 164,
+        "mean": 0.05514650410482446,
+        "std": 0.003024473824771766
+      },
+      "3": {
+        "n": 172,
+        "mean": 0.05519515316221428,
+        "std": 0.002989695985784598
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0004_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0004_pos1000/uniform_size_rng_0004_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0004_pos1000/uniform_size_rng_0004_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0004_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "ab14adc28161d8d48dc7cca67ff04d0bb5da290be803bbcef726436d9a9106eb",
+    "xml_sha256": "e7b964665556501f99313e24b84918d8ae73dc8aac7e51e5e7711380e8efa668",
+    "seeds_sha256": "8057d866bb88d3899aa9f1f8769c924981a11a746962c8b080340b59eca1e5fe",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "4",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 522.2249147295952,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 420,
+    "saved_mean": 0.055023159454113485,
+    "saved_std_population": 0.0028200384048081514,
+    "saved_min": 0.05003058113770871,
+    "saved_max": 0.05999866799727541,
+    "size_fingerprint": "b24350e08b0fb3f33c78b6381d1c6ac91a00320a6b73a864014c72b1d7dbccd9",
+    "position_fingerprint": "7623f7f317a2290652ab7d862bd990b71f44e4ff643551f94438627bfa98c6cb",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05567149757572506,
+        "std": 0.002406316600340347
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05474033547254564,
+        "std": 0.0025789070421842475
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.05494432813627985,
+        "std": 0.002788963862799502
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.055010160969741005,
+        "std": 0.002967014717025368
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0005_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0005_pos1000/uniform_size_rng_0005_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0005_pos1000/uniform_size_rng_0005_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0005_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "da6fbdb782fd7aac08c665066d9ecde5b30d658bf16a5d8fc91ad3fe1331010a",
+    "xml_sha256": "f10b184726296b09a06d4d21148c8b38cf60f9af9729427c12451d7b8691c3cc",
+    "seeds_sha256": "1518fa09771d831c6061c1d58843cd79289d6a8f3bf24c36cce290924ea41abe",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "5",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 541.577672123909,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 420,
+    "saved_mean": 0.0550508633243374,
+    "saved_std_population": 0.002861492225431335,
+    "saved_min": 0.05002060968637967,
+    "saved_max": 0.05999606874779348,
+    "size_fingerprint": "54f07d49c75e33d4977f97323655702e5481f53af70dab7e3b79f96382bd7cce",
+    "position_fingerprint": "4bc7a23f5379020a7590a60366fb64b42d18af3d29e12864153be2ab2e57b938",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.054541847637147964,
+        "std": 0.0024786373085643955
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.054871252573958175,
+        "std": 0.00298166862312215
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.05522626070382881,
+        "std": 0.002793259323331894
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.05504576852878484,
+        "std": 0.0029625453899262432
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0006_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0006_pos1000/uniform_size_rng_0006_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0006_pos1000/uniform_size_rng_0006_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0006_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "b57ddb7198e6554b3fce35e33fcaa6135e6cb230093fe49efd3da174aca09778",
+    "xml_sha256": "5401cdcff05e38b6f360907706f42abc7ace339a3d75199ddad616003c4b410b",
+    "seeds_sha256": "dfd20aff2f42073e2cc0197e055033775124d0676a3a8cbe70376b096a828711",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "6",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 547.2579298615456,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 418,
+    "saved_mean": 0.055122719090273074,
+    "saved_std_population": 0.0028960108140094333,
+    "saved_min": 0.050004598305938605,
+    "saved_max": 0.05995938243248368,
+    "size_fingerprint": "03f82e98a5daa27c9e724422c8974ec89242a01c156ee8075af5c25ad58ca9fe",
+    "position_fingerprint": "4ab1db61acb61fbb06347ace37706cf208fdd649bc8428f12f8dd6cb46171ab3",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.054832066580351765,
+        "std": 0.0030068276170104914
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05570791790473199,
+        "std": 0.003122151690751086
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.05501997691022727,
+        "std": 0.0028285574386675803
+      },
+      "3": {
+        "n": 172,
+        "mean": 0.05515447060211014,
+        "std": 0.002859014513097463
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0007_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0007_pos1000/uniform_size_rng_0007_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0007_pos1000/uniform_size_rng_0007_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0007_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "c76fe766a1913843a7307c1439010935b8b9cb7acf768b69e2ec8d551c88f7e6",
+    "xml_sha256": "e2e08504b854cc410325760e3b169d8099fa9d0aecc6d6294caa82825028e2d0",
+    "seeds_sha256": "fa0aa80d18fd8477b4c612abcdb12a1f16e2157f4d61545da5523198573655e1",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "7",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 549.3094081878662,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 421,
+    "saved_mean": 0.05495676562411465,
+    "saved_std_population": 0.0028923339429942313,
+    "saved_min": 0.050010914961542786,
+    "saved_max": 0.05996858686331252,
+    "size_fingerprint": "fdea3e090b4d40550edc45a712caa4e579fb7e5f83117cedbbf1468ea09f8f44",
+    "position_fingerprint": "633b247447fa2fd0a2af5f1ef4662afbbeebece05b118b72ac134e9d401fdf7c",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.054916819627945306,
+        "std": 0.002844580610042916
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.055142704566982406,
+        "std": 0.0029444344650147816
+      },
+      "2": {
+        "n": 166,
+        "mean": 0.05519178320354257,
+        "std": 0.0030522134804201436
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.0546992214283859,
+        "std": 0.00270669167577371
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0008_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0008_pos1000/uniform_size_rng_0008_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0008_pos1000/uniform_size_rng_0008_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0008_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "87121998b2182ec75ed746fe2ace6e78a2581b554ba65fb5af24820986583193",
+    "xml_sha256": "d6523e2da10191e3d7f625607d8393e965b2272b5d199161481864722f15e2ad",
+    "seeds_sha256": "7eff7700e649e1670cf9cdfe1b6f5216b69badf7cf84ad979b224a4713d5c050",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "8",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 545.3489597439766,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 423,
+    "saved_mean": 0.05482102150240921,
+    "saved_std_population": 0.0028638022899364433,
+    "saved_min": 0.05003377838960713,
+    "saved_max": 0.05997472578618285,
+    "size_fingerprint": "29c18e96101806146024d5c53bb4e2d7b839833d9b789eb9b896cd6d75e17d6c",
+    "position_fingerprint": "da768d3ad183acf5b071b7d8f021cf2b43e5a50c7c880b6eacd0c9091897e13d",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.054837940878333546,
+        "std": 0.0028906615302620236
+      },
+      "1": {
+        "n": 41,
+        "mean": 0.0549576770822337,
+        "std": 0.0029811220894452374
+      },
+      "2": {
+        "n": 167,
+        "mean": 0.05469926254987307,
+        "std": 0.0029505675329650973
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.05490169490406342,
+        "std": 0.002737511731868038
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0009_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0009_pos1000/uniform_size_rng_0009_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0009_pos1000/uniform_size_rng_0009_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0009_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "b7e883329a14cb0f698413bfd57b2f5f38ed37e6b1c67856e7840fa03ffcdecd",
+    "xml_sha256": "04e3b7ca76cbd60169b09bb724c8f9ae3e33086778f8f29ce908ef4e68009671",
+    "seeds_sha256": "d149cc67c4ce07eece23dfd40bc4590c96c28143add35b02563375647e6b874b",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "9",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 536.5116325616837,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 420,
+    "saved_mean": 0.05502007046461514,
+    "saved_std_population": 0.0029123646236619643,
+    "saved_min": 0.050021790636192845,
+    "saved_max": 0.059988923496052025,
+    "size_fingerprint": "c996bb391a9fc14b460ccb5cbf24561f733b8f1cf3854b698d4d2c05482d0db7",
+    "position_fingerprint": "14af2e0686a4fa74bb0cf44f870fe298a79419e1677ab3fb246ff4f527237613",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05547140531822941,
+        "std": 0.002800735043593119
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.055267392369352256,
+        "std": 0.0029476979497584477
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.05486503201974635,
+        "std": 0.0029410840682081345
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.05500388505206159,
+        "std": 0.0028879083361840123
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0010_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0010_pos1000/uniform_size_rng_0010_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0010_pos1000/uniform_size_rng_0010_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0010_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "85dd451d18493944c061a62afbc37baadca300830babd3cbe28d82b40cf18864",
+    "xml_sha256": "e349d346d3cb3151a3306e4c22ab4e6ac4396dc49f2fea70412030b1ba2a3cbb",
+    "seeds_sha256": "a61c63705b6f26fb9f1aec64cce28acbc629977dd5bff07be7f07b2a4e5e1383",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "10",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 549.017038166523,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 418,
+    "saved_mean": 0.05517034652572662,
+    "saved_std_population": 0.0029384421571978935,
+    "saved_min": 0.050006285218186515,
+    "saved_max": 0.059996928403795516,
+    "size_fingerprint": "8e8d260338ba9ab1827b00741e8452fc54662de99e649ff64105b0725d2df476",
+    "position_fingerprint": "80f046c730919aa5fbad85c9b840432cd75173d59d186105bc49259f87faf340",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.054282422884971364,
+        "std": 0.00277635451831894
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05426090407301158,
+        "std": 0.0027878292921394627
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.05530149179542615,
+        "std": 0.002930921055069561
+      },
+      "3": {
+        "n": 172,
+        "mean": 0.05546769302502396,
+        "std": 0.002934786039968439
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0011_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0011_pos1000/uniform_size_rng_0011_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0011_pos1000/uniform_size_rng_0011_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0011_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "09dfab8fe0a59957a9295cb9ceb168952de9e42f050f32e2ef93d5eeddd4d712",
+    "xml_sha256": "4a8b64ec98a52055bae047d7dff742f84c3b0e358d35c8aca28521d5561e77c4",
+    "seeds_sha256": "6abb054ae36433906c3551fb6f3c2a5adf78429efe15410b835ee1cacfb2122a",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "11",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 540.6270095705986,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 421,
+    "saved_mean": 0.054968170247968705,
+    "saved_std_population": 0.0028461774778977887,
+    "saved_min": 0.050013614469380796,
+    "saved_max": 0.05999145540825116,
+    "size_fingerprint": "76ba69225782154ce41e82b6090191028b6cec67d8cde0430307135640c2b904",
+    "position_fingerprint": "951f1d3af723d22bc35b3e1dc3e24a11d88a0aec05b864ac3c440d6cc5ca9fd6",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05472299586671979,
+        "std": 0.0029064472240262216
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.054921006998310616,
+        "std": 0.0028361972386860635
+      },
+      "2": {
+        "n": 166,
+        "mean": 0.05514964953874993,
+        "std": 0.0027859324185195507
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.05486364793387585,
+        "std": 0.002880755675654447
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0012_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0012_pos1000/uniform_size_rng_0012_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0012_pos1000/uniform_size_rng_0012_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0012_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "7112a7edcea8e0a8d79d57cbd56206975783be94b90c03e607d73c47cfa344bc",
+    "xml_sha256": "2f62358b1f3784fb5e46eb01569c1613fdf99fd7dc96db640cdb2d05dc103ca3",
+    "seeds_sha256": "69d05a76c4e81791e370cb25552eda6cb68ceca8a00e88d4eac562ddc7704062",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "12",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 527.8458533585072,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 420,
+    "saved_mean": 0.055047976936574865,
+    "saved_std_population": 0.00286917570248327,
+    "saved_min": 0.05000144697572843,
+    "saved_max": 0.059961308214181566,
+    "size_fingerprint": "2418293b0a934f62a7c6b1b2c923e2aa1a6bdf9a229601f90da0a0b6d0ec145a",
+    "position_fingerprint": "2473a13af2d8912a118fda89c4d5e851c817eaf462ff2ff155609966a5d04f30",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05528382603570463,
+        "std": 0.0030765267212632414
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.054780732880484975,
+        "std": 0.0029069524061059106
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.05508998417259794,
+        "std": 0.0028830338691374427
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.055014004265514324,
+        "std": 0.002789904020094476
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0013_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0013_pos1000/uniform_size_rng_0013_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0013_pos1000/uniform_size_rng_0013_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0013_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "e805b70b2c6896fb235547e3b1536607459cc2c5136d711409f0ed86f8328735",
+    "xml_sha256": "ca8349d93ebc85c1c703eedb556cb34f1f785e39f6a183cb1dc443e301fb5a0d",
+    "seeds_sha256": "d1fadab872a42946ec76c2c3973c2ddbbaa40e878d2541d6ed4efd515e1fd01b",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "13",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 536.6768053621054,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 414,
+    "saved_mean": 0.055410971100269754,
+    "saved_std_population": 0.0028755616178835156,
+    "saved_min": 0.050084057043006745,
+    "saved_max": 0.05996822033392465,
+    "size_fingerprint": "534db55ed42976d3433a16d25a5b97225ee5a272b326773119eced3fcaf9786e",
+    "position_fingerprint": "b5c7df3058ad0aab8dda792e9f00d9fc64162be9c9709add8cd7c468f93c1fa8",
+    "phases": {
+      "0": {
+        "n": 40,
+        "mean": 0.05571446325061241,
+        "std": 0.002884259053817151
+      },
+      "1": {
+        "n": 39,
+        "mean": 0.05556033308795479,
+        "std": 0.003185643334655443
+      },
+      "2": {
+        "n": 163,
+        "mean": 0.054912118977946116,
+        "std": 0.00294721956322502
+      },
+      "3": {
+        "n": 172,
+        "mean": 0.05577927396309142,
+        "std": 0.002652861143555251
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0014_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0014_pos1000/uniform_size_rng_0014_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0014_pos1000/uniform_size_rng_0014_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0014_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "332bcd8e340fad5ceea25e701ceb94ee31b5c44d65afff8631d761bfe38cbbcb",
+    "xml_sha256": "b300e1ca7251b7be8ea0401492f3976f50f5618e077dc3e14204ee2ead49401b",
+    "seeds_sha256": "52c34b8850d8e6c533f939da0d850b88463f79e12c7513cf7c2e2ceee45eb318",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "14",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 542.4350064992905,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 426,
+    "saved_mean": 0.05460105937625529,
+    "saved_std_population": 0.002936286627025169,
+    "saved_min": 0.050015383716154806,
+    "saved_max": 0.05998077928585539,
+    "size_fingerprint": "ca8fdd89d52a77ac4e7f31c30caa909e6e7c93e029de5f07aec034a0197220b3",
+    "position_fingerprint": "4b69e7458423c728adf6f5f95138f49f7d47d7aa6a1c0953a789a84acecc5033",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05456890135411627,
+        "std": 0.0031236235233565706
+      },
+      "1": {
+        "n": 42,
+        "mean": 0.05526580031922744,
+        "std": 0.0022370749112670466
+      },
+      "2": {
+        "n": 167,
+        "mean": 0.05420856090738935,
+        "std": 0.002918159865584873
+      },
+      "3": {
+        "n": 176,
+        "mean": 0.05482234689672961,
+        "std": 0.0030033968213947597
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0015_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0015_pos1000/uniform_size_rng_0015_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0015_pos1000/uniform_size_rng_0015_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0015_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "f9afbc98e8f5ebc47626cab15648b430a517bf66c09f971c706e6c20ce4244d7",
+    "xml_sha256": "dcca348d2dd99a42b7b3ab753ce0eaf337510c2fc8aca22d46e0a805c86f9c22",
+    "seeds_sha256": "8f57a8cd637d28db2f44e72d81e5fe10546af82a25a6050f80466e207ec2bf95",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "15",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 539.7221440672874,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 420,
+    "saved_mean": 0.05501627384150301,
+    "saved_std_population": 0.002871422929330831,
+    "saved_min": 0.05000197629742498,
+    "saved_max": 0.059957517576582256,
+    "size_fingerprint": "74f3ddd83c88ee2e7a063b2c52b45f47739728df34605a2569510fa7dee283e4",
+    "position_fingerprint": "971d86b8e5922e3d1f89d2a0a049447960e89cfeda80b6d6dbae6de52c5aaec1",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.055218201634952106,
+        "std": 0.003011878687552861
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05443972261165,
+        "std": 0.0027579806365631006
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.055245744898944564,
+        "std": 0.002869641714238928
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.054883631802335506,
+        "std": 0.002837835370604141
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0016_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0016_pos1000/uniform_size_rng_0016_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0016_pos1000/uniform_size_rng_0016_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0016_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "30b1e504305e5165473a327b0c4b4f41cfd41c599b1c9cee0ee0304f26fe234f",
+    "xml_sha256": "6349f0d9e47de82c106bc2fd2b6e7930a03d1442c7b0be01f8f35c82613111d4",
+    "seeds_sha256": "25da5cfee6b5001a3d6d1aa4e86975ed86de74bef325d3f46e63ff7136300a99",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "16",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 542.0801365971565,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 421,
+    "saved_mean": 0.05491782432132046,
+    "saved_std_population": 0.00289352487848112,
+    "saved_min": 0.050003111465455705,
+    "saved_max": 0.059994826456319705,
+    "size_fingerprint": "1a21825fb8d6d65ad3e945086a8f1170c5d2bd6f3415f3005e67d611a2eb85e9",
+    "position_fingerprint": "235bf0987c1918519467e535c300cf54ed7cffff63de3a64f5b70bbcc90c2601",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.054951985505889756,
+        "std": 0.0029238760762245494
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.055304778038483604,
+        "std": 0.0030218577562366655
+      },
+      "2": {
+        "n": 166,
+        "mean": 0.05500569132740352,
+        "std": 0.0027794331220860856
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.0547369928255523,
+        "std": 0.0029494211160948475
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0017_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0017_pos1000/uniform_size_rng_0017_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0017_pos1000/uniform_size_rng_0017_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0017_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "feea774aa1260c6374877d549e190f0b1345985a2ca66539a9da125c1bd190f0",
+    "xml_sha256": "0f2ced5175c3c369c889bfa1148c1d8cda04ce4fda3d9dbc7acc6c791aee2cda",
+    "seeds_sha256": "a29a702f14d100cb1f90b2bff6f98dc78e417c2ecb8cac498166a721fc4926ff",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "17",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 538.0764751136303,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 417,
+    "saved_mean": 0.05525153819448474,
+    "saved_std_population": 0.0028483169238599053,
+    "saved_min": 0.05004377744387898,
+    "saved_max": 0.05998884487614935,
+    "size_fingerprint": "51006bc30e0cba8fa97e3eb1a37c6b036560d3de2095c888f2d8ddb690236fd4",
+    "position_fingerprint": "380e992085a86264239955aacf9925bac1ada54cf031e21ded31f07b9c3a4d50",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05532470739959747,
+        "std": 0.003135300077033767
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05495970876254368,
+        "std": 0.0027269785209728904
+      },
+      "2": {
+        "n": 164,
+        "mean": 0.0551860034212072,
+        "std": 0.002902805510086511
+      },
+      "3": {
+        "n": 172,
+        "mean": 0.05536445065195878,
+        "std": 0.0027430240776173025
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0018_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0018_pos1000/uniform_size_rng_0018_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0018_pos1000/uniform_size_rng_0018_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0018_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "4a0712c3b41c30d4383ea6cd249f47c5314f2f3d414e68b8fe22a297285a6402",
+    "xml_sha256": "d07bcad234ea4a8dfe2baaa1f847e51376ba01913e6a20a5ce4aecc2faeb3c61",
+    "seeds_sha256": "41d4ab394ff5b0f4c82dfadacd4e5f3301370b6015c3a5c0e44bdc7d6022dfcf",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "18",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 549.5550298690796,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 422,
+    "saved_mean": 0.054868978889919186,
+    "saved_std_population": 0.0029240917788804343,
+    "saved_min": 0.050006885320252686,
+    "saved_max": 0.059988124354517974,
+    "size_fingerprint": "c6c14dd3576138daa5cf98efb055b137d3736e361b304d2fabd41614821060db",
+    "position_fingerprint": "f352d71fda683ddb2cb2218774432458caec104971308cb61e51cdb96adcc67f",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.054818400680602605,
+        "std": 0.002770484896123158
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05524843980402579,
+        "std": 0.0031915004944971246
+      },
+      "2": {
+        "n": 167,
+        "mean": 0.054823696196596314,
+        "std": 0.002851665815552266
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.05483712532556652,
+        "std": 0.002957241997322045
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0019_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0019_pos1000/uniform_size_rng_0019_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0019_pos1000/uniform_size_rng_0019_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0019_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "0e6cac2fdfa282c1e3d952ecc5ecfbfdc9e835ebf005dbcbe792befbf1380445",
+    "xml_sha256": "b1edee5f786b299cc399d0715fdde6e89b4111d6a52b5874fe204d32a6b00804",
+    "seeds_sha256": "ff72fd51bd6278c9ed499a8dd4e3324c4975cb20ddcbff20d1e4be3cc0bdaaff",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "19",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 539.0988811552525,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 420,
+    "saved_mean": 0.055011749523960415,
+    "saved_std_population": 0.0028356156369395685,
+    "saved_min": 0.050026304916269256,
+    "saved_max": 0.05998695953122955,
+    "size_fingerprint": "535c2066be200bb5b20bdabf0ee5cc59007d0500bcd36edf12bb30387132313c",
+    "position_fingerprint": "46666a9a33b8619fa2c1fbf9f0c8a91a4ff260fdef54db80282619fa93af094e",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05469484872149795,
+        "std": 0.002265205633911685
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05516581616033389,
+        "std": 0.002828575361641818
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.054974435928470816,
+        "std": 0.002910991182963236
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.05508638751649954,
+        "std": 0.0028790117368434846
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set3_uniform_size_rng",
+    "case": "uniform_size_rng_0020_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0020_pos1000/uniform_size_rng_0020_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0020_pos1000/uniform_size_rng_0020_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0020_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "629cb2b5c3b73a3601919aab7d5b8b4a5a73de12db1b7b0af9585509da147624",
+    "xml_sha256": "9d6045c5cc046abdc29158e2c26c7a239c6900a2df1aac9e3ec0d948c8cf613c",
+    "seeds_sha256": "45edf98fc7ec642097fadacfe155ee4767ee7198e32c5338e7b079a3b7a902dc",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "20",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 528.9122433662415,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 422,
+    "saved_mean": 0.054867748818146,
+    "saved_std_population": 0.002776558363774363,
+    "saved_min": 0.05001035681178742,
+    "saved_max": 0.059969438347093736,
+    "size_fingerprint": "625018c441edfcc28ddb5fbef652fafa0c18f3ac8ebda044b69d9aa0d1bbec7e",
+    "position_fingerprint": "a306d545b27efa7fd4d2caf38451e1ed42dc5d5a781dc0c1807f1910b5affe2f",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05440731247943339,
+        "std": 0.00248591265739809
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05418527715839509,
+        "std": 0.0031170763126224443
+      },
+      "2": {
+        "n": 167,
+        "mean": 0.055011305767436944,
+        "std": 0.0027488446779833408
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.05499535080519009,
+        "std": 0.0027499464139446633
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0001_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0001_pos1000/normal_matched_size_rng_0001_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0001_pos1000/normal_matched_size_rng_0001_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0001_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "90409276c4538418ff3e6a98b848017f4e745183497eb37afa3b44b1a5dd675a",
+    "xml_sha256": "b695df1c5c4a02b87a8f02dcd0781d6de106e9e475123916481282632149752b",
+    "seeds_sha256": "4a4543c5ec394ab30450615d78d55768c5f6bb82c4935f776d626da89bd26e1e",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "1",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 540.7965776324272,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 422,
+    "saved_mean": 0.05485877128317689,
+    "saved_std_population": 0.0028976131842747225,
+    "saved_min": 0.04472803033082175,
+    "saved_max": 0.0625141023004131,
+    "size_fingerprint": "76e3795eb56309f96df4be60a75bf97286c429bf9263ecbd8956809378572881",
+    "position_fingerprint": "d58b6c5f12a8a67c52785497e1bcceec7a85e794bf2df55524a0dce4b877a533",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.054225868844945915,
+        "std": 0.0028502849077485333
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.054543702156605776,
+        "std": 0.0024469774684101778
+      },
+      "2": {
+        "n": 167,
+        "mean": 0.05532284228709354,
+        "std": 0.002787801562478523
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.054634931670396625,
+        "std": 0.003039594117096091
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0002_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0002_pos1000/normal_matched_size_rng_0002_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0002_pos1000/normal_matched_size_rng_0002_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0002_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "e379576fcc673e3fda1e6d39fa75b25b1fc95d03637152a982c10e84d0ea25ae",
+    "xml_sha256": "32edf47840d02239382cb68fc9d05c942e22027473c0e5e15632b168c0b18319",
+    "seeds_sha256": "bfda51108aca059c8bf8ff5c25d8a460f9dc5d43b61da3082a1c2f0317e623a5",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "2",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 538.3945167660713,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 423,
+    "saved_mean": 0.05482155674063916,
+    "saved_std_population": 0.0028418990423192286,
+    "saved_min": 0.0452566178045176,
+    "saved_max": 0.06307088031326878,
+    "size_fingerprint": "6b560e6c6decd6dab11746ca983cb87b4274c58b9694841ca905e3a5ecf6fd1c",
+    "position_fingerprint": "6d12250225b1136334316acdd63f6b9a533f102bfe0f9ea013a15e1b9557e08b",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.055739611132048374,
+        "std": 0.0024540195944553903
+      },
+      "1": {
+        "n": 41,
+        "mean": 0.05451037421449941,
+        "std": 0.0029705489312589458
+      },
+      "2": {
+        "n": 167,
+        "mean": 0.05472956307020395,
+        "std": 0.0029916591245437345
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.05476685097332099,
+        "std": 0.0027042937961774005
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0003_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0003_pos1000/normal_matched_size_rng_0003_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0003_pos1000/normal_matched_size_rng_0003_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0003_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "14a2fb6c3f00a959b99f0b5b8fac81782a18c4220cef8295b654a4c93e82f70b",
+    "xml_sha256": "c39640b2a4d107f9b4ea9be3db3f6aace475d19f004f08e6b9ea97fd1a91ffe6",
+    "seeds_sha256": "8123ee69a05ed1f72dd95e1dbfa9246abf72e6e3dbfa4f19d9bf4a763200328e",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "3",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 543.1059521436691,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 422,
+    "saved_mean": 0.054875460066418726,
+    "saved_std_population": 0.002768095670887235,
+    "saved_min": 0.04686006395800783,
+    "saved_max": 0.06433026000365613,
+    "size_fingerprint": "b6c87253876599703e1a69e2bdbba20c2111c0f50241bdeea399c90d411eec7c",
+    "position_fingerprint": "6c3dfb812d7cbc01432108e096bef3ca0d7efe23fc4d453fcc34bf53ea4b9fb9",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05484751704306013,
+        "std": 0.00272663747524477
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.054504817093149735,
+        "std": 0.00229924279380923
+      },
+      "2": {
+        "n": 167,
+        "mean": 0.055002390237693016,
+        "std": 0.0027855496564064453
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.05484542583817536,
+        "std": 0.002849743283535288
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0004_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0004_pos1000/normal_matched_size_rng_0004_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0004_pos1000/normal_matched_size_rng_0004_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0004_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "a554efecd54b09375ad618e45993540a1253256ecab623d893076fd89b65b1d7",
+    "xml_sha256": "641bdabeb0a1180be4d7929493910aedaf5f0106b6a49b92a72c14a202d7fd29",
+    "seeds_sha256": "3a1737bf54ea19fbf5673543876e3bc6426375100628984d1a13d74ca0febfc7",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "4",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 537.8519449830055,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 417,
+    "saved_mean": 0.0552282460163661,
+    "saved_std_population": 0.0031310876323517025,
+    "saved_min": 0.046174614039683815,
+    "saved_max": 0.0643604104812883,
+    "size_fingerprint": "2a32e736afa9cb9f33756a973a2123738d835ca44f791e4649d3c53105ea2cf0",
+    "position_fingerprint": "7f5c65af44b79d829373e71c2b30493ef6e1c42912eae29e2f6b90b5d0302735",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05648457133757707,
+        "std": 0.0032605569382178033
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05464675306523028,
+        "std": 0.0028567758689266535
+      },
+      "2": {
+        "n": 164,
+        "mean": 0.05508221987487108,
+        "std": 0.0033051274281938477
+      },
+      "3": {
+        "n": 172,
+        "mean": 0.055203238266836804,
+        "std": 0.002905951203208197
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0005_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0005_pos1000/normal_matched_size_rng_0005_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0005_pos1000/normal_matched_size_rng_0005_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0005_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "9c4b97c34e55ca79b05725db278bb61632f2f6be4de7d1c3d75164d60ac95a8c",
+    "xml_sha256": "fb7aa26428053614ed291131acbc3c684b61145bdcfae758bb9e46eda316639e",
+    "seeds_sha256": "653e2f4c67caedbc0c9433f863d1a3edf61a8a257a5dd677542e3960564906fc",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "5",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 541.2785891294479,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 420,
+    "saved_mean": 0.05501107207205469,
+    "saved_std_population": 0.003048318724600351,
+    "saved_min": 0.046774955130304156,
+    "saved_max": 0.06426052728036459,
+    "size_fingerprint": "98e84e362b03299ce0634524006127c3d8ab690144deca9a3dc43006ffbd19bb",
+    "position_fingerprint": "46b7ed532a8959c26665aee77341203091f6eb76596f6a3abb8fd31a94a561a1",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.055295827364479494,
+        "std": 0.0032782403538819884
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05525988583850806,
+        "std": 0.0025900656278939472
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.05483802773231358,
+        "std": 0.0029194098838659
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.05505086976406463,
+        "std": 0.0031952553181231903
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0006_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0006_pos1000/normal_matched_size_rng_0006_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0006_pos1000/normal_matched_size_rng_0006_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0006_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "3f3c147866fe4666c7c87d3202a613219c511f5f8f667bf59adc50b144b7997b",
+    "xml_sha256": "9d5dc1b97dd3283fbb230a2dc6dadba531648b3b9e1bf8d660d7bf2769dd8db8",
+    "seeds_sha256": "1e048ee184672e3834e134ea8901a834cf04d2fa54773ea760daac57514fa86b",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "6",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 542.5785598158836,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 420,
+    "saved_mean": 0.055053067372164206,
+    "saved_std_population": 0.002740899775447666,
+    "saved_min": 0.04603052606335267,
+    "saved_max": 0.06368167355118805,
+    "size_fingerprint": "4751e67577e350e0957f13b2dedc3831ee08a0a742db0d1aac1dfa3a10d247ff",
+    "position_fingerprint": "9c2e28d0eb1e6861894c1dbf7bda8c3dc7a4f72945bb19aae3473a0b12aa19e2",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05447905053573885,
+        "std": 0.0024648269827494407
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.055951727367832584,
+        "std": 0.0023385607790284185
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.054971015953771525,
+        "std": 0.002695765959223797
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.05505954308769004,
+        "std": 0.0028781847649343747
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0007_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0007_pos1000/normal_matched_size_rng_0007_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0007_pos1000/normal_matched_size_rng_0007_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0007_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "d0eaa487a1699f8fbe418882ae7f44009dd6766405ad59361e597a0de9d5a8f0",
+    "xml_sha256": "a655ac0478dc011de5ab5c8b58d1269528436282a81c04a0976dfc45dcad83aa",
+    "seeds_sha256": "b260044d48cecc7f26da5b8c68dad7c882a574da5d996c21610316720ad07926",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "7",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 552.5396414995193,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 421,
+    "saved_mean": 0.05497250320575261,
+    "saved_std_population": 0.00283110384054098,
+    "saved_min": 0.04621402855863818,
+    "saved_max": 0.06544015723727147,
+    "size_fingerprint": "d73a4ba36797f9ddbade114759b48b78a53013821d112b9c1600b19504fba15a",
+    "position_fingerprint": "5aa3b2df086246842637282c1a7d55e776e60ed9eb5a20ef812ebdc9685ca0b7",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.0546659073389517,
+        "std": 0.0032434980854636353
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05484039427715862,
+        "std": 0.0029467776751743563
+      },
+      "2": {
+        "n": 166,
+        "mean": 0.05486137091646587,
+        "std": 0.0024981501671830606
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.0551811396868112,
+        "std": 0.002980361670520091
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0008_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0008_pos1000/normal_matched_size_rng_0008_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0008_pos1000/normal_matched_size_rng_0008_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0008_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "83aa67e9289709df1ab4f61f9115b40930e46b89be7d19f83ab27024d250ba80",
+    "xml_sha256": "59d5a2b4ec587cd9b9496072272683371f938699e01c4957f4de884fb552f38d",
+    "seeds_sha256": "f6a572c799eec9afbb4a4e13ba4e317153f06bb6b1e8df8c35ab36b1d98985fe",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "8",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 545.7284457683563,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 418,
+    "saved_mean": 0.05519154734649946,
+    "saved_std_population": 0.0025717252884128717,
+    "saved_min": 0.04911500372980376,
+    "saved_max": 0.06231193570995801,
+    "size_fingerprint": "4faf07742933026ac9725e13bdf6bd3383269de246ee1c41456bc95ae2708cb2",
+    "position_fingerprint": "f3b7d96ed9c45a901d6eb9eb71bd91fe87b0ae87ac208dda4744262a0138fa20",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.054793339354041466,
+        "std": 0.0026162082841055833
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05431295646910066,
+        "std": 0.0026299558721606955
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.05524997740026666,
+        "std": 0.0026028731395073097
+      },
+      "3": {
+        "n": 172,
+        "mean": 0.05543474039251774,
+        "std": 0.002460481291617326
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0009_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0009_pos1000/normal_matched_size_rng_0009_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0009_pos1000/normal_matched_size_rng_0009_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0009_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "a0731d00fcc65bcc28c2c752104fac292e68e094c4248f6a3e4a532b9e8e974a",
+    "xml_sha256": "9e5f1389b98596f95e2d2c0d58a889b1bf6362da408f3bc4563ec9a70b4ba2df",
+    "seeds_sha256": "a8f47380777a27816c78326a2e616b8110d92a18cbd4de7de5a6ca53a774ccac",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "9",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 540.5405834317207,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 418,
+    "saved_mean": 0.0551452824882472,
+    "saved_std_population": 0.0029002419181099735,
+    "saved_min": 0.04744640340918683,
+    "saved_max": 0.06493754563962972,
+    "size_fingerprint": "9e63f4db35b7bb4caef14a1d67fa950851f5f914d862f568bb9f8340865f961b",
+    "position_fingerprint": "db7ce6e5c0679889549a001d28e1182e4ebdcd6c17ee569d5594158394aca544",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05499777219149843,
+        "std": 0.0023756892292494665
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05608491758847698,
+        "std": 0.0030337029444428
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.0550696078650436,
+        "std": 0.0028229285016689847
+      },
+      "3": {
+        "n": 172,
+        "mean": 0.05503451987770129,
+        "std": 0.0030138209619983924
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0010_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0010_pos1000/normal_matched_size_rng_0010_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0010_pos1000/normal_matched_size_rng_0010_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0010_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "9514602840c37500f2e9c8b4e236a3b5867e223c1643a6ef1c89da2d52980855",
+    "xml_sha256": "5aa39eedf79f0a81d3a073fa11d359578319208f192c4f48a9f870dee76781aa",
+    "seeds_sha256": "01a4681ca97241ec45c633d1737be5af80a1c9ddad5c0d01404b5bc33a6a2ecd",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "10",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 537.0343123674393,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 417,
+    "saved_mean": 0.05522238852483214,
+    "saved_std_population": 0.002889890256437542,
+    "saved_min": 0.04803793911461884,
+    "saved_max": 0.0643489637522497,
+    "size_fingerprint": "59b1b5a743187bfe6ce43f6c4c2eff7220e0d58b5e99b9ed843f3703468d9186",
+    "position_fingerprint": "375899b36e6f96851149f54a6d67274f2a2cc58d3e078cb00d44566375cb165e",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.055682158409669696,
+        "std": 0.003134019933211658
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05462999242277269,
+        "std": 0.002902818595088162
+      },
+      "2": {
+        "n": 164,
+        "mean": 0.055193262054026984,
+        "std": 0.0029524683018222523
+      },
+      "3": {
+        "n": 172,
+        "mean": 0.055278330501669824,
+        "std": 0.0027384224194089497
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0011_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0011_pos1000/normal_matched_size_rng_0011_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0011_pos1000/normal_matched_size_rng_0011_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0011_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "de50643f1adc11a388a2a5ac726881a50fee11d3112a85f666351e9f8206081d",
+    "xml_sha256": "bcbf1bd284edd31f133c8cef436e70af1849ee4d6fec9f32cb698bd37ee5566e",
+    "seeds_sha256": "0ae3408d733b14564dca0d9f73fac8eb2564c66bf59c23acfb4ae04476b770b2",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "11",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 551.3626232743263,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 417,
+    "saved_mean": 0.05523285935610095,
+    "saved_std_population": 0.002733136422943331,
+    "saved_min": 0.047252781598133176,
+    "saved_max": 0.06403197542849348,
+    "size_fingerprint": "3d52458b67e8ac86d3a489610f3a2bd70f933a3b03a9b97a42b922ada3a078d1",
+    "position_fingerprint": "f5e6211c77b3b3629750ddb1b3dc6ca6becc428b99019cda6abff8b4f0dab485",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05512086482492343,
+        "std": 0.00288021003960277
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.05505128720087502,
+        "std": 0.0026520619405780276
+      },
+      "2": {
+        "n": 164,
+        "mean": 0.05553832641289076,
+        "std": 0.002741321761131286
+      },
+      "3": {
+        "n": 172,
+        "mean": 0.05501052252280902,
+        "std": 0.002680109924913809
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0012_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0012_pos1000/normal_matched_size_rng_0012_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0012_pos1000/normal_matched_size_rng_0012_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0012_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "35ad2c7a3c250e7d627b544da4ddfe32d057bc1ea5367b157c1ea53a9fa879e9",
+    "xml_sha256": "3537dcac65ce08b5072dd32b28767754f96710dae4f1af7c48aca52bb56ba950",
+    "seeds_sha256": "186e52b2b85400dc5fb5c247c1d04fa20d8cd90b89aba874f17bf028a11156f7",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "12",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 536.6648928523064,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 417,
+    "saved_mean": 0.05520332565896983,
+    "saved_std_population": 0.0027958795071739073,
+    "saved_min": 0.046736395600676855,
+    "saved_max": 0.0633695964788116,
+    "size_fingerprint": "dd2af66fb4e5ebb0fd8afa99881066c0e00d3a3c10287497c32682dca09b06cb",
+    "position_fingerprint": "c1e1fab1544004d6fcbe5d73c08cbdab861527b5dcaf7bf385501207292e9b15",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05463533093117671,
+        "std": 0.0027147345338563444
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.0557200163422941,
+        "std": 0.002664153434785183
+      },
+      "2": {
+        "n": 164,
+        "mean": 0.05504474563499309,
+        "std": 0.0026902850308407884
+      },
+      "3": {
+        "n": 172,
+        "mean": 0.05536976333593919,
+        "std": 0.0029073167102013613
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "set4_matched_normal_size_rng_partial",
+    "case": "normal_matched_size_rng_0013_pos1000",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0013_pos1000/normal_matched_size_rng_0013_pos1000.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0013_pos1000/normal_matched_size_rng_0013_pos1000_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG matched-uniform/Position RNG 1000/normal_matched_size_rng_0013_pos1000/msp_mesh_files/seeds.txt",
+    "csv_sha256": "8911dd6a6c6aa371a9a598826a09fd99c7922d2d1cd0af68f03175b0e0f373b3",
+    "xml_sha256": "75395c7d26fdb3cf85c240afd440fc280d87920744e3e1230fdc5afc88850526",
+    "seeds_sha256": "e1b87c0c6e5e98369a769d0bac9bcab48515ed4bd1e065d248e7b167c9896ffa",
+    "family": "norm",
+    "loc": 0.05500000000000001,
+    "scale": 0.0028867513459481294,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "13",
+    "position_rng": "1000",
+    "stress_at_1pct_MPa": 542.7563517987728,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 419,
+    "saved_mean": 0.055106010837763064,
+    "saved_std_population": 0.0028760611346511276,
+    "saved_min": 0.0460986840415995,
+    "saved_max": 0.06350563245151554,
+    "size_fingerprint": "1f0ee7997d01abcded321521e7393bf6c37fbdb8976b11f6464ca81c9d4f1b34",
+    "position_fingerprint": "b6f67c5e8f6d7814a49bd2ed4c99334432290066e3b951d76b3a0b005bb3c887",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.055426868769836206,
+        "std": 0.0031356038024813104
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.0547303032219167,
+        "std": 0.0026208248206804835
+      },
+      "2": {
+        "n": 165,
+        "mean": 0.05528302874377287,
+        "std": 0.002955297276489272
+      },
+      "3": {
+        "n": 173,
+        "mean": 0.054948006068556356,
+        "std": 0.002770156746400834
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_baseline_0p050",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_baseline_0p050/bp_same_size_baseline_0p050.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_baseline_0p050/bp_same_size_baseline_0p050_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_baseline_0p050/msp_mesh_files/seeds.txt",
+    "csv_sha256": "82e0e1310e50ec66e982d217d277e4837d5b18f9319c06bfe70a1208c1f368e4",
+    "xml_sha256": "7a160e01855b869df6dd2c265b63cf080bb5900d007749864de78f25fe5645a7",
+    "seeds_sha256": "13af3b5627f19b7aaccee7b7be93dbc268921e60732618c413270bc65825a1f2",
+    "family": "uniform",
+    "loc": 0.05,
+    "scale": 0.010000000000000002,
+    "theoretical_mean": 0.05500000000000001,
+    "theoretical_std": 0.0028867513459481294,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 540.6139207482338,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 422,
+    "saved_mean": 0.05488578614690935,
+    "saved_std_population": 0.0029405735504056418,
+    "saved_min": 0.05000555541034617,
+    "saved_max": 0.05996250390458484,
+    "size_fingerprint": "c97a121223ed8326f5e526f6a76b01fa3b006fc80b5099400cced438157d2278",
+    "position_fingerprint": "a2d495fb916c2d3c17062d73ff98de5b60e6e88beb4a6ac061b7ec50512353d3",
+    "phases": {
+      "0": {
+        "n": 41,
+        "mean": 0.05509228742451671,
+        "std": 0.0031719695214961563
+      },
+      "1": {
+        "n": 40,
+        "mean": 0.054863023760188166,
+        "std": 0.0030124196693283776
+      },
+      "2": {
+        "n": 167,
+        "mean": 0.054838919204276824,
+        "std": 0.003048240964557033
+      },
+      "3": {
+        "n": 174,
+        "mean": 0.054887342023383925,
+        "std": 0.0027539482755212764
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_03",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_03/bp_same_size_case_03.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_03/bp_same_size_case_03_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_03/msp_mesh_files/seeds.txt",
+    "csv_sha256": "e76ff3e7802e884e2b2a4cb40d98c209a78c1213c4508db78fdc4876f6267c23",
+    "xml_sha256": "da7edbd2896a47bcbc2f7c15ef689c2800d02afc7fe0c26f1333df1251ad27bc",
+    "seeds_sha256": "6431b84509311f0100ee27249463d921cf4a211a77c0b18b5750a0df953d21e3",
+    "family": "uniform",
+    "loc": 0.025,
+    "scale": 0.005000000000000001,
+    "theoretical_mean": 0.027500000000000004,
+    "theoretical_std": 0.0014433756729740647,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 545.7779312133789,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 1685,
+    "saved_mean": 0.027451492270989017,
+    "saved_std_population": 0.0014540192584853195,
+    "saved_min": 0.025000871580183166,
+    "saved_max": 0.029999633101117973,
+    "size_fingerprint": "df89286acf25a4a45392c5b2ccce24489ba85ce4508c7edb70ea35e7ec779f81",
+    "position_fingerprint": "d6b1d98175408dc4aeb15b86c8ac400763fb29419e9af78f4c796033eea66846",
+    "phases": {
+      "0": {
+        "n": 160,
+        "mean": 0.02748310279711791,
+        "std": 0.0014804974579466425
+      },
+      "1": {
+        "n": 177,
+        "mean": 0.027495467416641765,
+        "std": 0.0014720925391400682
+      },
+      "2": {
+        "n": 656,
+        "mean": 0.027345432813683505,
+        "std": 0.0014662727023536093
+      },
+      "3": {
+        "n": 692,
+        "mean": 0.02753347741409776,
+        "std": 0.0014250077233356074
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_04",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_04/bp_same_size_case_04.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_04/bp_same_size_case_04_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_04/msp_mesh_files/seeds.txt",
+    "csv_sha256": "3fc4d8652fd7186d5e6fc07d5458e395f524860596568ca1872648232e6367d3",
+    "xml_sha256": "37fd45d7a06c4149513a1deca2939f10fc6b53992c3e136725007c7f3d6ce596",
+    "seeds_sha256": "97c36dc8bb8e90cd96419fc2d991802b7e5bbdffed8d18843af2bba68337588d",
+    "family": "uniform",
+    "loc": 0.035,
+    "scale": 0.007000000000000001,
+    "theoretical_mean": 0.038500000000000006,
+    "theoretical_std": 0.0020207259421636905,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 549.672747194767,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 859,
+    "saved_mean": 0.03845765539944362,
+    "saved_std_population": 0.0020413037532472323,
+    "saved_min": 0.03500388878724232,
+    "saved_max": 0.041981381426464924,
+    "size_fingerprint": "84accf75f6f2a6ba3e1aebc44119c436315b880c4d038fdea6aac761d79a9533",
+    "position_fingerprint": "746f5b0cd3020ba37130eb1c33b2cea1bf388ad118a94ddee85174b5cef140ac",
+    "phases": {
+      "0": {
+        "n": 75,
+        "mean": 0.03867162009389932,
+        "std": 0.0020723948509699273
+      },
+      "1": {
+        "n": 83,
+        "mean": 0.03854669755753366,
+        "std": 0.002205575428045955
+      },
+      "2": {
+        "n": 345,
+        "mean": 0.038313602999172316,
+        "std": 0.00204714217221614
+      },
+      "3": {
+        "n": 356,
+        "mean": 0.038531420081713154,
+        "std": 0.0019791782248071
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_05",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_05/bp_same_size_case_05.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_05/bp_same_size_case_05_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_05/msp_mesh_files/seeds.txt",
+    "csv_sha256": "351b421cbcca554e2b994d7711720676e9ea3cb53d60a5d32948e892ad503e2f",
+    "xml_sha256": "17515d3e3ba77e23e34f13f6660f29ff3728739dd4f5b1fbfe78d204b0fc3eb1",
+    "seeds_sha256": "9db4404315bbdfb57aadd5ce319d02155f3d413019d7eae6f1e2882e8f8e345f",
+    "family": "uniform",
+    "loc": 0.045,
+    "scale": 0.009,
+    "theoretical_mean": 0.049499999999999995,
+    "theoretical_std": 0.002598076211353316,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 545.7945281267166,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 521,
+    "saved_mean": 0.04939672185184524,
+    "saved_std_population": 0.0026083194459391836,
+    "saved_min": 0.04500499986931154,
+    "saved_max": 0.05396625351412635,
+    "size_fingerprint": "352d810cb362e7fed029dff8cff948f20496ce0e935ccb47fa6f7a041485300f",
+    "position_fingerprint": "752d833c935144688feb36425d05e6432607320d8ea9055f5d5b29fe88463897",
+    "phases": {
+      "0": {
+        "n": 51,
+        "mean": 0.049392344694283996,
+        "std": 0.0027516247564060782
+      },
+      "1": {
+        "n": 49,
+        "mean": 0.049560851910347176,
+        "std": 0.0026519167754392487
+      },
+      "2": {
+        "n": 198,
+        "mean": 0.04929558969832741,
+        "std": 0.0027061794774785887
+      },
+      "3": {
+        "n": 223,
+        "mean": 0.04945145292164595,
+        "std": 0.0024693116866072737
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_06",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_06/bp_same_size_case_06.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_06/bp_same_size_case_06_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_06/msp_mesh_files/seeds.txt",
+    "csv_sha256": "50e4ae44f5508e17aeefeb12a3f61d6e9d9e11285dd0b78b841e332156790b3c",
+    "xml_sha256": "44b04a321c2da0dfd2783f23b7fe231901dd01699c385561d6d494b1c9be80ba",
+    "seeds_sha256": "074775052efcce1c54cf466fa785444c7a69969e531f1e5be51cc765aa2e6efb",
+    "family": "uniform",
+    "loc": 0.055,
+    "scale": 0.011000000000000001,
+    "theoretical_mean": 0.0605,
+    "theoretical_std": 0.003175426480542942,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 550.244505405426,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 349,
+    "saved_mean": 0.060408305433674744,
+    "saved_std_population": 0.0031773509057466216,
+    "saved_min": 0.0550231590415949,
+    "saved_max": 0.06595875429504332,
+    "size_fingerprint": "346ea587cd242135c9093e318711d7ff7475c88ca65cc51e76f9f6a29ae4751d",
+    "position_fingerprint": "6867bc1d4534de480e9484ceaa2f9d556a172916cd655416397d2d86958277b9",
+    "phases": {
+      "0": {
+        "n": 35,
+        "mean": 0.06057807459105426,
+        "std": 0.003399248940061746
+      },
+      "1": {
+        "n": 33,
+        "mean": 0.06066098389533636,
+        "std": 0.0033267542695144645
+      },
+      "2": {
+        "n": 138,
+        "mean": 0.06024642192852376,
+        "std": 0.003296494815735956
+      },
+      "3": {
+        "n": 143,
+        "mean": 0.060464666370511955,
+        "std": 0.0029528846542118256
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_07",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_07/bp_same_size_case_07.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_07/bp_same_size_case_07_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_07/msp_mesh_files/seeds.txt",
+    "csv_sha256": "d5ab4aa1b678f5ad1acec46b146542bd40c81849139b9cc1b4248359aa0f3275",
+    "xml_sha256": "b4e37d013adfa754e2cf577d78751863fd5983bc349a5868c6789be98db7b872",
+    "seeds_sha256": "c948d11f5b576eb33c6c4a5a3ee14d660306d2b6be1c136b537a9158d6235a8a",
+    "family": "uniform",
+    "loc": 0.065,
+    "scale": 0.013000000000000001,
+    "theoretical_mean": 0.07150000000000001,
+    "theoretical_std": 0.003752776749732568,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 527.6254123589024,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 250,
+    "saved_mean": 0.07141619812176356,
+    "saved_std_population": 0.0037428385380143796,
+    "saved_min": 0.06502736977643034,
+    "saved_max": 0.07795125507596029,
+    "size_fingerprint": "fd989b77ccd1f40997e91576429ddeeed3c75ebcc800a3e4ac4207e0bd22606f",
+    "position_fingerprint": "fd3540e33afc9695c1647e543637a1862142ce4d1b20891202917b11e3b9fbf2",
+    "phases": {
+      "0": {
+        "n": 30,
+        "mean": 0.07193119158395749,
+        "std": 0.003967883727762087
+      },
+      "1": {
+        "n": 23,
+        "mean": 0.07202961388800254,
+        "std": 0.003790600784411396
+      },
+      "2": {
+        "n": 100,
+        "mean": 0.0710144400717013,
+        "std": 0.0037828328377366586
+      },
+      "3": {
+        "n": 97,
+        "mean": 0.07152565625080387,
+        "std": 0.0035674812571464716
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_08",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_08/bp_same_size_case_08.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_08/bp_same_size_case_08_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_08/msp_mesh_files/seeds.txt",
+    "csv_sha256": "825a057fa8fbe47524ee1fc0e3c11d1b5a70fd22d305000a6927d8cacaacea1e",
+    "xml_sha256": "dd1849b8555bf16d6acfdaa3cc843a5ad416d3a06b1df843e617703dc727ead5",
+    "seeds_sha256": "5cc7d4c8f3e02dd34768cdc6e0b46e56291201ef0f0e0f815947a3c080ff2c97",
+    "family": "uniform",
+    "loc": 0.075,
+    "scale": 0.015,
+    "theoretical_mean": 0.08249999999999999,
+    "theoretical_std": 0.004330127018922193,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 509.15410654246807,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 187,
+    "saved_mean": 0.08248782631078899,
+    "saved_std_population": 0.004226541702988809,
+    "saved_min": 0.07545662223464503,
+    "saved_max": 0.08994375585687725,
+    "size_fingerprint": "f1c236419b8f3d49eccb37fa4aa89701a085b48203569dcd15e9e019b6a312e5",
+    "position_fingerprint": "579981ab2b92f63280465c2e231bf6940489cfde9eb8c19ec80e2b3156e2eebf",
+    "phases": {
+      "0": {
+        "n": 23,
+        "mean": 0.08292586370127827,
+        "std": 0.00469716785111668
+      },
+      "1": {
+        "n": 13,
+        "mean": 0.08192106434534764,
+        "std": 0.004507907515644934
+      },
+      "2": {
+        "n": 81,
+        "mean": 0.08224366381376023,
+        "std": 0.004215595557868665
+      },
+      "3": {
+        "n": 70,
+        "mean": 0.08273168642262915,
+        "std": 0.003985362608918675
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_09",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_09/bp_same_size_case_09.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_09/bp_same_size_case_09_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_09/msp_mesh_files/seeds.txt",
+    "csv_sha256": "e384408982c04b40f5a9585af6a9b66314eda9ff2ae0e4ea0460650df269e31e",
+    "xml_sha256": "f9bb09c1bc061bf1dc5d60d74fe375bdd6a1f0bfa6bd78624a976430c78fe5e3",
+    "seeds_sha256": "be84b5b110a5987af8e5f3cb4e63a4f4dfe7b3ced182c13f9b0c246ad6cfe3f0",
+    "family": "uniform",
+    "loc": 0.085,
+    "scale": 0.017,
+    "theoretical_mean": 0.0935,
+    "theoretical_std": 0.0049074772881118195,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 548.1895453333855,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 147,
+    "saved_mean": 0.0932431390798004,
+    "saved_std_population": 0.004656452708447033,
+    "saved_min": 0.08551750519926436,
+    "saved_max": 0.10193625663779422,
+    "size_fingerprint": "aebc3a536afd84fa26db8ab941debdd15f7431f1b171d062a22b5e7a28e5987a",
+    "position_fingerprint": "87c893e01fa672e13f9c00a74e18606b5bb1c92317fde5135f87f3695bb6a22e",
+    "phases": {
+      "0": {
+        "n": 17,
+        "mean": 0.09385035459527903,
+        "std": 0.005516679996773051
+      },
+      "1": {
+        "n": 12,
+        "mean": 0.09224552145519693,
+        "std": 0.004860277482590125
+      },
+      "2": {
+        "n": 69,
+        "mean": 0.09306798997707903,
+        "std": 0.004669138959506225
+      },
+      "3": {
+        "n": 49,
+        "mean": 0.09352342552510409,
+        "std": 0.004184659188358608
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_10",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_10/bp_same_size_case_10.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_10/bp_same_size_case_10_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_10/msp_mesh_files/seeds.txt",
+    "csv_sha256": "ad9a9974d6cd69d028865d3d42e37855f83709fc3efebfa0b07e1f89eb78096c",
+    "xml_sha256": "36ba62c2866c78473b95f73374f293b555e2c7cad61e40aa999b3233acbfcfe5",
+    "seeds_sha256": "8525e2596bc305d1a1f179387d18254aaa8517d4b52b5b87e0d12ec3014119bb",
+    "family": "uniform",
+    "loc": 0.095,
+    "scale": 0.019000000000000003,
+    "theoretical_mean": 0.10450000000000001,
+    "theoretical_std": 0.005484827557301446,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 530.4872594475746,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 117,
+    "saved_mean": 0.10420334654039073,
+    "saved_std_population": 0.005211772804101128,
+    "saved_min": 0.0955783881638837,
+    "saved_max": 0.1139287574187112,
+    "size_fingerprint": "eb3183b0bc76134d4ffb73c385a3a6ad8e64d7ae49ae733279c85ae12a94c67b",
+    "position_fingerprint": "3aec1a22740c1e6edc4a19909364e2ad468fffbf94288892bbd3861e26c831d6",
+    "phases": {
+      "0": {
+        "n": 15,
+        "mean": 0.10529529066019756,
+        "std": 0.0061692435681492686
+      },
+      "1": {
+        "n": 10,
+        "mean": 0.10446980863329583,
+        "std": 0.004908583723069891
+      },
+      "2": {
+        "n": 54,
+        "mean": 0.10390513890873326,
+        "std": 0.0052257147320711695
+      },
+      "3": {
+        "n": 38,
+        "mean": 0.10412596310311045,
+        "std": 0.004779132343655771
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_11",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_11/bp_same_size_case_11.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_11/bp_same_size_case_11_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_11/msp_mesh_files/seeds.txt",
+    "csv_sha256": "5f83aa48f9fbd52469eb3adb0f3c300042652f380ac3264e72fd966c6b8f49f0",
+    "xml_sha256": "41df08495b919f8b360222bbb0dc4216ff1e21f673d88ab73b8573345efb5dba",
+    "seeds_sha256": "51dcefd9c859ff4b81c65bee272e03675a462b4ef74638518e5d0fbdcb1d339c",
+    "family": "uniform",
+    "loc": 0.105,
+    "scale": 0.021,
+    "theoretical_mean": 0.11549999999999999,
+    "theoretical_std": 0.006062177826491071,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 523.6751648783684,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 96,
+    "saved_mean": 0.11539650234485987,
+    "saved_std_population": 0.0056826966365229725,
+    "saved_min": 0.10563927112850303,
+    "saved_max": 0.12592125819962816,
+    "size_fingerprint": "809ae599e52d1630a4846ecbaedcf743c103b7cc477ca8d67e42a072c3fed01f",
+    "position_fingerprint": "1971e0eccc258698896c9c1bc89fd7cc8c7db346d6dd06e3a4411ecc0721fd5f",
+    "phases": {
+      "0": {
+        "n": 10,
+        "mean": 0.11785800424512456,
+        "std": 0.006858070508828409
+      },
+      "1": {
+        "n": 7,
+        "mean": 0.11359780293387,
+        "std": 0.005226217728148751
+      },
+      "2": {
+        "n": 47,
+        "mean": 0.11518207219964917,
+        "std": 0.005504231075978518
+      },
+      "3": {
+        "n": 32,
+        "mean": 0.11533569277295941,
+        "std": 0.005388507170474218
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_12",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_12/bp_same_size_case_12.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_12/bp_same_size_case_12_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_12/msp_mesh_files/seeds.txt",
+    "csv_sha256": "ba38141afbac1335b5201f6bdf04b3aa782d157b95d30aa24c89c841e09a77af",
+    "xml_sha256": "41a22de3bf8fa8e67cd7c1e7430173876974105a190ae36fe6d5e50d02f044f6",
+    "seeds_sha256": "91cfdc58d7a7e70c37b67c8bb3974c185f88a093ae6bcb645ef560f739b33236",
+    "family": "uniform",
+    "loc": 0.115,
+    "scale": 0.023000000000000003,
+    "theoretical_mean": 0.1265,
+    "theoretical_std": 0.006639528095680697,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 545.3523964881897,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 80,
+    "saved_mean": 0.12630304873057016,
+    "saved_std_population": 0.0063394307113114985,
+    "saved_min": 0.11598933921742349,
+    "saved_max": 0.13791375898054514,
+    "size_fingerprint": "f9a98f72ff978154e3b81e2c9ce5677221b272857f8967d2a2ea9f590f445201",
+    "position_fingerprint": "8b62d4e94e279c1827c660c0f9f952453685799e72117fad4e6d9384b02ae275",
+    "phases": {
+      "0": {
+        "n": 8,
+        "mean": 0.12776465129804168,
+        "std": 0.0077783095495835165
+      },
+      "1": {
+        "n": 6,
+        "mean": 0.12306755933458191,
+        "std": 0.005048176475030398
+      },
+      "2": {
+        "n": 37,
+        "mean": 0.12664705602746873,
+        "std": 0.00637170773399117
+      },
+      "3": {
+        "n": 29,
+        "mean": 0.12613035375991194,
+        "std": 0.005845289063674084
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_13",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_13/bp_same_size_case_13.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_13/bp_same_size_case_13_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_13/msp_mesh_files/seeds.txt",
+    "csv_sha256": "ec6951c033dfcc0921521345526e6fdf5fbb27b6231cab65e1704b7359287f55",
+    "xml_sha256": "eb7c1ed1dfc584b66c20b361c68874600c44dc2372e3c3a60bba73f44f737730",
+    "seeds_sha256": "17127582592f49854153f7e60c1df80467bcbe55ac4a14438d0037248d8efe0e",
+    "family": "uniform",
+    "loc": 0.125,
+    "scale": 0.025,
+    "theoretical_mean": 0.1375,
+    "theoretical_std": 0.007216878364870323,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 526.0856128931046,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 68,
+    "saved_mean": 0.13745874784907017,
+    "saved_std_population": 0.006702195986497683,
+    "saved_min": 0.1261554915771361,
+    "saved_max": 0.14915887982265982,
+    "size_fingerprint": "dbba6044b20cd3f886f6514f46f4e5c7798c2f25aecc4e8c1a18f1a9a73e48d9",
+    "position_fingerprint": "caaa6972b4e0b04686c851dacbae638139e19db975e1fab52f5fe360e55fb5e6",
+    "phases": {
+      "0": {
+        "n": 8,
+        "mean": 0.1388746209761323,
+        "std": 0.008454684293025554
+      },
+      "1": {
+        "n": 6,
+        "mean": 0.13376908623324116,
+        "std": 0.005487148342424338
+      },
+      "2": {
+        "n": 31,
+        "mean": 0.1382778251742245,
+        "std": 0.006409048916267112
+      },
+      "3": {
+        "n": 23,
+        "mean": 0.13682481687510034,
+        "std": 0.006258567017388559
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_14",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_14/bp_same_size_case_14.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_14/bp_same_size_case_14_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_14/msp_mesh_files/seeds.txt",
+    "csv_sha256": "c3b4b50da5e4eab0762f09666f151471fc233b04a60c61200dbc62f946f9bb2f",
+    "xml_sha256": "f42244186975623260ed57dbde1bfb552a40cb05fc0e86886d80a8aea034748a",
+    "seeds_sha256": "18e4e389a6398d80ac3b67133dfc34e4bdec36803e13865cc1cbfddafb50de27",
+    "family": "uniform",
+    "loc": 0.135,
+    "scale": 0.027000000000000003,
+    "theoretical_mean": 0.14850000000000002,
+    "theoretical_std": 0.007794228634059949,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 525.0663847327232,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 58,
+    "saved_mean": 0.14822968929831581,
+    "saved_std_population": 0.0072361947137502035,
+    "saved_min": 0.136247930903307,
+    "saved_max": 0.15996319871301698,
+    "size_fingerprint": "5020ce014b67f1d1677735932e9639f643d87491924f7616073d209ac33d0e27",
+    "position_fingerprint": "a368af3f41cd3fb5858eab240cc5d712a50c708dd147a3149632bef638cf55ff",
+    "phases": {
+      "0": {
+        "n": 8,
+        "mean": 0.14998459065422287,
+        "std": 0.0091310590364676
+      },
+      "1": {
+        "n": 5,
+        "mean": 0.1448234934868041,
+        "std": 0.006433936090776683
+      },
+      "2": {
+        "n": 26,
+        "mean": 0.1489934831366614,
+        "std": 0.0068676569841019134
+      },
+      "3": {
+        "n": 19,
+        "mean": 0.14734195921480622,
+        "std": 0.00658533573325164
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_15",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_15/bp_same_size_case_15.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_15/bp_same_size_case_15_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_15/msp_mesh_files/seeds.txt",
+    "csv_sha256": "a8d59778d574232a7afb228018297432e113f7e6ac3bd8d5891eaacdbde0867a",
+    "xml_sha256": "4c6cf98891935009c47a3a0e1c96337a0c25e9f1bb84dcca68095e8d259c48ef",
+    "seeds_sha256": "eda888e1353936540eb293b7aed937fd77a34e071f7335cc10692c7cef09120e",
+    "family": "uniform",
+    "loc": 0.145,
+    "scale": 0.028999999999999998,
+    "theoretical_mean": 0.15949999999999998,
+    "theoretical_std": 0.008371578903249573,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 540.5758041739464,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 50,
+    "saved_mean": 0.15968035685984427,
+    "saved_std_population": 0.007601528391850212,
+    "saved_min": 0.14669430028083882,
+    "saved_max": 0.1718123245436108,
+    "size_fingerprint": "00dba9ff327cfe1c6a7f0ba8b0039e31904639743c32fefbe99a25c500cd8a1b",
+    "position_fingerprint": "6887c9ded341b8283b2a05459d9ce8670590cae40418e4a039545e0fcde6cd06",
+    "phases": {
+      "0": {
+        "n": 6,
+        "mean": 0.16516356499215323,
+        "std": 0.007787419040867269
+      },
+      "1": {
+        "n": 4,
+        "mean": 0.15256787922242768,
+        "std": 0.0038979950479318564
+      },
+      "2": {
+        "n": 23,
+        "mean": 0.16070402187716848,
+        "std": 0.007268695361440623
+      },
+      "3": {
+        "n": 17,
+        "mean": 0.15803367252792413,
+        "std": 0.006844488932182604
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_16",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_16/bp_same_size_case_16.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_16/bp_same_size_case_16_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_16/msp_mesh_files/seeds.txt",
+    "csv_sha256": "21d90be993305ef63d7883baa5e05a1f05e078277218d3cff3b26234516be923",
+    "xml_sha256": "33923aa145c420b2ed215ea5539649fd321dc05b324256978e5cb3de0f19559e",
+    "seeds_sha256": "6c917dc0d477aeacc5ebbf50fd826090ee270b288229a21fa87585808e05a5ca",
+    "family": "uniform",
+    "loc": 0.155,
+    "scale": 0.031,
+    "theoretical_mean": 0.17049999999999998,
+    "theoretical_std": 0.0089489291724392,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 509.23426109552383,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 44,
+    "saved_mean": 0.17090028201812502,
+    "saved_std_population": 0.008220180999424006,
+    "saved_min": 0.1568111485760691,
+    "saved_max": 0.18366145037420467,
+    "size_fingerprint": "74a8ee92ee32742fabb2e1d7b276acb7d6305139839cd47f293a8ce0b272a0c0",
+    "position_fingerprint": "aa7d0672f45389057c5227b958cf55caf6f5bcb1f712f79e9e729900e653108e",
+    "phases": {
+      "0": {
+        "n": 5,
+        "mean": 0.17664345735052125,
+        "std": 0.00911638965841932
+      },
+      "1": {
+        "n": 3,
+        "mean": 0.16321870956827503,
+        "std": 0.004804519605349124
+      },
+      "2": {
+        "n": 21,
+        "mean": 0.17167439322691863,
+        "std": 0.007808854252802237
+      },
+      "3": {
+        "n": 15,
+        "mean": 0.16943844903831864,
+        "std": 0.0073992192152501825
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_17",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_17/bp_same_size_case_17.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_17/bp_same_size_case_17_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_17/msp_mesh_files/seeds.txt",
+    "csv_sha256": "72e33af65839eaf50e30d63758c24af04661c4228b7125e4698ee80e0da79279",
+    "xml_sha256": "0185c31af4fb8d4030bacf3ff508cc14351e33a9c55b2de2eec5c202dcca2272",
+    "seeds_sha256": "9dd70a6dd6a5dae69c894cd114c7a74efa287eef4d10688c2db19819e50e16ec",
+    "family": "uniform",
+    "loc": 0.165,
+    "scale": 0.033,
+    "theoretical_mean": 0.1815,
+    "theoretical_std": 0.009526279441628826,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 520.1095970273018,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 39,
+    "saved_mean": 0.1819940958209758,
+    "saved_std_population": 0.008847726378475942,
+    "saved_min": 0.1669279968712994,
+    "saved_max": 0.19551057620479853,
+    "size_fingerprint": "81e64d342bdb1d99dc090ae120e0c78906dd365e75c428bc9f2593d0fdb03837",
+    "position_fingerprint": "4e656a6268753d146220279bbcf006fc1a72fd365304bed3f2fd926ff9f77fc1",
+    "phases": {
+      "0": {
+        "n": 5,
+        "mean": 0.1880398094376517,
+        "std": 0.009704543829930249
+      },
+      "1": {
+        "n": 3,
+        "mean": 0.17374894889526052,
+        "std": 0.005114488612145842
+      },
+      "2": {
+        "n": 16,
+        "mean": 0.1831734009344694,
+        "std": 0.008383442820631104
+      },
+      "3": {
+        "n": 15,
+        "mean": 0.18036996187950052,
+        "std": 0.007876588196879225
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_18",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_18/bp_same_size_case_18.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_18/bp_same_size_case_18_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_18/msp_mesh_files/seeds.txt",
+    "csv_sha256": "b589d3e3a7685690d8a0f50dae62c0e804ffc4e1736451007179a740e5bca98e",
+    "xml_sha256": "90be7dec1f6bfc53ffeb40ced21b83100ab4482df74b5983c64f02d83801c022",
+    "seeds_sha256": "3bf6ea535a4be81a0d85a2f3cc2a116d5a1886144a5b0c3b9477fbb317a5c56b",
+    "family": "uniform",
+    "loc": 0.175,
+    "scale": 0.034999999999999996,
+    "theoretical_mean": 0.19249999999999998,
+    "theoretical_std": 0.01010362971081845,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 524.7236594557762,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 35,
+    "saved_mean": 0.1920963877826701,
+    "saved_std_population": 0.00938575529988733,
+    "saved_min": 0.17704484516652963,
+    "saved_max": 0.20735970203539233,
+    "size_fingerprint": "4b6f1d476186915cee52dffce33ade84f79c834be3fb496288edd31c55512796",
+    "position_fingerprint": "1bc95e90622747ed23352a78ed4f0d1f2699758993288300fe93840f972c162e",
+    "phases": {
+      "0": {
+        "n": 4,
+        "mean": 0.19823292298730932,
+        "std": 0.011188638223474337
+      },
+      "1": {
+        "n": 3,
+        "mean": 0.184279188222246,
+        "std": 0.005424457618942565
+      },
+      "2": {
+        "n": 15,
+        "mean": 0.19353681023947,
+        "std": 0.008695712516145782
+      },
+      "3": {
+        "n": 13,
+        "mean": 0.19035016632195603,
+        "std": 0.00857217782740753
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_19",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_19/bp_same_size_case_19.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_19/bp_same_size_case_19_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_19/msp_mesh_files/seeds.txt",
+    "csv_sha256": "d7b8ee55563d903e81ebe1c576002ca3762363273190ab6756af82df5cc12a3f",
+    "xml_sha256": "602aaba34e4bbdd52f6cd45ef2df9b19eb7f5751df32d63388f787fd145f5fec",
+    "seeds_sha256": "3352301fa010017ca1e8b4b6b948ba595778814ca6751710165d294e33eb7d76",
+    "family": "uniform",
+    "loc": 0.185,
+    "scale": 0.037,
+    "theoretical_mean": 0.2035,
+    "theoretical_std": 0.010680979980008077,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 516.3527323007584,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 31,
+    "saved_mean": 0.2028462372180817,
+    "saved_std_population": 0.009726850227639175,
+    "saved_min": 0.1871616934617599,
+    "saved_max": 0.21920882786598622,
+    "size_fingerprint": "708fde30e5096b55768b2ec8c08096eb7a1e129c75a6c20ddb694f441c864b20",
+    "position_fingerprint": "32fc47d1f82dfc0187e182b393d7f83c05cb78a4ca52c5c3aefaaadfb41d08d1",
+    "phases": {
+      "0": {
+        "n": 4,
+        "mean": 0.20956051858658412,
+        "std": 0.01182798897910144
+      },
+      "1": {
+        "n": 3,
+        "mean": 0.1948094275492315,
+        "std": 0.005734426625739283
+      },
+      "2": {
+        "n": 14,
+        "mean": 0.20368904466788876,
+        "std": 0.00884307828683915
+      },
+      "3": {
+        "n": 10,
+        "mean": 0.20139163714160607,
+        "std": 0.00880172133613989
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  },
+  {
+    "group": "original_uniform_sweep_matched_subset",
+    "case": "bp_same_size_case_20",
+    "csv": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_20/bp_same_size_case_20.csv",
+    "xml": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_20/bp_same_size_case_20_resolved_input.xml",
+    "seeds": "/mnt/c/Users/MAEadmin/Desktop/Github Repos/mesoscale-local-roi-fe-model/simulation_outputs/sensitivity-mean-diameter-diff-4all-phases/bp_same_size_case_20/msp_mesh_files/seeds.txt",
+    "csv_sha256": "f67a5a4a02f6e18a4e9a6f5d204c348766fc564ec100bafea8f6fe761625ceea",
+    "xml_sha256": "75b7701ffa4bc1dd4bc329d46b5c8c6f649cccc471da1576bee5a05f3e495496",
+    "seeds_sha256": "96466b89802a4c314689d4c0146c7eaf3b0b4a96c153ccf1e6d9aeb19dbb41cf",
+    "family": "uniform",
+    "loc": 0.2,
+    "scale": 0.04000000000000001,
+    "theoretical_mean": 0.22000000000000003,
+    "theoretical_std": 0.011547005383792518,
+    "size_rng": "1000",
+    "position_rng": "omitted",
+    "stress_at_1pct_MPa": 532.714656740427,
+    "strain_endpoint": 0.009999999776482582,
+    "seed_count": 27,
+    "saved_mean": 0.2203204999889472,
+    "saved_std_population": 0.010830009238283726,
+    "saved_min": 0.20233696590460531,
+    "saved_max": 0.236982516611877,
+    "size_fingerprint": "8b4a6d1e52a43426b8311fe2860a47c93b543b0fd82aab815f61366c210a5062",
+    "position_fingerprint": "cd2809518926764366effef3ef15b616907ca28329ae50e1be0dd064ff1244e7",
+    "phases": {
+      "0": {
+        "n": 4,
+        "mean": 0.22655191198549637,
+        "std": 0.012787015112542105
+      },
+      "1": {
+        "n": 3,
+        "mean": 0.21060478653970974,
+        "std": 0.006199380135934359
+      },
+      "2": {
+        "n": 13,
+        "mean": 0.22111431630597816,
+        "std": 0.009318457721154224
+      },
+      "3": {
+        "n": 7,
+        "mean": 0.21944934002324912,
+        "std": 0.010800983242318674
+      }
+    },
+    "controls": {
+      "side_length": "1",
+      "E": "70000",
+      "nu": "0.33",
+      "displacement_yy": "0.01",
+      "plastic_stresses": "410, 470, 680, 710",
+      "mesh_min_angle": "25",
+      "mesh_max_edge_length": "0.0026"
+    },
+    "fractions": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ]
+  }
+]

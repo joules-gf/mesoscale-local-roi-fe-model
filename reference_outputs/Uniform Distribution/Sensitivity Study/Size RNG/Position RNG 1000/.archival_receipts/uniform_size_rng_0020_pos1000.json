@@ -1,0 +1,87 @@
+{
+  "case": "uniform_size_rng_0020_pos1000",
+  "completion_sha256": "59137862630fe9f1145bb53e26f38b29aebdf42313eeeff39137310001ebf73e",
+  "destination": "reference_outputs/Uniform Distribution/Sensitivity Study/Size RNG/Position RNG 1000/uniform_size_rng_0020_pos1000",
+  "files": {
+    "abaqus_files/abaqus.rpy": {
+      "sha256": "e7cd664d43354111bdfa744047ce666da0021e8ecc100716011a2d1c69f5a899",
+      "size": 1144
+    },
+    "abaqus_files/uniform_size_rng_0020_pos1000.com": {
+      "sha256": "1cc3c32c096cb8aa116ff2f20a84c3a9d8f347500db19c83aabfacac43f95a62",
+      "size": 3277
+    },
+    "abaqus_files/uniform_size_rng_0020_pos1000.dat": {
+      "sha256": "3e1f322766875863094a254b5146631b3bff46dd93e4e94fd7eaf30638dab3ae",
+      "size": 35534
+    },
+    "abaqus_files/uniform_size_rng_0020_pos1000.inp": {
+      "sha256": "b4034d10b886a0c60603f2171510be672c885ef5e7edb2206aac6cb4296bec5e",
+      "size": 5424178
+    },
+    "abaqus_files/uniform_size_rng_0020_pos1000.msg": {
+      "sha256": "ab6aec649cb8d9b13ffd285b01449ff74cad50988e31ccfa6b1d0208d5fac9e8",
+      "size": 209180
+    },
+    "abaqus_files/uniform_size_rng_0020_pos1000.odb": {
+      "sha256": "afd8594568b1969b13c5f3b76b92e1b654bb84aa03fc932eca328b53c76d088a",
+      "size": 584576184
+    },
+    "abaqus_files/uniform_size_rng_0020_pos1000.prt": {
+      "sha256": "122ca6bb2aa368c67c63e8c84aed2709dc33ae2ec9422413c91009f1fe3df1a7",
+      "size": 759503
+    },
+    "abaqus_files/uniform_size_rng_0020_pos1000.sta": {
+      "sha256": "5a0b504639e55c0afd2c4bc1fd2d6356dd651fa65e14ccb67aae3a77b45d8c04",
+      "size": 7175
+    },
+    "cycles_uniform_size_rng_0020_pos1000.png": {
+      "sha256": "c97774d793e7cc5f1f845fc0efbf7592b94bcc5d4a7021bedf0b1aa45e9c9cc7",
+      "size": 22758
+    },
+    "cyclic_stress_strain_uniform_size_rng_0020_pos1000.png": {
+      "sha256": "80f588dc464ca0e1a802a8a07ba8843e0d0e9570fe0f6c70391bb6f83e6ebe9b",
+      "size": 41227
+    },
+    "msp_mesh_files/polymesh.png": {
+      "sha256": "65cb060906f98fdef823eb4ad28534ef570e9522deaf9806d9edc77cd818cd98",
+      "size": 156636
+    },
+    "msp_mesh_files/polymesh.txt": {
+      "sha256": "a092a9a8fea1cde89863d9dd8926058927f96cb2001d34964fbc047a9e2c1864",
+      "size": 80269
+    },
+    "msp_mesh_files/seeds.png": {
+      "sha256": "d4a0176badc14a4bc739be7b6083a0d2d760ff4a23c34fdbc73ed758a6f34828",
+      "size": 167539
+    },
+    "msp_mesh_files/seeds.txt": {
+      "sha256": "45edf98fc7ec642097fadacfe155ee4767ee7198e32c5338e7b079a3b7a902dc",
+      "size": 103034
+    },
+    "msp_mesh_files/trimesh.inp": {
+      "sha256": "0ed9e7f18ead07894044d21fcd2c52207fe909ed35a10d864019cfb80f7dca49",
+      "size": 5418245
+    },
+    "msp_mesh_files/trimesh.png": {
+      "sha256": "67fb0a5917525c1e81462e406f4b2c54dc0cf9db4d770fd108f7a8c4ad8a8180",
+      "size": 447247
+    },
+    "stress_strain_uniform_size_rng_0020_pos1000.png": {
+      "sha256": "153acdbb71699cf3b9ce06eae827631cb123382a418f64aa2b0e0e6e59e1685f",
+      "size": 37598
+    },
+    "uniform_size_rng_0020_pos1000.csv": {
+      "sha256": "629cb2b5c3b73a3601919aab7d5b8b4a5a73de12db1b7b0af9585509da147624",
+      "size": 6737
+    },
+    "uniform_size_rng_0020_pos1000_resolved_input.xml": {
+      "sha256": "9d6045c5cc046abdc29158e2c26c7a239c6900a2df1aac9e3ec0d948c8cf613c",
+      "size": 2281
+    }
+  },
+  "input_sha256": "f60296e7f54ce47a4b02bf34b483f024b871b8675a64181d808e73df1fe92e1a",
+  "source": "simulation_outputs/uniform_size_rng_0020_pos1000",
+  "state": "complete",
+  "version": 1
+}

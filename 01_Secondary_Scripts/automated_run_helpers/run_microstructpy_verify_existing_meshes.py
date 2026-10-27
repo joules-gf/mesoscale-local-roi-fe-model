@@ -15,7 +15,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 MAIN_SCRIPTS = PROJECT_ROOT / "00_Main_Scripts"
-INPUT_DIR = PROJECT_ROOT / "simulation_inputs" / "Uniform Distribution" / "sensitivity-study-AA7075-T651" / "bp_same_lower_bound_diameter"
+INPUT_DIR = PROJECT_ROOT / "simulation_inputs" / "Uniform Distribution" / "sensitivity-study-AA7075-T651" / "bp_same_mean_diameter"
 OUTPUT_BASE = PROJECT_ROOT / "simulation_outputs" / "sensitivity-mean-diameter-diff-4all-phases"
 CASES = [
     "bp_same_size_case_08",

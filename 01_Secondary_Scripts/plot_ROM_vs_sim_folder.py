@@ -1,44 +1,7 @@
 import os
-import ntpath
 import csv
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
-
-
-MATERIAL_REFERENCE_CURVES_DIR = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-    '00_Main_Scripts',
-    'material_reference_curves'
-)
-
-REFERENCE_CURVES = {
-    'AA7075-T651 cyclic ROM': 'aa7075-T651_monotonic_ROM_cyclic_parameters.csv',
-    'AA2024-T351 cyclic ROM': 'aa2024-T351_monotonic_ROM_cyclic_parameters.csv',
-    'AA7075-T6 cyclic ROM': 'aa7075-T6_monotonic_ROM_cyclic_parameters.csv',
-    'AA7075-T651 cyclic experimental SvS': 'aa7075-T651_cyclic_experimental_SvS.csv',
-    'AA7075-T651 cyclic experimental FvD': 'aa7075-T651_cyclic_experimental_FvD.csv',
-}
-
-REFERENCE_CURVE_PATHS = {
-    ref_label: os.path.join(MATERIAL_REFERENCE_CURVES_DIR, file_name)
-    for ref_label, file_name in REFERENCE_CURVES.items()
-}
-
-
-def resolve_reference_curve(reference_csv_or_label):
-    """Return (reference_csv, ref_label) from either a reference label or CSV path."""
-    if reference_csv_or_label in REFERENCE_CURVE_PATHS:
-        return REFERENCE_CURVE_PATHS[reference_csv_or_label], reference_csv_or_label
-
-    reference_csv = reference_csv_or_label
-    reference_file = os.path.basename(os.path.normpath(reference_csv))
-    reference_file = ntpath.basename(reference_file)
-
-    for ref_label, file_name in REFERENCE_CURVES.items():
-        if reference_file == file_name:
-            return reference_csv, ref_label
-
-    return reference_csv, os.path.splitext(reference_file)[0]
 
 
 def load_csv(file_path, strain_col=0, stress_col=1):
@@ -94,8 +57,8 @@ def plot_folder_against_rom(
     rcParams['ytick.labelsize'] = tick_size
 
     # Load reference
-    reference_csv, ref_label = resolve_reference_curve(reference_csv)
     ref_strain, ref_stress = load_csv(reference_csv, strain_col=0, stress_col=1)
+    ref_label = 'AA7075-T651 cyclic ROM'
 
     if show_area:
         ref_area = compute_area(ref_strain, ref_stress)
@@ -167,9 +130,9 @@ def plot_folder_against_rom(
 
 if __name__ == '__main__':
   plot_folder_against_rom(
-      reference_csv='AA7075-T651 cyclic ROM',
-      results_folder=r"C:\Users\MAEadmin\Desktop\Github Repos\mesoscale-local-roi-fe-model\simulation_outputs\sensitivity-study\area-fraction",
-      fig_title="Sensitivity to Random Variation of Area Fraction",
+      reference_csv=r"C:\Users\MAEadmin\Desktop\Github Repos\mesoscale-local-roi-fe-model\00_Main_Scripts\material_reference_curves\aa7075-T651_monotonic_ROM_cyclic_parameters.csv",
+      results_folder=r"C:\Users\MAEadmin\Desktop\Github Repos\mesoscale-local-roi-fe-model\reference_outputs\Uniform Distribution\Sensitivity Study\lower-bound-diameter-equal-4all-phases\Simulations",
+      fig_title="Sensitivity to Lower Bound Diameter of all Phases",
       fig_size=(19, 10),
       label_size=32,
       title_size=32,
