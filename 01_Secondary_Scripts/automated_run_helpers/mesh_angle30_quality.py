@@ -12,7 +12,8 @@ STUDY=ROOT/'simulation_outputs'/'mesh_min_angle_30_comparison'
 REF=ROOT/'reference_outputs'/'Uniform Distribution'/'Sensitivity Study'/'mesh-min-angle-30-comparison'
 ORIGINAL=ROOT/'simulation_outputs'/'sensitivity-mean-diameter-diff-4all-phases'
 MIDPOINTS=['bp_same_size_case_07_08_mid_070um','bp_same_size_case_08_09_mid_080um','bp_same_size_case_15_16_mid_150um','bp_same_size_case_16_17_mid_160um']
-NEW_SOURCES={75:ORIGINAL/'bp_same_size_case_08',150:ROOT/'simulation_outputs'/MIDPOINTS[2],155:ORIGINAL/'bp_same_size_case_16',160:ROOT/'simulation_outputs'/MIDPOINTS[3]}
+MIDPOINT_ROOT=ROOT/'reference_outputs'/'Uniform Distribution'/'Sensitivity Study'/'lower-bound-diameter-equal-4all-phases'/'Simulations'
+NEW_SOURCES={75:ORIGINAL/'bp_same_size_case_08',150:MIDPOINT_ROOT/MIDPOINTS[2],155:ORIGINAL/'bp_same_size_case_16',160:MIDPOINT_ROOT/MIDPOINTS[3]}
 
 def sha(path):
     h=hashlib.sha256()
@@ -139,7 +140,7 @@ def audit_case(case_dir,group):
     return result
 
 def all_cases():
-    return [(ORIGINAL/f'bp_same_size_case_{i:02}','original') for i in range(1,21)]+[(ROOT/'simulation_outputs'/c,'midpoint') for c in MIDPOINTS]+[(STUDY/f'mesh_angle30_{d:03}um','angle30') for d in sorted(NEW_SOURCES)]
+    return [(ORIGINAL/f'bp_same_size_case_{i:02}','original') for i in range(1,21)]+[(MIDPOINT_ROOT/c,'midpoint') for c in MIDPOINTS]+[(STUDY/f'mesh_angle30_{d:03}um','angle30') for d in sorted(NEW_SOURCES)]
 
 def analyze(include_new=True):
     import numpy as np

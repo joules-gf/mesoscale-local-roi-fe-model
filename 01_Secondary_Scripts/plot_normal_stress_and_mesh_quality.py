@@ -16,6 +16,8 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from normal_result_paths import resolve_case_folder
 from plot_normal_mean_diameter_vs_stress_1pct import collect_rows, ROOT, BATCH
 sys.path.insert(0, str(ROOT / '01_Secondary_Scripts/automated_run_helpers'))
 from mesh_angle30_quality import parse_mesh, triangle_quality
@@ -69,7 +71,7 @@ def verify_metrics():
 
 def audit(row):
     case = row['case']
-    folder = ROOT / 'simulation_outputs' / case
+    folder = resolve_case_folder(ROOT, case)
     mesh = folder / 'abaqus_files' / (case+'.inp')
     fingerprint = sha(mesh)
     nodes, elements = parse_mesh(mesh)

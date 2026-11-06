@@ -16,3 +16,16 @@ Legacy plot titles/axes and historical resolved-input names have NOT been
 regenerated or rewritten; figures calling these lower-bound values "mean"
 need a separate labeling correction before presentation. Do not interpret
 seed input diameter statistics as final tessellated-region measurements.
+
+## Additional archived uniform cases
+
+`Simulations/` contains the 20 original cases plus four midpoint cases and two professor-check reruns:
+
+- `bp_same_size_case_07_08_mid_070um`
+- `bp_same_size_case_08_09_mid_080um`
+- `bp_same_size_case_15_16_mid_150um`
+- `bp_same_size_case_16_17_mid_160um`
+- `bp_same_size_case_08_rerun_prof_check`
+- `bp_same_size_case_16_rerun_prof_check`
+
+The six additional folders were moved in full from `simulation_outputs/`, including ignored solver databases. All 99 files were SHA-256 verified before and after moving; scientific file bytes and historical provenance paths were unchanged. Existing aggregate figures were not regenerated. The all-cases plotter still selects 20 originals plus four midpoint cases, not the two reruns.

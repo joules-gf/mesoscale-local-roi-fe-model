@@ -10,6 +10,11 @@ import csv
 import hashlib
 import json
 import math
+import sys
+
+# Support direct execution and importlib standalone loading.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from normal_result_paths import resolve_case_folder
 import xml.etree.ElementTree as ET
 
 import matplotlib
@@ -52,7 +57,7 @@ def collect_rows(manifest_path=None, expected_cases=None):
     rows = []
     for entry in manifest:
         case = entry['case']
-        folder = ROOT / 'simulation_outputs' / case
+        folder = resolve_case_folder(ROOT, case)
         xml = folder / (case + '_resolved_input.xml')
         curve = folder / (case + '.csv')
         marker = json.loads((manifest_path.parent / (case + '.completed.json')).read_text())

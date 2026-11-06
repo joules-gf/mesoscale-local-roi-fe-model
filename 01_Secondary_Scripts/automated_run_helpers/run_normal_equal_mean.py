@@ -12,6 +12,10 @@ import sys
 import time
 import xml.etree.ElementTree as ET
 
+# Support direct execution and importlib standalone loading.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from normal_result_paths import resolve_case_folder
+
 ROOT = Path(__file__).resolve().parents[2]
 INPUTS = ROOT / 'simulation_inputs/Normal Distribution/bp-equal-mean-4all-phases'
 BATCH = ROOT / 'simulation_outputs/normal_equal_mean_batch'
@@ -83,7 +87,7 @@ def run_child(path):
 
 
 def artifacts_ok(case):
-    dest = ROOT / 'simulation_outputs' / case
+    dest = resolve_case_folder(ROOT, case)
     sta = dest / 'abaqus_files' / (case + '.sta')
     curve = dest / (case + '.csv')
     if not sta.is_file() or 'THE ANALYSIS HAS COMPLETED SUCCESSFULLY' not in sta.read_text(errors='replace').upper() or not curve.is_file():
@@ -108,7 +112,7 @@ def artifacts_ok(case):
 def preflight(rows):
     for row in rows:
         marker = BATCH / (row['case'] + '.completed.json')
-        dest = ROOT / 'simulation_outputs' / row['case']
+        dest = resolve_case_folder(ROOT, row['case'])
         if marker.exists():
             saved = json.loads(marker.read_text())
             if saved.get('input_sha256') != row['input_sha256'] or saved.get('returncode') != 0 or not artifacts_ok(row['case']):

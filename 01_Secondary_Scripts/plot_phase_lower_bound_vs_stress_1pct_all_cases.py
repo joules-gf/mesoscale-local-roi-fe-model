@@ -59,7 +59,7 @@ def read_stress(path, target=0.01):
 
 def collect_rows():
     cases = [(STUDY / 'Simulations' / f'bp_same_size_case_{i:02d}', 'original') for i in range(1, 21)]
-    cases.extend((ROOT / 'simulation_outputs' / case, 'midpoint') for case in MIDPOINTS)
+    cases.extend((STUDY / 'Simulations' / case, 'midpoint') for case in MIDPOINTS)
     rows = []
     for folder, group in cases:
         case = folder.name
