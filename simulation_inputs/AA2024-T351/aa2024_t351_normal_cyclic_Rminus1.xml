@@ -1,0 +1,13 @@
+<input>
+    <include> aa2024_t351_baseline_parameters.xml </include>
+    <abaqus>
+        <cyclic_parameters>
+            <rRatio_strain> -1 </rRatio_strain>
+            <frequency_hz> 5 </frequency_hz>
+            <start_min> False </start_min>
+            <time_increment_s> 0.01 </time_increment_s>
+            <plot_before> False </plot_before>
+        </cyclic_parameters>
+        <num_increments_step> 250 </num_increments_step>
+    </abaqus>
+</input>

@@ -1,0 +1,10 @@
+{
+  "odb_path": "REPLACE_WITH_WORKING_COPY.odb",
+  "instance_name": "I-PART-1",
+  "frames": [],
+  "radius": 0.1,
+  "count_per_side": 9,
+  "output_folder": "../roi_reports",
+  "save_clean_backup": true,
+  "reset_from_clean_backup": true
+}

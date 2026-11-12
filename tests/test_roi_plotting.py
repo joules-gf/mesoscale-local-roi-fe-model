@@ -24,6 +24,22 @@ class RoiPlottingTests(unittest.TestCase):
     def setUp(self):
         self.module = load_module()
 
+    def test_reads_exact_global_extractor_csv_layout(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            csv_path = Path(tmp) / "case.csv"
+            csv_path.write_text(
+                "ODB file name: case\n"
+                "Step Time,U_Y,Total RF Y,Bottom RF Node Count,Upper U Node Count\n"
+                "0,0,0,2,3\n"
+                "0.85,0.01,523,2,3\n"
+            )
+            frame = self.module.read_global_cycle_csv(csv_path)
+            self.assertEqual(len(frame), 2)
+            self.assertEqual(list(frame.columns)[:3], ["Step Time", "U_Y", "Total RF Y"])
+            context = self.module.frame_context_from_cycle_csv(csv_path, step_time=0.85)
+            self.assertAlmostEqual(context.global_stress, 523.0)
+            self.assertAlmostEqual(context.global_strain, 0.01)
+
     def test_format_roi_label_puts_side_first_and_uses_all_caps_roi(self):
         self.assertEqual(self.module.format_roi_label("roi_left_01"), "Left ROI 01")
         self.assertEqual(self.module.format_roi_label("roi_right_09"), "Right ROI 09")

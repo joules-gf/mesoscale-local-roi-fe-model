@@ -1,7 +1,0 @@
-          Input (Avg.)    Output          Input (Avg.)    Output         
-# Name    Relative Volume Relative Volume Volume Fraction Volume Fraction
-- ------- --------------- --------------- --------------- ---------------
-0 Phase-0        0.100000        0.100196        0.100000        0.100196
-1 Phase-1        0.100000        0.092305        0.100000        0.092305
-2 Phase-2        0.400000        0.399531        0.400000        0.399531
-3 Phase-3        0.400000        0.407968        0.400000        0.407968

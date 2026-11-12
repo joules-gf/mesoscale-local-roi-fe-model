@@ -11,6 +11,9 @@ The plotting code is intentionally direct and thesis-script friendly:
 from __future__ import annotations
 
 import argparse
+import hashlib
+import importlib.util
+import json
 import math
 import re
 from dataclasses import dataclass
@@ -118,7 +121,9 @@ def ordered_roi_names(roi_names, mode: str = "grouped_by_side") -> list[str]:
 def read_global_cycle_csv(cycle_csv: str | Path) -> pd.DataFrame:
     """Read the global cycle CSV written by getForceDisp.py."""
     cycle_path = Path(cycle_csv)
-    return pd.read_csv(cycle_path, skiprows=2).dropna(how="all")
+    # The extractor writes one metadata row, then the header. Pandas skips
+    # blank lines automatically, including those in older exported CSVs.
+    return pd.read_csv(cycle_path, skiprows=1).dropna(how="all")
 
 
 def frame_context_from_cycle_csv(
@@ -166,12 +171,12 @@ def global_stress_intensity_factor(global_stress_mpa: float, characteristic_leng
     return SIF_SHAPE_FACTOR * float(global_stress_mpa) * math.sqrt(math.pi * characteristic_length_m)
 
 
-def phase_plot_groups(combine_equal_yield_phases: bool = True) -> list[tuple[str, list[str], str]]:
+def phase_plot_groups(combine_equal_yield_phases: bool = False) -> list[tuple[str, list[str], str]]:
     """Return phase groups for stacked volume-fraction plots.
 
-    Phases 2 and 3 currently share the same yield stress in this model, so the
-    default presentation combines them.  Passing ``False`` keeps all four phases
-    separate if future model definitions assign different yield behavior.
+    Phases remain separate by default. Set the option explicitly to combine
+    phases 2 and 3 for a case where that presentation is justified; the function
+    does not inspect material properties or verify equal yield stresses.
     """
     return COMBINED_EQUAL_YIELD_PHASE_GROUPS if combine_equal_yield_phases else SEPARATE_PHASE_GROUPS
 
@@ -276,9 +281,16 @@ def plot_full_response(
     output_path: str | Path,
     mode: str,
     shaded_bands: bool = True,
-    combine_equal_yield_phases: bool = True,
+    combine_equal_yield_phases: bool = False,
+    *,
+    pe22_log: bool = False,
+    material_label: str | None = None,
 ) -> Path:
-    """Create the multi-panel full technical ROI response plot."""
+    """Create the multi-panel response; PE22 requires explicit log-display mode."""
+    if not pe22_log:
+        _reject_pe22_legacy(frame_data)
+    elif mode != "grouped_by_side" or combine_equal_yield_phases:
+        raise ValueError("PE22 log display requires grouped sides and four separate phases")
     order = ordered_roi_names(frame_data["roi_name"], mode=mode)
     data = frame_data.set_index("roi_name").loc[order]
     x = np.arange(len(order))
@@ -314,11 +326,20 @@ def plot_full_response(
             stress_ax.set_xlim(-0.5, len(side_order) - 0.5)
 
             plastic_ax = axes[1, column_index]
-            plastic_values = side_data["average_plastic_strain"].clip(lower=1.0e-12)
+            if pe22_log:
+                # These are already signed spatial means: abs(mean(PE22)), never
+                # mean(abs(PE22)). Exact zeros are not positive log-axis data.
+                magnitudes = side_data["average_plastic_strain"].abs().to_numpy(dtype=float)
+                plastic_values = np.where(magnitudes == 0., np.nan, magnitudes)
+            else:
+                plastic_values = side_data["average_plastic_strain"].clip(lower=1.0e-12)
             plastic_ax.plot(side_x, plastic_values, marker="s", color=PLASTIC_COLOR, linewidth=2.0, label="ROI average plastic strain")
-            if context.global_plastic_strain > 0.0:
-                plastic_ax.axhline(context.global_plastic_strain, color=PLASTIC_COLOR, linestyle="--", linewidth=1.4, label="Global plastic strain estimate")
+            reference = abs(context.global_plastic_strain) if pe22_log else context.global_plastic_strain
+            if reference > 0.0:
+                plastic_ax.axhline(reference, color=PLASTIC_COLOR, linestyle="--", linewidth=1.4, label="Whole-model PE22" if pe22_log else "Global plastic strain estimate")
             plastic_ax.set_yscale("log")
+            if pe22_log:
+                _pe22_zero_band(plastic_ax, side_x[magnitudes == 0.], reference == 0.)
             plastic_ax.set_title(f"{side_title} plastic strain")
             plastic_ax.grid(True, axis="y", alpha=0.3, which="both")
             plastic_ax.set_xticks(side_x)
@@ -344,6 +365,12 @@ def plot_full_response(
         axes[0, 1].legend(loc="best")
         axes[1, 1].legend(loc="best")
         axes[2, 1].legend(ncol=3, loc="upper center", bbox_to_anchor=(0.5, -0.42))
+        if pe22_log:
+            axes[0, 0].set_ylabel("Stress (S22), MPa")
+            axes[1, 0].set_ylabel("Plastic strain (PE22)\n(log scale)")
+            for ax in axes[2]:
+                ax.set_title(ax.get_title().replace("volume fractions", "area fractions"))
+            _add_material_title(fig, material_label)
         fig.tight_layout(rect=[0, 0.04, 1, 0.955])
 
         output = Path(output_path)
@@ -401,7 +428,10 @@ def plot_sif_volume_fraction_comparison(
     output_path: str | Path,
     mode: str,
     shaded_bands: bool = True,
-    combine_equal_yield_phases: bool = True,
+    combine_equal_yield_phases: bool = False,
+    *,
+    area_labels: bool = False,
+    material_label: str | None = None,
 ) -> Path:
     """Create a two-panel SIF and local volume-fraction plot for all ROIs."""
     order = ordered_roi_names(frame_data["roi_name"], mode=mode)
@@ -449,6 +479,12 @@ def plot_sif_volume_fraction_comparison(
         axes[1, 0].set_ylabel("Volume fraction (%)")
         axes[0, 1].legend(loc="best")
         axes[1, 1].legend(ncol=3, loc="upper center", bbox_to_anchor=(0.5, -0.42))
+        if area_labels:
+            axes[1, 0].set_ylabel("Area fraction (%)")
+            for ax in axes[1]:
+                ax.set_title(ax.get_title().replace("volume fractions", "area fractions"))
+            fig._suptitle.set_text(fig._suptitle.get_text().replace("volume fractions", "area fractions"))
+        _add_material_title(fig, material_label)
         fig.tight_layout(rect=[0, 0.04, 1, 0.955])
 
         output = Path(output_path)
@@ -492,7 +528,7 @@ def plot_representative_comparison(
     frame_data: pd.DataFrame,
     context: FrameContext,
     output_path: str | Path,
-    combine_equal_yield_phases: bool = True,
+    combine_equal_yield_phases: bool = False,
 ) -> Path:
     """Create the two-ROI explanatory plot with normalized response and phases."""
     selection = select_representative_rois(frame_data, context.global_stress, context.global_plastic_strain)
@@ -604,14 +640,157 @@ def plot_roi_location_map(
     return output
 
 
+def _reject_pe22_legacy(data: pd.DataFrame) -> None:
+    if "plastic_strain_source" in data and data["plastic_strain_source"].astype(str).str.upper().eq("PE22").any():
+        raise ValueError("PE22 requires explicit make_pe22_log_plots; legacy clipping is not valid")
+
+
+def _add_material_title(fig, material_label: str | None) -> None:
+    if material_label:
+        fig._suptitle.set_text(f"{material_label}\n{fig._suptitle.get_text()}")
+
+
+def _pe22_zero_band(ax, zero_x, domain_zero: bool) -> None:
+    """Show true zeros in a separate axes-coordinate strip, never log data y."""
+    if not len(zero_x) and not domain_zero:
+        return
+    transform = ax.get_xaxis_transform()
+    ax.add_patch(plt.Rectangle((0., -.19), 1., .165, transform=ax.transAxes,
+                               facecolor="#F4F6F7", edgecolor="none", clip_on=False))
+    if len(zero_x):
+        line, = ax.plot(zero_x, np.full(len(zero_x), -.10), transform=transform,
+                        linestyle="None", marker="o", markerfacecolor="none",
+                        color=PLASTIC_COLOR, clip_on=False, label="0: true zero (off log axis)")
+        line.set_gid("pe22-zero-band")
+        for x in zero_x:
+            ax.text(x, -.14, "0", transform=transform, ha="center", va="top",
+                    fontsize=ROI_SMALL_ANNOTATION_FONTSIZE, clip_on=False)
+    if domain_zero:
+        ax.text(.98, -.10, "Whole-model PE22 = 0 (off log axis)", transform=ax.transAxes,
+                ha="right", va="center", fontsize=ROI_SMALL_ANNOTATION_FONTSIZE, clip_on=False)
+
+
+def _require_finite(data: pd.DataFrame, columns, source: str) -> None:
+    if data.empty or not set(columns).issubset(data.columns):
+        raise ValueError(f"{source}: missing rows or required columns {list(columns)}")
+    try:
+        values = data[list(columns)].to_numpy(dtype=float)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"{source}: nonnumeric data") from exc
+    if not np.isfinite(values).all():
+        raise ValueError(f"{source}: nonfinite data")
+
+
+def make_pe22_log_plots(
+    roi_summary_csv: str | Path,
+    cycle_csv: str | Path,
+    domain_pe22_csv: str | Path,
+    area_fractions_csv: str | Path,
+    output_root: str | Path,
+    material_label: str | None = None,
+) -> list[Path]:
+    """Plot signed-mean PE22 magnitudes on ordinary log axes, with an audit record.
+
+    Inputs are read-only. PE22 values must already be signed spatial averages;
+    this display-only abs(mean(PE22)) transformation is NOT mean(abs(PE22)).
+    The domain CSV must come from the direct WHOLEMODEL PE22 extractor, not
+    an elastic-subtraction estimate. Validate every frame before any output.
+    """
+    sources = {"roi_summary": Path(roi_summary_csv), "cycle": Path(cycle_csv),
+               "domain_pe22": Path(domain_pe22_csv), "area_fractions": Path(area_fractions_csv)}
+    hashes = {key: {"path": str(path.resolve()), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+              for key, path in sources.items()}
+    summary = pd.read_csv(roi_summary_csv, float_precision="round_trip")
+    domain = pd.read_csv(domain_pe22_csv, float_precision="round_trip")
+    cycle = read_global_cycle_csv(cycle_csv)
+    _require_finite(summary, ["frame_number", "step_time", "average_stress_mpa",
+                            "average_plastic_strain", "stress_intensity_factor", *PHASE_COLUMNS], "ROI summary")
+    if "plastic_strain_source" not in summary or not summary["plastic_strain_source"].eq("PE22").all():
+        raise ValueError("ROI summary requires plastic_strain_source=PE22 on every row")
+    if "roi_name" not in summary:
+        raise ValueError("ROI summary requires roi_name")
+    for name in summary["roi_name"]:
+        parse_roi_name(name)
+    _require_finite(domain, ["frame_number", "step_time", "average_plastic_strain"], "Domain PE22")
+    _require_finite(cycle, ["Step Time", "U_Y", "Total RF Y"], "Global cycle")
+    for data, name in [(summary, "ROI"), (domain, "Domain")]:
+        numbers = data["frame_number"].to_numpy(dtype=float)
+        if (numbers < 0).any() or (numbers != np.floor(numbers)).any():
+            raise ValueError(f"{name}: frame numbers must be nonnegative integers")
+    if summary.duplicated(["roi_name", "frame_number"]).any() or domain.duplicated("frame_number").any():
+        raise ValueError("Duplicate ROI/frame or domain frame")
+    if cycle.duplicated("Step Time").any():
+        raise ValueError("Duplicate global cycle times")
+    if set(summary["frame_number"]) != set(domain["frame_number"]):
+        raise ValueError("Domain and ROI frame numbers must match")
+    # Load by absolute sibling path: isolated spec loaders need no sys.path edits.
+    spec = importlib.util.spec_from_file_location("_pe22_area_validation", Path(__file__).with_name("roi_postprocessing.py"))
+    postprocessing = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(postprocessing)
+    area_data = pd.read_csv(area_fractions_csv)
+    _require_finite(area_data, ["represented_area", "expected_area", "coverage_error"], "Area coverage")
+    areas = postprocessing.load_area_fractions(area_fractions_csv, required_roi_names=summary["roi_name"].unique())
+    for _, row in summary.iterrows():
+        expected = [areas[row["roi_name"]][phase] for phase in PHASE_COLUMNS]
+        if not np.allclose(row[PHASE_COLUMNS].to_numpy(dtype=float), expected, atol=1e-6, rtol=0.):
+            raise ValueError(f"ROI phase vector does not match area fractions: {row['roi_name']}")
+    contexts = []
+    roi_names = set(summary["roi_name"])
+    for frame_number, frame_data in summary.groupby("frame_number", sort=True):
+        if set(frame_data["roi_name"]) != roi_names:
+            raise ValueError("Every frame must contain the same ROI set")
+        if {parse_roi_name(name)[0] for name in frame_data["roi_name"]} != {"left", "right"}:
+            raise ValueError("Grouped PE22 plots require both ROI sides")
+        reference = domain.loc[domain["frame_number"] == frame_number].iloc[0]
+        time = float(reference["step_time"])
+        if not np.allclose(frame_data["step_time"].to_numpy(dtype=float), time, atol=1e-6, rtol=0.):
+            raise ValueError(f"ROI/domain step_time mismatch at frame {frame_number}")
+        matches = cycle.loc[np.isclose(cycle["Step Time"].to_numpy(dtype=float), time, atol=1e-6, rtol=0.)]
+        if len(matches) != 1:
+            raise ValueError(f"Expected one matching global cycle time at frame {frame_number}")
+        global_row = matches.iloc[0]
+        if not np.allclose(frame_data["step_time"].to_numpy(dtype=float), float(global_row["Step Time"]), atol=1e-6, rtol=0.):
+            raise ValueError(f"ROI/global step_time mismatch at frame {frame_number}")
+        if "frame_number" in cycle and float(global_row["frame_number"]) != frame_number:
+            raise ValueError("Global cycle frame_number mismatch")
+        contexts.append((frame_data, FrameContext(int(frame_number), time, float(global_row["U_Y"]),
+                         float(global_row["Total RF Y"]), float(reference["average_plastic_strain"]))))
+    output_root = Path(output_root)
+    created = []
+    for frame_data, context in contexts:
+        prefix = f"frame{context.frame_number}"
+        created.append(plot_full_response(frame_data, context,
+            output_root / "full_response" / f"{prefix}_grouped_by_side.png",
+            mode="grouped_by_side", pe22_log=True, material_label=material_label))
+        created.append(plot_sif_volume_fraction_comparison(frame_data, context,
+            output_root / "sif_area_fractions" / f"{prefix}_sif_grouped_by_side.png",
+            mode="grouped_by_side", area_labels=True, material_label=material_label))
+    roi_values = [{"roi_name": row["roi_name"], "frame_number": int(row["frame_number"]),
+                   "raw_signed_pe22": float(row["average_plastic_strain"]),
+                   "display_pe22": abs(float(row["average_plastic_strain"]))} for _, row in summary.iterrows()]
+    record = {"scale": "log", "material_label": material_label,
+              "display_policy": "Display-only abs(mean(PE22)), not mean(abs(PE22)); signed raw CSVs unchanged. No positive floor; exact zeros in separate below-axis band.",
+              "stress_and_sif": "signed, unchanged", "phase_fractions": "four separate phases, validated area fractions, unchanged",
+              "sources": hashes, "roi_values": roi_values,
+              "domain_values": [{"frame_number": c.frame_number, "step_time": c.step_time,
+                                 "raw_signed_pe22": c.global_plastic_strain, "display_pe22": abs(c.global_plastic_strain)} for _, c in contexts],
+              "zero_locations": [row for row in roi_values if row["raw_signed_pe22"] == 0.],
+              "domain_zero_frames": [c.frame_number for _, c in contexts if c.global_plastic_strain == 0.],
+              "outputs": [str(path.relative_to(output_root)) for p in created for path in (p, p.with_suffix('.svg'))]}
+    output_root.mkdir(parents=True, exist_ok=True)
+    (output_root / "plot_generation.json").write_text(json.dumps(record, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    return created
+
+
 def make_all_roi_plots(
     roi_summary_csv: str | Path,
     cycle_csv: str | Path,
     output_root: str | Path,
-    combine_equal_yield_phases: bool = True,
+    combine_equal_yield_phases: bool = False,
 ) -> list[Path]:
     """Generate all requested ROI plot families for every frame in the summary."""
     summary = pd.read_csv(roi_summary_csv)
+    _reject_pe22_legacy(summary)
     output_root = Path(output_root)
     created: list[Path] = []
 
@@ -673,10 +852,16 @@ def main() -> None:
     parser.add_argument("--roi-summary", required=True, help="Path to roi_summary.csv")
     parser.add_argument("--cycle-csv", required=True, help="Path to global cycle CSV, e.g. strainRratio-1.csv")
     parser.add_argument("--output-root", required=True, help="Folder where plot families will be saved")
-    parser.add_argument(
+    grouping = parser.add_mutually_exclusive_group()
+    grouping.add_argument(
+        "--combine-equal-yield-phases",
+        action="store_true",
+        help="Explicitly combine phases 2 and 3; verify this is appropriate for your case.",
+    )
+    grouping.add_argument(
         "--separate-phases",
         action="store_true",
-        help="Plot phases 2 and 3 separately instead of combining them as equal-yield phases.",
+        help="Keep every phase separate (the default; retained for existing commands).",
     )
     args = parser.parse_args()
 
@@ -684,7 +869,7 @@ def main() -> None:
         args.roi_summary,
         args.cycle_csv,
         args.output_root,
-        combine_equal_yield_phases=not args.separate_phases,
+        combine_equal_yield_phases=args.combine_equal_yield_phases,
     )
     print("Created ROI plots:")
     for path in created:

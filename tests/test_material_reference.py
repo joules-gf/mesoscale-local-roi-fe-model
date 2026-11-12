@@ -28,7 +28,7 @@ class MaterialReferenceTests(unittest.TestCase):
         self.assertEqual(ref["H_prime_MPa"], 662)
         self.assertEqual(ref["n_prime"], 0.070)
         self.assertEqual(ref["stress_max_MPa"], 449)
-        self.assertTrue(ref["reference_csv"].endswith(
+        self.assertTrue(ref["reference_csv"].replace("\\", "/").endswith(
             "00_Main_Scripts/material_reference_curves/aa2024-T351_monotonic_ROM_1pct_strain.csv"
         ))
 
@@ -100,7 +100,7 @@ class MaterialReferenceTests(unittest.TestCase):
 
             self.assertEqual(abaqus.findtext("reference_material").strip(), "AA2024-T351")
             self.assertEqual(abaqus.findtext("E").strip(), "73100")
-            self.assertTrue(abaqus.findtext("reference_curve_csv").strip().endswith(
+            self.assertTrue(abaqus.findtext("reference_curve_csv").strip().replace("\\", "/").endswith(
                 "00_Main_Scripts/material_reference_curves/aa2024-T351_monotonic_ROM_1pct_strain.csv"
             ))
             self.assertEqual(

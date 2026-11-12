@@ -19,16 +19,30 @@ run an older Python interpreter.  Keep the script readable and conservative.
 
 from __future__ import print_function
 
+import csv
 import json
 import math
 import os
 import shutil
+import sys
+
+
+def abaqus_native_string(value):
+    """Convert JSON text to the native string required by Abaqus Python 2 APIs.
+
+    Preserve existing byte strings; encode unicode with the filesystem encoding
+    (mbcs on Windows), not Python 2's implicit ASCII conversion. Python 3 APIs
+    continue to receive text strings.
+    """
+    if isinstance(value, str):
+        return str(value)
+    return value.encode(sys.getfilesystemencoding() or "utf-8")
 
 
 DEFAULT_INSTANCE_NAME = "DOMAIN-1"
 DEFAULT_REPORT_VARIABLES = (
-    ("E", "E22"),
     ("S", "S22"),
+    ("PE", "PE22"),
 )
 
 
@@ -121,12 +135,13 @@ def infer_domain_size_from_instance(instance):
 
 def choose_instance(odb, preferred_name=DEFAULT_INSTANCE_NAME):
     """Return the preferred instance, or the only available instance as fallback."""
+    preferred_name = abaqus_native_string(preferred_name)
     instances = odb.rootAssembly.instances
     if preferred_name in instances.keys():
         return preferred_name, instances[preferred_name]
     names = list(instances.keys())
     if len(names) == 1:
-        return names[0], instances[names[0]]
+        return abaqus_native_string(names[0]), instances[names[0]]
     raise KeyError("Could not find instance %s. Available instances: %s" % (preferred_name, names))
 
 
@@ -196,7 +211,7 @@ def resolve_element_set_name(assembly, requested_name):
     return None
 
 def export_roi_field_reports(odb, roi_specs, frames, output_folder=".", set_name_by_roi=None):
-    """Export E22/S22 field reports for each ROI at the selected frames."""
+    """Export S22/PE22 field reports for each ROI at the selected frames."""
     import visualization
     from abaqus import session
     from abaqusConstants import COMMA_SEPARATED_VALUES, COMPONENT, INTEGRATION_POINT, OFF, SPECIFY
@@ -235,7 +250,7 @@ def export_roi_field_reports(odb, roi_specs, frames, output_folder=".", set_name
             viewport.odbDisplay.setValues(visibleDisplayGroups=(display_group,))
             report_name = os.path.join(output_folder, "%s_frame%d.csv" % (roi.name, int(frame_number)))
             session.writeFieldReport(
-                fileName=str(report_name),
+                fileName=abaqus_native_string(report_name),
                 append=OFF,
                 sortItem="Element Label",
                 odb=odb,
@@ -245,6 +260,87 @@ def export_roi_field_reports(odb, roi_specs, frames, output_folder=".", set_name
                 variable=variables,
                 stepFrame=SPECIFY,
             )
+
+def export_domain_pe22_summary(odb, frames, output_folder, instance_name="I-PART-1"):
+    """Write signed, unweighted CPS3 PE22 integration-point statistics.
+
+    Use precisely the first-step frame indices used by the ROI reports. No
+    elastic subtraction, clipping, absolute value or area weighting is applied.
+    Reference-node-only instances are excluded; multiple meshed instances fail
+    rather than silently changing the meaning of the whole-model mean.
+    """
+    from abaqusConstants import INTEGRATION_POINT
+
+    instances = odb.rootAssembly.instances
+    model_names = [name for name in instances.keys() if len(instances[name].elements)]
+    if len(model_names) != 1:
+        raise ValueError("Domain PE22 requires a single meshed model instance: %s" % model_names)
+    chosen_name, instance = choose_instance(odb, instance_name)
+    if chosen_name != model_names[0]:
+        raise ValueError("Selected PE22 instance must be the one meshed model instance.")
+    elements = instance.elements
+    if any(element.type != "CPS3" for element in elements):
+        raise ValueError("Domain PE22 summary requires CPS3 elements (one integration point each).")
+    expected_labels = set(element.label for element in elements)
+    step_names = list(odb.steps.keys())
+    if not step_names:
+        raise ValueError("ODB has no first step for PE22 summary.")
+    step = odb.steps[step_names[0]]
+    if not frames:
+        raise ValueError("Domain PE22 requires selected frame indices.")
+    rows = []
+    for frame_number in frames:
+        index = int(frame_number)
+        if index != frame_number or index < 0 or index >= len(step.frames):
+            raise ValueError("Invalid first-step PE22 frame index: %s" % frame_number)
+        frame = step.frames[index]
+        if "PE" not in frame.fieldOutputs.keys():
+            raise ValueError("Frame %d has no PE field; direct PE22 is required." % index)
+        pe_field = frame.fieldOutputs["PE"]
+        if "PE22" not in pe_field.componentLabels:
+            raise ValueError("Frame %d PE component labels do not contain PE22." % index)
+        scalar = pe_field.getSubset(region=instance).getScalarField(componentLabel="PE22")
+        values = []
+        labels = set()
+        for point in scalar.values:
+            if point.instance.name != chosen_name or point.position != INTEGRATION_POINT:
+                raise ValueError("PE22 point is outside the selected instance/integration points.")
+            if point.elementLabel not in expected_labels or point.elementLabel in labels or point.integrationPoint != 1:
+                raise ValueError("PE22 must contain exactly one integration point per CPS3 element.")
+            value = float(point.data)
+            if math.isnan(value) or math.isinf(value):
+                raise ValueError("Nonfinite PE22 at frame %d element %d." % (index, point.elementLabel))
+            labels.add(point.elementLabel)
+            values.append(value)
+        if labels != expected_labels or not values:
+            raise ValueError("Missing PE22 integration points in selected model instance.")
+        step_time = float(frame.frameValue)
+        if math.isnan(step_time) or math.isinf(step_time):
+            raise ValueError("Nonfinite PE22 frame time.")
+        # CAE may shadow bare sum with a kernel numeric function that rejects
+        # generators. Count signs without invoking that injected function.
+        rows.append((index, step_time, chosen_name, math.fsum(values) / len(values),
+                     min(values), max(values), len([value for value in values if value < 0.0]),
+                     len([value for value in values if value == 0.0]),
+                     len([value for value in values if value > 0.0]), len(values)))
+    if not os.path.isdir(output_folder):
+        os.makedirs(output_folder)
+    output_path = os.path.join(output_folder, "domain_pe22_summary.csv")
+    # Python 2's csv writer needs a binary stream on Windows; Python 3 needs
+    # newline='' to avoid doubled line endings.
+    if sys.version_info[0] < 3:
+        handle = open(output_path, "wb")
+    else:
+        handle = open(output_path, "w", newline="")
+    try:
+        writer = csv.writer(handle)
+        writer.writerow(("frame_number", "step_time", "instance_name", "average_plastic_strain",
+                         "min_pe22", "max_pe22", "negative_count", "zero_count", "positive_count", "point_count"))
+        writer.writerows(rows)
+    finally:
+        handle.close()
+    return output_path
+
 
 def load_config(config_path="roi_report_config.json"):
     """Load optional JSON config from the Abaqus working directory."""
@@ -256,11 +352,11 @@ def load_config(config_path="roi_report_config.json"):
 
 def find_odb_file(config):
     if config.get("odb_path"):
-        return os.path.abspath(config["odb_path"])
+        return abaqus_native_string(os.path.abspath(config["odb_path"]))
     odb_files = sorted(name for name in os.listdir(os.getcwd()) if name.lower().endswith(".odb"))
     if not odb_files:
         raise IOError("No ODB file found in the Abaqus working directory.")
-    return os.path.abspath(odb_files[0])
+    return abaqus_native_string(os.path.abspath(odb_files[0]))
 
 
 def clean_backup_path_for_odb(odb_path):
@@ -291,9 +387,15 @@ def save_clean_odb_backup_if_missing(odb_path, config):
 
 def main():
     """Abaqus noGUI entry point."""
+    config = load_config()
+    # Reject missing/malformed frame selections before restoring or opening an
+    # ODB. Frame bounds still need to be checked against the chosen database.
+    frames = [int(frame) for frame in config.get("frames", [])]
+    if not frames:
+        raise ValueError("roi_report_config.json must provide a non-empty 'frames' list.")
+
     from abaqus import session
 
-    config = load_config()
     odb_path = find_odb_file(config)
 
     # This is the clean replacement for the old ``_current`` suffix idea:
@@ -324,9 +426,6 @@ def main():
         x_min=float(x_min),
         y_min=float(y_min),
     )
-    frames = [int(frame) for frame in config.get("frames", [])]
-    if not frames:
-        raise ValueError("roi_report_config.json must provide a non-empty 'frames' list.")
 
     # Verify the ODB is clean before saving the backup.  If ROI sets already
     # exist and no clean backup is available, Abaqus cannot delete them; rerun
@@ -336,9 +435,10 @@ def main():
     save_clean_odb_backup_if_missing(odb_path, config)
 
     odb = session.openOdb(name=odb_path, readOnly=False)
-    output_folder = config.get("output_folder", "../roi_reports")
+    output_folder = config.get("output_folder", "../roi_reports_pe22")
     set_name_by_roi = create_roi_sets(odb, roi_specs, instance_name=instance_name)
     export_roi_field_reports(odb, roi_specs, frames, output_folder=output_folder, set_name_by_roi=set_name_by_roi)
+    export_domain_pe22_summary(odb, frames, output_folder, instance_name=instance_name)
     odb.close()
 
 

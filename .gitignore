@@ -1,23 +1,79 @@
-# Python
+# Essential-workflow allowlist; excluded research files stay local.
+/*
+!/.gitignore
+!/README.md
+!/requirements.txt
+!/00_Main_Scripts/
+/00_Main_Scripts/*
+!/00_Main_Scripts/abaqus_input_generation_v02.py
+!/00_Main_Scripts/full_simulation_runner.py
+!/00_Main_Scripts/run_abaqus_sim.py
+!/00_Main_Scripts/getForceDisp.py
+!/00_Main_Scripts/postprocessing_abaqus_sim_v01.py
+!/00_Main_Scripts/abaqus_roi_report_export.py
+!/00_Main_Scripts/abaqus_odb_frame_inventory.py
+!/00_Main_Scripts/roi_postprocessing.py
+!/00_Main_Scripts/roi_area_fractions.py
+!/00_Main_Scripts/roi_plotting.py
+!/00_Main_Scripts/material_reference.py
+!/00_Main_Scripts/wsl_windows_compat.py
+!/00_Main_Scripts/peak_detection.py
+!/00_Main_Scripts/material_reference_curves/
+!/simulation_inputs/
+/simulation_inputs/*
+!/simulation_inputs/AA2024-T351/
+!/simulation_inputs/AA7075-T651/
+!/simulation_inputs/Uniform Distribution/
+/simulation_inputs/Uniform Distribution/*
+!/simulation_inputs/Uniform Distribution/examples/
+/simulation_inputs/Uniform Distribution/examples/*
+!/simulation_inputs/Uniform Distribution/examples/aa7075-T6-base-mesh.xml
+!/simulation_inputs/Uniform Distribution/examples/aa7075-T6-base-parameters.xml
+!/simulation_inputs/Uniform Distribution/examples/strainRratio-1.xml
+!/reference_outputs/
+/reference_outputs/*
+!/reference_outputs/Normal Distribution/
+/reference_outputs/Normal Distribution/*
+!/reference_outputs/Normal Distribution/Sensitivity Study/
+/reference_outputs/Normal Distribution/Sensitivity Study/*
+!/reference_outputs/Normal Distribution/Sensitivity Study/Area Fraction/
+!/reference_outputs/Normal Distribution/Sensitivity Study/Grain Position/
+!/reference_outputs/Normal Distribution/Sensitivity Study/Plastic Stress/
+!/reference_outputs/Normal Distribution/Sensitivity Study/Size RNG/
+!/reference_outputs/Normal Distribution/Sensitivity Study/Uniform Mean Diameter Change/
+!/reference_outputs/Normal Distribution/Sensitivity Study/normal_study_plot_manifest.json
+!/tests/
+/tests/*
+!/tests/test_abaqus_input_generation_elset_wrapping.py
+!/tests/test_get_force_disp_nozip.py
+!/tests/test_material_reference.py
+!/tests/test_roi_plotting.py
+!/tests/test_pe22_log_plotting.py
+!/tests/test_roi_workflow.py
+!/tests/test_roi_pe22_export.py
+!/tests/test_pe22_postprocessing.py
+!/tests/test_peak_frame_mapping.py
+!/tests/test_roi_area_fractions.py
+!/tests/test_material_baseline_inputs.py
+!/tests/test_wsl_copy_back.py
+!/tests/test_roi_phase_defaults.py
+!/tests/test_release_scope.py
+!/docs/
+/docs/*
+!/docs/WORKFLOW.md
+!/docs/RELEASE_REVIEW.md
+!/docs/RELEASE_SCOPE.json
+!/docs/roi_report_config.example.json
+
+# Caches, local secrets and generated solver files
 __pycache__/
 *.py[cod]
-*$py.class
 .venv/
 venv/
 env/
-
-# OS/editor
-.DS_Store
-Thumbs.db
+.env
 .idea/
-
-# VS Code / Hermes local workspace settings
-# If we later add shared recommended VS Code settings, we can track specific
-# files under .vscode/ with negation rules.
 .vscode/
-.hermes/plans/
-
-# Abaqus generated files
 *.odb
 *.dat
 *.msg
@@ -42,39 +98,9 @@ Thumbs.db
 *.mtx
 *.odb_f
 *.ipm
-
-# Generated simulation outputs
-simulation_outputs/
-generated_outputs/
-outputs/
-results/
-runs/
-
-# Local/generated simulation input batches
-# Keep curated examples tracked, but do not track the large AL2024/AL7075
-# working input folders.
-simulation_inputs/AL2024-T351/
-simulation_inputs/AL7075-T6/
-
-# Generated plots / explanatory images
-# Most generated images stay untracked, but keep the explanatory/reference
-# figures in 01_Secondary_Scripts because they document the analysis.
-*.jpg
-*.jpeg
-*.svg
-!01_Secondary_Scripts/rom_outputs/*.png
-!01_Secondary_Scripts/fatigue_figures/*.png
-
-# Temporary/local files
 *.tmp
 *.bak
 *.swp
 *.swo
-
-# Local run helpers and uniform-distribution study inputs
-/archive/run_helpers/
-/simulation_inputs/Uniform Distribution/*
-!/simulation_inputs/Uniform Distribution/examples/
-!/simulation_inputs/Uniform Distribution/examples/**
-!/simulation_inputs/Uniform Distribution/size-rng-position1000/
-!/simulation_inputs/Uniform Distribution/size-rng-position1000/**
+.DS_Store
+Thumbs.db

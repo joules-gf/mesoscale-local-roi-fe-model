@@ -1,433 +1,66 @@
 # Mesoscale Local ROI FE Model
 
-<!-- GITHUB_STAGE_1_HEADER -->
+## Essential-workflow candidate
 
-## Project status
+This release is the repository reference version of the research workflow, approved by Julio for publication to `main`. The full research checkpoint is preserved on `integration/normal-sensitivity-consolidation` at `4cc9de1`. Publication does not establish independent scientific validation or completion of the target-machine checks below.
 
-This repository contains a research-oriented **mesoscale finite element modeling workflow** for local/global mechanical-response analysis and region-of-interest (ROI) postprocessing in aluminum alloys. It uses **MicroStructPy** for microstructure/mesh generation and **Abaqus** for finite-element simulation and `.odb` postprocessing.
+The workflow uses MicroStructPy to generate computational mesostructures and meshes, Abaqus to solve the model, and Python to extract macroscopic and local region responses. It does not explicitly model crystallographic slip or predict fatigue life.
 
-The code is currently kept close to its original research-script form. The immediate goal is to make it easy to share, clone, and run on Windows machines while also allowing partial workflow validation in WSL/Linux where Abaqus may not be available.
+## Included
 
-## Repository layout
+- `00_Main_Scripts/`: the selected generation, execution, extraction, reference, platform and ROI scripts, including `peak_detection.py`.
+- `00_Main_Scripts/material_reference_curves/`: the complete selected reference folder.
+- `simulation_inputs/Uniform Distribution/examples/`: one monotonic example, one cyclic example, and their shared mesh definition. These are demonstration inputs, **not** the normal sensitivity-study input collection.
+- `reference_outputs/Normal Distribution/Sensitivity Study/`: the five selected study folders, initially retained in full pending individual CSV/figure selection.
+- `simulation_inputs/AA2024-T351/` and `simulation_inputs/AA7075-T651/`: normal-distribution material baselines, each with local include files and distinct monotonic/cyclic case stems.
+- `tests/`: solver-free tests for the retained workflow.
+- `docs/`: workflow, exact scope and release-review records.
 
-- `00_Main_Scripts/` — active pipeline scripts for input generation, Abaqus execution, `.odb` extraction, and postprocessing.
-- `01_Secondary_Scripts/` — secondary analysis/plotting scripts.
-- `simulation_inputs/` — XML input cases and parameter-study inputs.
-- `archive/old_script_versions/` — older script versions preserved for reference.
-- `environment_notes.md` — setup notes for Windows, VS Code, WSL, Python dependencies, and Abaqus-specific limitations.
-- `requirements.txt` — regular Python dependencies. Abaqus Python modules are provided by Abaqus and are not installed from pip.
+Study runners, secondary analysis tools, historical code, uniform reference-output collections and matched-uniform results are excluded from this branch's tracked tree. In the original working checkout they remain on disk, ignored, and are preserved by the research checkpoint. A fresh clone of this candidate will not include them. This is tree cleanup, not history removal or a privacy guarantee.
 
-## Quick setup
+## Setup
 
-### Regular Python environment
+Use a regular Python environment compatible with the project's dependencies:
 
-Create and activate a virtual environment, then install dependencies:
-
-```bash
+```text
 python -m venv .venv
-# Windows PowerShell:
-.venv\Scripts\Activate.ps1
-# macOS/Linux/WSL:
-source .venv/bin/activate
-
-pip install -r requirements.txt
 ```
 
-### Important Abaqus note
+Activate it using `.venv\Scripts\Activate.ps1` in Windows PowerShell or `source .venv/bin/activate` in a POSIX shell, then:
 
-The full simulation workflow requires **Abaqus** to be installed and callable from the terminal as `abaqus`.
-
-Some scripts, especially `getForceDisp.py`, must run inside the Abaqus Python environment using commands such as:
-
-```bash
-abaqus cae noGUI=path/to/getForceDisp.py
+```text
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
 ```
 
-Those Abaqus-only modules, including `abaqus`, `abaqusConstants`, and `odbAccess`, should not be installed with pip.
+A full solve additionally requires a working, licensed Abaqus installation. Abaqus supplies `abaqus`, `abaqusConstants` and `odbAccess`; do not install replacements from pip. The regular environment is not a complete Abaqus or native-meshing environment lock.
 
-## Current main entry point
+## Run a demonstration
 
-The current full-pipeline entry point is:
+From the repository root, on a machine configured for Abaqus:
 
-```bash
-python 00_Main_Scripts/full_simulation_runner.py
+```text
+python 00_Main_Scripts/full_simulation_runner.py --input-file "simulation_inputs/Uniform Distribution/examples/aa7075-T6-base-parameters.xml"
 ```
 
-At this stage, some paths are still hardcoded for the original Windows development machine. The next portability step is to replace those hardcoded paths with project-relative paths using `pathlib` and/or command-line arguments.
+For the cyclic example, use `strainRratio-1.xml` in the same folder. These commands launch real computation and may take substantial time. They were **not** run as part of release preparation. Use a unique input filename stem for a new case; output names are based on that stem and can collide across input folders.
 
-## Cross-platform goal
+`--generate-only` skips Abaqus and postprocessing, but still runs MicroStructPy; it is not a cheap validation command. The legacy direct-script demonstration blocks are not supported entry points. Prefer the runner's explicit `--input-file` interface. Windows Abaqus may be reached from WSL through `wsl_windows_compat.py` and the `MICROSTRUCTURE_ABAQUS_CMD` override; verify the installed command and licensing locally.
 
-Target usage:
+## ROI analysis
 
-- **Windows + VS Code:** run the full Abaqus workflow on a computer with Abaqus installed.
-- **WSL/Linux:** validate Python logic, file layout, XML handling, plotting utilities, and non-Abaqus portions of the workflow.
+ROI processing is a **separate sequence**, not an automatic stage of the full runner. See `docs/WORKFLOW.md` for frame selection, a configuration template, safe ODB handling and commands.
 
-Abaqus execution itself generally needs a machine/license where Abaqus is installed and configured.
+ROI plots keep every phase separate by default. To deliberately combine phases 2 and 3, add `--combine-equal-yield-phases`; this option does not verify their constitutive equality. Historical grouped figures remain unchanged.
 
----
+## Saved results and provenance
 
-This project is a **fully automated mesoscale FE modeling pipeline** built on top of MicroStructPy and Abaqus, with support for local/global response comparison and ROI postprocessing.
+The retained normal-study folders are `Area Fraction`, `Grain Position`, `Plastic Stress`, `Size RNG`, and `Uniform Mean Diameter Change`. In the last name, "Uniform" means applying the same mean to all four phases, not a uniform probability distribution. The normal mean sweep also changes the absolute spread through the historical `0.2 * mean` default.
 
-It extends the workflow from **input preprocessing → mesh generation → Abaqus simulation → postprocessing**, allowing you to run an entire simulation with minimal manual intervention.
+Resolved XML and solver input decks retained beside saved outputs are provenance records, not the excluded input campaigns or promises that every old path works in a fresh clone. Existing metadata can name batch folders, ignored ODBs or historical scripts not supplied here. In particular, `normal_study_plot_manifest.json` records a historical secondary plotter that is intentionally excluded; its name/hash are not a runnable command in this release. Reference curves and saved plots do not independently validate physical assumptions.
 
-If you'd just like to quickly run a simulation, you can skip this reading and go to the **Demo section below**.
+## Contributions and validation boundary
 
----
+Detailed function-level attribution is retained separately and is not distributed in this repository. Git commit identity is not evidence of human-versus-AI implementation authorship. Release-preparation implementation included AI assistance; code review, historical authorship and independent scientific validation are distinct claims.
 
-## What this project does
-
-Put simply, you can:
-
-1. Submit an XML input file describing:
-
-   * Microstructure (phases, shape, sizes)
-   * Domain geometry
-   * Abaqus simulation parameters (E, ν, plastic stresses, strain applied)
-
-2. The script automatically can:
-
-   * Expand `<include>` XML files to include Abaqus simulation parameters
-   * Fill missing parameters (e.g., standard deviations)
-   * Generate a MicroStructPy mesh
-   * Convert it into an Abaqus `.inp` file
-   * Insert:
-
-     * Materials
-     * Boundary conditions
-     * Steps
-     * Output requests
-
-3. Run the Abaqus simulation
-
-4. Postprocess results:
-
-   * Extract force–displacement from `.odb`
-   * Convert to stress–strain
-   * Compare against:
-
-     * ROM AA7075-T6 curve
-     * Experimental data
-   * Generate plots
-
----
-
-## Overall Workflow
-
-```
-XML Input File
-     ↓
-[abaqus_input_generation_v02.py]
-     ↓
-MicroStructPy Mesh + Abaqus .inp
-     ↓
-[run_abaqus_sim.py]
-     ↓
-Abaqus Simulation (.odb)
-     ↓
-[getForceDisp.py]
-     ↓
-Force–Displacement CSV
-     ↓
-[postprocessing_abaqus_sim_v01.py]
-     ↓
-Plots + Analysis
-```
-
----
-
-## Main Scripts
-
-### 1) Input Generation & Preprocessing
-
-📄 `abaqus_input_generation_v02.py` 
-
-Handles:
-
-* XML parsing and `<include>` expansion
-* Default parameter completion (i.e., std = 20% of mean, if no std is provided)
-* Cyclic loading definition (periodic amplitude)
-* MicroStructPy execution
-* Abaqus `.inp` file completion:
-
-  * Materials
-  * Sections
-  * Boundary conditions
-  * Step definition
-  * Output requests
-
-⚠️ Important notes:
-
-* Requires **at least 2 phases** to avoid unkown bug
-* If one phase lacks `scale`, all phases will be assigned default values
-
-#### Cyclic Loading Pre-Visualization (Optional)
-
-This module includes a feature to **pre-visualize the expected cyclic loading profile before running the simulation**.
-
-When cyclic parameters are defined in the input file (`<cyclic_parameters>`), the script generates a **time–amplitude waveform** based on the specified:
-
-* Strain ratio ( R )
-* Frequency ( f )
-* Time increment ( \Delta t )
-* Phase shift (controlled by `start_min`)
-
-Internally, the loading follows a periodic formulation of the form:
-
-$$ A(t) = A_0 + B \sin(\omega t + \phi) $$
-
-where:
-
-* ( $A_0$ ) = mean amplitude
-* ( $B$ ) = amplitude range
-* ( $\omega = 2\pi f$ )
-* ( $\phi$ ) = phase shift
-
-A preview plot is displayed **before the simulation begins**, allowing you to:
-
-* Verify the correctness of the loading definition
-* Inspect resolution based on the chosen time increment
-* Confirm whether the cycle starts at maximum or minimum strain
-
-You are then prompted to:
-
-* **Continue** with the simulation, or
-* **Abort** and adjust parameters
-
-If accepted, the waveform is saved as:
-
-```id="z3e8rm"
-expected_cycles_<simulation_name>.png
-```
-
-and stored alongside the simulation outputs for reference.
-
-This is particularly useful when working with:
-
-* High-frequency loading (risk of under-resolution)
-* Non-standard ( R )-ratios
-* Debugging cyclic boundary condition behavior in Abaqus
-
----
-
-
-### 2) Full Simulation Runner
-
-📄 `full_simulation_runner.py` 
-
-This is the **main entry point**.
-
-It:
-
-1. Calls input generation
-2. Runs Abaqus simulation
-3. Executes postprocessing
-
-This is the script you should run for a full pipeline.
-
----
-
-### 3) Abaqus Data Extraction
-
-📄 `getForceDisp.py` 
-
-Runs inside Abaqus (`noGUI`) and:
-
-* Opens `.odb`
-* Extracts:
-
-  * Reaction force (RF)
-  * Displacement (U)
-* Outputs a CSV:
-
-  ```
-  Step Time | U_Y | Total RF_Y
-  ```
-
-Key assumption:
-
-* Uses node sets:
-
-  * `BOTTOMNODES`
-  * `UPPERNODES`
-
----
-
-### 4) Postprocessing & Plotting
-
-📄 `postprocessing_abaqus_sim_v01.py` 
-
-Handles:
-
-* Running `getForceDisp.py`
-* Loading CSV data
-* Assummes that domain is of unit length:
-
-  * Stress = Force / 1
-  * Strain = Displacement / 1
-* Plotting:
-
-  * Simulation vs ROM curve
-  * Simulation vs experimental data
-  * Cyclic displacement vs time
-
-⚠️ Important assumption:
-
-* Domain size = 1 →
-
-  ```
-  stress = force
-  strain = displacement
-  ```
-
----
-
-## Demo
-
-### Quick Setup
-
-1. Go to:
-
-```
-00_Main_Scripts/full_simulation_runner.py
-```
-
-2. Modify:
-
-```python
-input_files_folder = r'YOUR_PATH_TO_INPUTS'
-```
-
-Options:
-
-* `''` → opens GUI file selector
-* Full path → directly loads from folder
-
-3. Run:
-
-```bash
-python full_simulation_runner.py
-```
-
----
-
-## Input File Requirements
-
-Your XML input should include:
-
-### Required Sections
-
-* `<domain>`
-* `<material>` (multiple phases recommended)
-* `<abaqus>`
-
-### Example Abaqus Parameters
-
-```xml
-<abaqus>
-  <E> 71000 </E>
-  <nu> 0.33 </nu>
-  <displacement_yy> 0.01 </displacement_yy>
-  <plastic_stresses> 350, 470, 710, 710 </plastic_stresses>
-</abaqus>
-```
-
-### Optional (Cyclic Loading)
-
-```xml
-<abaqus>
-  <cyclic_parameters>
-    <rRatio_strain>-1</rRatio_strain>
-    <frequency_hz>1</frequency_hz>
-    <time_increment_s>0.01</time_increment_s>
-    <start_min>true</start_min>
-  </cyclic_parameters>
-</abaqus>
-```
-
----
-
-## Output Structure
-
-```
-simulation_outputs/
-└── simulation_name/
-    ├── msp_mesh_files/
-    │   ├── *.inp (raw mesh)
-    │   ├── polymesh.png
-    │   ├── seeds.png
-    │   └── trimesh.png
-    ├── abaqus_files/
-    │   ├── simulation_name.inp (final input)
-    │   ├── simulation report files
-    │   └── simulation_name.odb
-    ├── stress_strain_simulation_name.png
-    ├── simulation_name.csv
-    ├── cycles_simulation_name.png
-```
-
----
-
-## Key Design Features
-
-### 1) Automatic Input Completion
-
-* Handles missing statistical parameters
-* Ensures MicroStructPy compatibility
-
-### 2) Abaqus Input Injection System
-
-* Modular insertion via:
-
-```python
-insert_text_in_abaqus_file(...)
-```
-
-### 3) Cyclic Simulation Support
-
-* Generates periodic amplitude:
-
-```
-A(t) = A0 + B sin(ωt + φ)
-```
-
-### 4) Fully Scripted Pipeline
-
-* No GUI dependency (except optional file picker)
-* End-to-end automation
-
----
-
-## Limitations / Assumptions
-
-* Requires:
-
-  * Abaqus installed and callable via CLI
-  * MicroStructPy installed
-* Assumes:
-
-  * 2D domain with unit dimensions (for stress/strain interpretation)
-* Mesh format:
-
-  * Triangle/TetGen compatible
-* Node set naming must remain consistent:
-
-  * `Ext-Surface-3`, `Ext-Surface-4`
-
----
-
-## Suggested Use Cases
-
-* Fatigue microstructure studies
-* Cyclic loading simulations
-* Validation against ROM or experimental data
-
----
-
-## Next Steps
-
-Based on your workflow, the next logical upgrades would be:
-
-* Batch simulation runner (multiple XMLs automatically)
-* Mesh convergence automation 
-* ROI-based stress/strain extraction 
-* Parallel execution for large studies
+Read `docs/RELEASE_REVIEW.md` before treating this as a general-purpose package. Remaining assumptions include unit-domain stress/strain conversion, four phase labels, material/modulus choices, single-step frame selection and case-specific comparison data. Publication was authorized; thesis integration and licensed target-machine validation remain separate tasks. No new license grant or permission to redistribute third-party data is implied.

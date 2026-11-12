@@ -38,13 +38,96 @@ class PeakDetectionTests(unittest.TestCase):
                 "0.80,0.0,0.0\n"
             )
 
-            result = peak_detection.last_stress_peak_times(folder)
+            result = peak_detection.last_stress_peak_times(folder, time_to_frame_scale=100)
 
         self.assertEqual(result.raw_times, [0.5, 0.7])
         self.assertEqual(result.frame_numbers, [50, 70])
 
 
 class RoiGeometryTests(unittest.TestCase):
+    def test_odb_open_receives_native_string_at_both_boundaries(self):
+        import sys
+        import types
+        from unittest.mock import Mock, patch
+
+        # A distinct string type stands in for Python 2 JSON unicode here.
+        class JsonString(str):
+            pass
+
+        roi_export = load_module("abaqus_roi_report_export")
+        odb = types.SimpleNamespace(
+            rootAssembly=types.SimpleNamespace(instances={"I-PART-1": object()}),
+            close=Mock(),
+        )
+        opened = []
+
+        def open_odb(name, readOnly):
+            self.assertIs(type(name), str)
+            self.assertEqual(name, "C:/case.odb")
+            self.assertIs(readOnly, False)
+            opened.append(name)
+            return odb
+
+        config = {"odb_path": "case.odb", "frames": [85, 95], "domain_size": [1, 1], "instance_name": "I-PART-1"}
+        session = types.SimpleNamespace(openOdb=open_odb)
+        with patch.dict(sys.modules, {"abaqus": types.SimpleNamespace(session=session)}), \
+                patch.object(roi_export, "load_config", return_value=config), \
+                patch.object(roi_export.os.path, "abspath", return_value=JsonString("C:/case.odb")), \
+                patch.object(roi_export, "restore_clean_odb_if_available"), \
+                patch.object(roi_export, "save_clean_odb_backup_if_missing"), \
+                patch.object(roi_export, "require_no_existing_roi_sets"), \
+                patch.object(roi_export, "create_roi_sets", return_value={}), \
+                patch.object(roi_export, "export_roi_field_reports"), \
+                patch.object(roi_export, "export_domain_pe22_summary"):
+            roi_export.main()
+        self.assertEqual(len(opened), 2)
+
+    def test_configured_instance_name_is_native_string_for_element_set_api(self):
+        import types
+        from unittest.mock import Mock
+
+        class JsonString(str):
+            pass
+
+        roi_export = load_module("abaqus_roi_report_export")
+        node = types.SimpleNamespace(label=1, coordinates=(0.95, 0.9, 0.0))
+        element = types.SimpleNamespace(label=1, connectivity=(1,))
+        instance = types.SimpleNamespace(nodes=[node], elements=[element])
+
+        def create_set(name, elementLabels):
+            self.assertIs(type(elementLabels[0][0]), str)
+            self.assertEqual(elementLabels, (("I-PART-1", (1,)),))
+
+        assembly = types.SimpleNamespace(
+            instances={"I-PART-1": instance}, elementSets={},
+            ElementSetFromElementLabels=create_set,
+        )
+        odb = types.SimpleNamespace(rootAssembly=assembly, save=Mock())
+        specs = roi_export.build_edge_roi_specs(1, 1, count_per_side=1)
+        result = roi_export.create_roi_sets(odb, specs, JsonString("I-PART-1"))
+        self.assertEqual(result, {"roi_right_01": "roi_right_01"})
+        odb.save.assert_called_once_with()
+
+    def test_invalid_frame_selection_cannot_restore_or_open_odb(self):
+        import sys
+        import types
+        from unittest.mock import Mock, patch
+
+        roi_export = load_module("abaqus_roi_report_export")
+        for frames in ([], ["not-a-frame"]):
+            with self.subTest(frames=frames), tempfile.TemporaryDirectory() as tmp:
+                odb = Path(tmp) / "working.odb"
+                backup = Path(tmp) / "working_clean_before_roi.odb"
+                odb.write_bytes(b"original working database")
+                backup.write_bytes(b"different clean backup")
+                session = types.SimpleNamespace(openOdb=Mock(side_effect=AssertionError("ODB must not be opened")))
+                config = {"odb_path": str(odb), "frames": frames}
+                with patch.dict(sys.modules, {"abaqus": types.SimpleNamespace(session=session)}), patch.object(roi_export, "load_config", return_value=config):
+                    with self.assertRaises(ValueError):
+                        roi_export.main()
+                session.openOdb.assert_not_called()
+                self.assertEqual(odb.read_bytes(), b"original working database")
+
     def test_default_edge_roi_specs_are_named_for_left_and_right_border_regions(self):
         roi_export = load_module("abaqus_roi_report_export")
 
